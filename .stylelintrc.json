@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+      "rule-empty-line-before": "never",
+      "selector-pseudo-element-colon-notation": "single"
+  }
+}
