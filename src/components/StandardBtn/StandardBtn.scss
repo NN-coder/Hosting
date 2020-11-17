@@ -1,0 +1,12 @@
+.standard-btn {
+  height: 55px;
+  border: none;
+  background-color: #ff8261;
+  color: white;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+  &:hover,
+  &:focus {
+    background-color: #52cbf8;
+  }
+}

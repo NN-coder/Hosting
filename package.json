@@ -56,7 +56,10 @@
     "ignorePatterns": [
       "src/reportWebVitals.js",
       "setupTests.js"
-    ]
+    ],
+    "rules": {
+      "react/button-has-type": 0
+    }
   },
   "prettier": {
     "singleQuote": true,

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: 'Montserrat';
+  font-size: 10px;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}

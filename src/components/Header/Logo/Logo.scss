@@ -1,0 +1,13 @@
+.logo {
+  &__link {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    color: #161920;
+  }
+}
