@@ -5,6 +5,9 @@
   &__item {
     width: 10%;
     font-size: 1.3rem;
+    &--active {
+      background-color: #52cbf8;
+    }
   }
 }
 

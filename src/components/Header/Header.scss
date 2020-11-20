@@ -10,3 +10,9 @@
   border: none;
   margin-left: 20px;
 }
+
+@media screen and (max-width: 950px) {
+  .header-wrapper {
+    padding-bottom: 20px;
+  }
+}

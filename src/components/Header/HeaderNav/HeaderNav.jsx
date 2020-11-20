@@ -1,21 +1,40 @@
 import React from 'react';
 import shortid from 'shortid';
+import classnames from 'classnames';
+import AppContext from '../../AppContext';
 import StandardBtn from '../../StandardBtn/StandardBtn';
-import sectionNames from '../../../sectionNames';
+import sectionNames from '../../sectionNames';
 import './HeaderNav.scss';
 
-const navBtns = sectionNames.map((name) => {
-  return { text: name, id: shortid.generate() };
-});
+class HeaderNav extends React.Component {
+  static contextType = AppContext;
 
-const HeaderNav = () => (
-  <nav className="main-nav">
-    {navBtns.map(({ text, id }) => (
-      <StandardBtn key={id} className="main-nav__item">
-        {text}
-      </StandardBtn>
-    ))}
-  </nav>
-);
+  constructor(props) {
+    super(props);
+    this.navBtns = sectionNames.map((name) => {
+      return { text: name, id: shortid.generate() };
+    });
+  }
+
+  render() {
+    const { currentSection, changeCurrentSection } = this.context;
+
+    return (
+      <nav className="main-nav">
+        {this.navBtns.map(({ text, id }, num) => {
+          const classes = classnames('main-nav__item', {
+            'main-nav__item--active': num === currentSection,
+          });
+
+          return (
+            <StandardBtn key={id} className={classes} onClick={() => changeCurrentSection(num)}>
+              {text}
+            </StandardBtn>
+          );
+        })}
+      </nav>
+    );
+  }
+}
 
 export default HeaderNav;

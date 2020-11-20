@@ -1,0 +1,26 @@
+.standard-section-title {
+  position: relative;
+  text-transform: uppercase;
+  &__row-1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.025em;
+    color: #859aa1;
+  }
+  &__row-2 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #556b72;
+  }
+  &__before {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 5px);
+    &--line {
+      width: 20px;
+      height: 2px;
+      background-color: #fb6b45;
+      bottom: calc(100% + 10px);
+    }
+  }
+}

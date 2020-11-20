@@ -58,7 +58,8 @@
       "setupTests.js"
     ],
     "rules": {
-      "react/button-has-type": 0
+      "react/button-has-type": 0,
+      "react/static-property-placement": 0
     }
   },
   "prettier": {
