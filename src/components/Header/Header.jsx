@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg from '../Svg';
-import Logo from './Logo/Logo';
+import Logo from '../Logo/Logo';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 import HeaderNav from './HeaderNav/HeaderNav';
 import MainMenu from './MainMenu/MainMenu';

@@ -2,8 +2,11 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  &__item {
+  &__link {
     width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.3rem;
     &--active {
       background-color: #52cbf8;
@@ -12,7 +15,7 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .main-nav__item {
+  .main-nav__link {
     width: 20%;
   }
 }

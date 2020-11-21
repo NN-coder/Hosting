@@ -22,7 +22,7 @@ const MainNav = ({ isClosed, toggleOpen }) => {
             </g>
           </Svg>
         </button>
-        <HeaderNav />
+        <HeaderNav onClick={toggleOpen} />
       </div>
       <div onClick={toggleOpen} className="main-menu__bg" />
     </>

@@ -25,6 +25,11 @@
   }
 }
 
+@media screen and (max-width: 1250px) {
+  .newsletter-section {
+    padding: 100px 20px 85px;
+  }
+}
 @media screen and (max-width: 950px) {
   .newsletter-section-wrapper {
     flex-direction: column;

@@ -1,40 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import shortid from 'shortid';
-import classnames from 'classnames';
-import AppContext from '../../AppContext';
-import StandardBtn from '../../StandardBtn/StandardBtn';
+// import StandardBtn from '../../StandardBtn/StandardBtn';
 import sectionNames from '../../sectionNames';
 import './HeaderNav.scss';
 
-class HeaderNav extends React.Component {
-  static contextType = AppContext;
+const navLinks = sectionNames.map((name) => {
+  return { text: name, link: name.toLowerCase().split(' ').join('-'), id: shortid.generate() };
+});
 
-  constructor(props) {
-    super(props);
-    this.navBtns = sectionNames.map((name) => {
-      return { text: name, id: shortid.generate() };
-    });
-  }
+const HeaderNav = ({ onClick }) => (
+  <nav className="main-nav">
+    {navLinks.map(({ text, id, link }) => (
+      <NavLink
+        key={id}
+        to={link}
+        onClick={onClick}
+        className="standard-btn main-nav__link"
+        activeClassName="main-nav__link--active"
+      >
+        {text}
+      </NavLink>
+    ))}
+  </nav>
+);
 
-  render() {
-    const { currentSection, changeCurrentSection } = this.context;
-
-    return (
-      <nav className="main-nav">
-        {this.navBtns.map(({ text, id }, num) => {
-          const classes = classnames('main-nav__item', {
-            'main-nav__item--active': num === currentSection,
-          });
-
-          return (
-            <StandardBtn key={id} className={classes} onClick={() => changeCurrentSection(num)}>
-              {text}
-            </StandardBtn>
-          );
-        })}
-      </nav>
-    );
-  }
-}
+HeaderNav.propTypes = {
+  onClick: PropTypes.func,
+};
+HeaderNav.defaultProps = {
+  onClick: null,
+};
 
 export default HeaderNav;
