@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  &__link {
+  .main-nav__link {
     width: 10%;
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .main-nav__link {
+  .main-nav .main-nav__link {
     width: 20%;
   }
 }

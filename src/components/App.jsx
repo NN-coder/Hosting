@@ -19,12 +19,13 @@ const {
   ContactUs,
 } = sections;
 
-const RouteWithTitle = ({ title, ...props }) => {
+const CustomRoute = ({ title, ...props }) => {
   document.title = `Hosting - ${title}`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Route {...props} />;
 };
-RouteWithTitle.propTypes = {
+CustomRoute.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
@@ -33,16 +34,16 @@ const App = () => (
     <Header />
     <main className="main">
       <Switch>
-        <RouteWithTitle title="Home" path="/home" component={Home} />
-        <RouteWithTitle title="About us" path="/about-us" component={AboutUs} />
-        <RouteWithTitle title="Service" path="/service" component={Service} />
-        <RouteWithTitle title="Hosting plans" path="/hosting-plans" component={HostingPlans} />
-        <RouteWithTitle title="Domain" path="/domain" component={Domain} />
-        <RouteWithTitle title="FAQ" path="/faq" component={FAQ} />
-        <RouteWithTitle title="Testimonials" path="/testimonials" component={Testimonials} />
-        <RouteWithTitle title="Blog" path="/blog" component={Blog} />
-        <RouteWithTitle title="Support" path="/support" component={Support} />
-        <RouteWithTitle title="Contact us" path="/contact-us" component={ContactUs} />
+        <CustomRoute title="Home" path="/home" component={Home} />
+        <CustomRoute title="About us" path="/about-us" component={AboutUs} />
+        <CustomRoute title="Service" path="/service" component={Service} />
+        <CustomRoute title="Hosting plans" path="/hosting-plans" component={HostingPlans} />
+        <CustomRoute title="Domain" path="/domain" component={Domain} />
+        <CustomRoute title="FAQ" path="/faq" component={FAQ} />
+        <CustomRoute title="Testimonials" path="/testimonials" component={Testimonials} />
+        <CustomRoute title="Blog" path="/blog" component={Blog} />
+        <CustomRoute title="Support" path="/support" component={Support} />
+        <CustomRoute title="Contact us" path="/contact-us" component={ContactUs} />
         <Redirect from="/" to="/home" />
       </Switch>
     </main>

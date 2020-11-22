@@ -1,8 +1,9 @@
 import React from 'react';
+import HomeSlider from './HomeSlider/HomeSlider';
 
 const Home = () => (
   <div className="main-content-section">
-    <div className="wrapper">Home</div>
+    <HomeSlider />
   </div>
 );
 

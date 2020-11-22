@@ -1,0 +1,13 @@
+.slider-dots {
+  display: flex;
+  column-gap: 5px;
+  &__item {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    background: none;
+    border: 2px solid;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+}

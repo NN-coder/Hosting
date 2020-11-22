@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import shortid from 'shortid';
-// import StandardBtn from '../../StandardBtn/StandardBtn';
 import sectionNames from '../../sectionNames';
 import './HeaderNav.scss';
 
-const navLinks = sectionNames.map((name) => {
-  return { text: name, link: name.toLowerCase().split(' ').join('-'), id: shortid.generate() };
-});
+const navLinks = sectionNames.map((name) => ({
+  text: name,
+  link: name.toLowerCase().split(' ').join('-'),
+  id: shortid.generate(),
+}));
 
 const HeaderNav = ({ onClick }) => (
   <nav className="main-nav">
