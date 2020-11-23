@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import lozad from 'lozad';
 import App from './components/App';
-import './styles/normalize.scss';
-import './styles/fonts.scss';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

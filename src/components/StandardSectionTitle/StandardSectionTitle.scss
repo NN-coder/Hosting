@@ -1,6 +1,7 @@
 .standard-section-title {
   position: relative;
   text-transform: uppercase;
+  white-space: nowrap;
   &__row-1 {
     font-size: 1.8rem;
     letter-spacing: 0.025em;
