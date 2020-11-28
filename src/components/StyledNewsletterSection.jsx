@@ -1,9 +1,52 @@
 import React from 'react';
-import Svg from '../Svg';
-import StandardSectionTitle from '../StandardSectionTitle/StandardSectionTitle';
-import StandardBtn from '../StandardBtn/StandardBtn';
-import './NewsletterSection.scss';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
+import StyledWrapper from './StyledWrapper';
+import Svg from './Svg';
+import StandardSectionTitle from './StandardSectionTitle';
+import StandardBtn from './StandardBtn';
+
+//* ================================================== Styles ==================================================
+const NewsletterWrapper = styled(StyledWrapper)`
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
+`;
+const NewsletterForm = styled.form`
+  width: 100%;
+  margin-left: 30px;
+
+  @media screen and (max-width: 950px) {
+    display: contents;
+  }
+`;
+
+const NesletterFormInput = styled.input`
+  width: calc(100% - 195px);
+  height: 55px;
+  padding: 0 25px;
+  color: #a0a9b6;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+  border: none;
+
+  @media screen and (max-width: 950px) {
+    width: 80%;
+  }
+`;
+const NewsletterFormSubmit = styled(StandardBtn)`
+  width: 195px;
+  font-weight: 700;
+  font-size: 1.35rem;
+`;
+
+//* ================================================== Code ==================================================
 const image = (
   <Svg width="25px" height="25px" fill="#fb6b45">
     <g>
@@ -30,22 +73,31 @@ const image = (
   </Svg>
 );
 
-const NewsletterSection = () => (
-  <section className="newsletter-section">
-    <div className="wrapper newsletter-section-wrapper">
+const NewsletterSection = ({ className }) => (
+  <section className={className}>
+    <NewsletterWrapper>
       <StandardSectionTitle rowOne="Sign up your" rowTwo="Newsletter" beforeImg={image} />
-      <form className="newsletter-form" action="" method="post">
-        <input
-          className="newsletter-form__input"
-          type="text"
-          placeholder="Enter your domain name"
-        />
-        <StandardBtn className="newsletter-form__submit" type="submit">
-          Sign up now
-        </StandardBtn>
-      </form>
-    </div>
+
+      <NewsletterForm action="" method="post">
+        <NesletterFormInput type="text" placeholder="Enter your domain name" />
+        <NewsletterFormSubmit type="submit">Sign up now</NewsletterFormSubmit>
+      </NewsletterForm>
+    </NewsletterWrapper>
   </section>
 );
 
-export default NewsletterSection;
+NewsletterSection.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+//* ================================================== Styles ==================================================
+const StyledNewsletterSection = styled(NewsletterSection)`
+  padding: 100px 0 85px;
+  background-color: #e7f4f8;
+
+  @media screen and (max-width: 1250px) {
+    padding: 100px 20px 85px;
+  }
+`;
+
+export default StyledNewsletterSection;

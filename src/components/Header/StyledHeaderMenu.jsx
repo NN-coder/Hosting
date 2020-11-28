@@ -1,21 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Svg from '../../Svg';
-import './HeaderMenu.scss';
 
-const HeaderMenu = ({ isMobile }) => {
+import Svg from '../Svg';
+
+//* ================================================== Styles ==================================================
+const HeaderMenuBtn = styled.button`
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  svg {
+    margin-right: 10px;
+  }
+`;
+
+//* ================================================== Code ==================================================
+const HeaderMenu = ({ isMobile, className }) => {
   const innerText = 'Login / Register';
 
   return (
-    <div className="header-menu">
-      <button type="button" className="header-menu__btn">
-        <Svg
-          className="header-menu__svg"
-          width="30px"
-          height="30px"
-          fill="#161920"
-          viewBox="0 0 439 439"
-        >
+    <div className={className}>
+      <HeaderMenuBtn type="button">
+        <Svg width="30px" height="30px" fill="#161920" viewBox="0 0 439 439">
           <g>
             <path
               d="M219.265,219.267c30.271,0,56.108-10.71,77.518-32.121c21.412-21.411,32.12-47.248,32.12-77.515
@@ -37,16 +44,23 @@ const HeaderMenu = ({ isMobile }) => {
           </g>
         </Svg>
         {!isMobile && innerText}
-      </button>
+      </HeaderMenuBtn>
     </div>
   );
 };
 
 HeaderMenu.propTypes = {
-  isMobile: PropTypes.bool,
-};
-HeaderMenu.defaultProps = {
-  isMobile: false,
+  isMobile: PropTypes.bool.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
-export default HeaderMenu;
+//* ================================================== Styles ==================================================
+const StyledHeaderMenu = styled(HeaderMenu)`
+  margin-right: 20px;
+  margin-left: auto;
+  color: #161920;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+`;
+
+export default StyledHeaderMenu;

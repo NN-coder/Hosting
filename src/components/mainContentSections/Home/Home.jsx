@@ -1,11 +1,12 @@
 import React from 'react';
-import HomeSlider from './HomeSlider/HomeSlider';
-import SearchDomain from './SearchDomain/SearchDomain';
+
+import StyledHomeSlider from './HomeSlider/HomeSlider';
+import StyledSearchDomain from './StyledSearchDomain/StyledSearchDomain';
 
 const Home = () => (
   <div className="main-content-section">
-    <HomeSlider />
-    <SearchDomain />
+    <StyledHomeSlider />
+    <StyledSearchDomain />
   </div>
 );
 
