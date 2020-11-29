@@ -7,6 +7,7 @@ import StyledSlider, {
   StyledSliderArrows,
   Arrow,
 } from '../../../Slider/StyledSlider';
+import StyledHomeSliderItem from './StyledHomeSliderItem';
 
 //* ================================================== Styles ==================================================
 const SlideContent = styled.div`
@@ -43,62 +44,36 @@ const theme = {
 };
 
 //* ================================================== Code ==================================================
-function improtAll(r) {
-  const images = {};
-  r.keys().forEach((item) => {
-    images[item.replace('./', '')] = r(item).default;
-  });
-  return images;
-}
-const images = improtAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
-
-const HomeSliderItem = styled.div`
-  position: relative;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media screen and (max-width: 1200px) {
-    background-image: ${(props) => `url(${images[`slide-${props.number}_1280x720.jpg`]}) `};
-  }
-  @media screen and (min-width: 1200.1px) and (max-width: 1600px) {
-    background-image: ${(props) => `url(${images[`slide-${props.number}_1600x900.jpg`]}) `};
-  }
-  @media screen and (min-width: 1600.1px) {
-    background-image: ${(props) => `url(${images[`slide-${props.number}_2048x1152.jpg`]}) `};
-  }
-`;
-
 const HomeSlider = ({ className }) => (
   <ThemeProvider theme={theme}>
     <StyledSlider className={className} navArrows>
-      <HomeSliderItem number="1">
+      <StyledHomeSliderItem number="1">
         <SlideContent>
           <SlideContentTitle>Awesome hosting 1</SlideContentTitle>
           <SlideContentSubtitle>With unlimited features 1</SlideContentSubtitle>
         </SlideContent>
-      </HomeSliderItem>
+      </StyledHomeSliderItem>
 
-      <HomeSliderItem number="2">
+      <StyledHomeSliderItem number="2">
         <SlideContent>
           <SlideContentTitle>Awesome hosting 2</SlideContentTitle>
           <SlideContentSubtitle>With unlimited features 2</SlideContentSubtitle>
         </SlideContent>
-      </HomeSliderItem>
+      </StyledHomeSliderItem>
 
-      <HomeSliderItem number="3">
+      <StyledHomeSliderItem number="3">
         <SlideContent>
           <SlideContentTitle>Awesome hosting 3</SlideContentTitle>
           <SlideContentSubtitle>With unlimited features 3</SlideContentSubtitle>
         </SlideContent>
-      </HomeSliderItem>
+      </StyledHomeSliderItem>
 
-      <HomeSliderItem number="4">
+      <StyledHomeSliderItem number="4">
         <SlideContent>
           <SlideContentTitle>Awesome hosting 4</SlideContentTitle>
           <SlideContentSubtitle>With unlimited features 4</SlideContentSubtitle>
         </SlideContent>
-      </HomeSliderItem>
+      </StyledHomeSliderItem>
     </StyledSlider>
   </ThemeProvider>
 );
