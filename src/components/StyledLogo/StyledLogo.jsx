@@ -6,7 +6,7 @@ import logo from './logo.png';
 const Logo = ({ className }) => (
   <h1 className={className}>
     <a href="/">
-      <img className="lazy" src={logo} alt="" />
+      <img className="lozad" src={logo} alt="" />
       Hosting
     </a>
   </h1>

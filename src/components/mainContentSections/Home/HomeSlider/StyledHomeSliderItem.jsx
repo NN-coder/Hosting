@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
-import lazyLoadInstance from '../../../lazyLoadInstance';
+import observer from '../../../lozadObserver';
 
 function improtAll(r) {
   const images = {};
@@ -16,23 +16,32 @@ function improtAll(r) {
 const images = improtAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 function handleMediaQueryChange() {
-  lazyLoadInstance.update();
+  observer.observe();
 }
 
 const HomeSliderItem = ({ number, className, children }) => (
   <>
     <MediaQuery maxDeviceWidth={1200} onChange={handleMediaQueryChange}>
-      <div className={`lazy ${className}`} data-bg={images[`slide-${number}_1280x720.jpg`]}>
+      <div
+        className={`lozad ${className}`}
+        data-background-image={images[`slide-${number}_1280x720.jpg`]}
+      >
         {children}
       </div>
     </MediaQuery>
     <MediaQuery minDeviceWidth={1200.1} maxDeviceWidth={1600} onChange={handleMediaQueryChange}>
-      <div className={`lazy ${className}`} data-bg={images[`slide-${number}_1600x900.jpg`]}>
+      <div
+        className={`lozad ${className}`}
+        data-background-image={images[`slide-${number}_1600x900.jpg`]}
+      >
         {children}
       </div>
     </MediaQuery>
     <MediaQuery minDeviceWidth={1600.1} onChange={handleMediaQueryChange}>
-      <div className={`lazy ${className}`} data-bg={images[`slide-${number}_2048x1152.jpg`]}>
+      <div
+        className={`lozad ${className}`}
+        data-background-image={images[`slide-${number}_2048x1152.jpg`]}
+      >
         {children}
       </div>
     </MediaQuery>
