@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 import StyledWrapper from '../StyledWrapper';
@@ -8,7 +8,6 @@ import StyledHeaderMenu from './StyledHeaderMenu';
 import HeaderNav from './HeaderNav';
 import MainMenu from './MainMenu';
 
-//* ================================================== Styles ==================================================
 const HeaderWrapper = styled(StyledWrapper)`
   display: flex;
   flex-wrap: wrap;
@@ -26,63 +25,58 @@ const MainNavOpener = styled.button`
   border: none;
 `;
 
-//* ================================================== Code ==================================================
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mql = window.matchMedia('screen and (max-width: 950px)');
-    this.state = { mobileMode: this.mql.matches, isMainNavClosed: true };
-    this.toggleMainNavOpen = this.toggleMainNavOpen.bind(this);
-  }
+const Header = () => {
+  const mql = window.matchMedia('(max-width: 950px)');
 
-  componentDidMount() {
-    this.mql.addEventListener('change', (e) =>
-      this.setState({ mobileMode: e.matches, isMainNavClosed: true })
-    );
-  }
+  const [mobileMode, changeMode] = useState(mql.matches);
+  const [isMainNavClosed, toggleMainNavClose] = useState(true);
 
-  toggleMainNavOpen() {
-    const { isMainNavClosed } = this.state;
-    this.setState({ isMainNavClosed: !isMainNavClosed });
-  }
+  const handleMediaQueryChange = useCallback((event) => {
+    changeMode(event.matches);
+    toggleMainNavClose(true);
+  }, []);
 
-  render() {
-    const { mobileMode, isMainNavClosed } = this.state;
+  useEffect(() => {
+    mql.addEventListener('change', handleMediaQueryChange);
+    return () => mql.removeEventListener('change', handleMediaQueryChange);
+  }, [mql, handleMediaQueryChange]);
 
-    return (
-      <header>
-        <HeaderWrapper>
-          {mobileMode && (
-            <MainNavOpener type="button" onClick={this.toggleMainNavOpen}>
-              <Svg width="25px" height="25px" viewBox="0 0 341 341" fill="#161920">
+  return (
+    <header>
+      <HeaderWrapper>
+        {mobileMode && (
+          <MainNavOpener type="button" onClick={() => toggleMainNavClose(!isMainNavClosed)}>
+            <Svg width="25px" height="25px" viewBox="0 0 341 341" fill="#161920">
+              <g>
                 <g>
-                  <g>
-                    <rect y="277.333" width="341.333" height="42.667" />
-                  </g>
+                  <rect y="277.333" width="341.333" height="42.667" />
                 </g>
+              </g>
+              <g>
                 <g>
-                  <g>
-                    <rect y="149.333" width="341.333" height="42.667" />
-                  </g>
+                  <rect y="149.333" width="341.333" height="42.667" />
                 </g>
+              </g>
+              <g>
                 <g>
-                  <g>
-                    <rect y="21.333" width="341.333" height="42.667" />
-                  </g>
+                  <rect y="21.333" width="341.333" height="42.667" />
                 </g>
-              </Svg>
-            </MainNavOpener>
-          )}
-          <StyledLogo />
-          <StyledHeaderMenu isMobile={mobileMode} />
-          {mobileMode && (
-            <MainMenu isClosed={isMainNavClosed} toggleOpen={this.toggleMainNavOpen} />
-          )}
-          {!mobileMode && <HeaderNav />}
-        </HeaderWrapper>
-      </header>
-    );
-  }
-}
+              </g>
+            </Svg>
+          </MainNavOpener>
+        )}
+        <StyledLogo />
+        <StyledHeaderMenu isMobile={mobileMode} />
+        {mobileMode && (
+          <MainMenu
+            isClosed={isMainNavClosed}
+            toggleOpen={() => toggleMainNavClose(!isMainNavClosed)}
+          />
+        )}
+        {!mobileMode && <HeaderNav />}
+      </HeaderWrapper>
+    </header>
+  );
+};
 
 export default Header;

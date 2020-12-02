@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
-import observer from '../../../lozadObserver';
+import lozadObserver from '../../../lozadObserver';
 
 function improtAll(r) {
   const images = {};
@@ -16,7 +16,7 @@ function improtAll(r) {
 const images = improtAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 function handleMediaQueryChange() {
-  observer.observe();
+  lozadObserver.observe();
 }
 
 const HomeSliderItem = ({ number, className, children }) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -6,48 +6,47 @@ import SliderTrack from './StyledSliderTrack';
 import StyledSliderDots from './StyledSliderDots';
 import StyledSliderArrows, { Arrow } from './StyledSliderArrows';
 
-//* ================================================== Code ==================================================
-class Slider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { currentSlide: 0 };
-    this.changeSlide = this.changeSlide.bind(this);
+function scrollSlider(direction, slideCount, curSlide) {
+  if (direction === 'right') {
+    return curSlide === slideCount - 1 ? 0 : curSlide + 1;
   }
-
-  changeSlide(num) {
-    const { currentSlide } = this.state;
-    const { children } = this.props;
-
-    if (currentSlide !== num && num >= 0 && num < children.length) {
-      this.setState({ currentSlide: num });
-    }
-  }
-
-  render() {
-    const { currentSlide } = this.state;
-    const { children, className, navArrows } = this.props;
-
-    return (
-      <div className={className}>
-        <SliderTrack currentSlide={currentSlide}>{children}</SliderTrack>
-        <StyledSliderDots
-          currentSlide={currentSlide}
-          count={children.length}
-          handleClick={this.changeSlide}
-        />
-        {navArrows && (
-          <StyledSliderArrows
-            handleClickOnLeft={() => this.changeSlide(currentSlide - 1)}
-            handleClickOnRight={() => this.changeSlide(currentSlide + 1)}
-          />
-        )}
-      </div>
-    );
-  }
+  return curSlide === 0 ? slideCount - 1 : curSlide - 1;
 }
 
+const Slider = ({ children, className, navArrows }) => {
+  const [curSlide, changeSlide] = useState(0);
+  const childrenCount = React.Children.count(children);
+
+  const scrollRight = useMemo(() => scrollSlider.bind(null, 'right', childrenCount), [
+    childrenCount,
+  ]);
+  const scrollLeft = useMemo(() => scrollSlider.bind(null, 'left', childrenCount), [childrenCount]);
+
+  useEffect(() => {
+    const timerID = setTimeout(() => changeSlide(scrollRight), 5000);
+    return () => clearTimeout(timerID);
+  });
+
+  return (
+    <div className={className}>
+      <SliderTrack currentSlide={curSlide}>{children}</SliderTrack>
+      <StyledSliderDots
+        currentSlide={curSlide}
+        count={childrenCount}
+        handleDotClick={changeSlide}
+      />
+      {navArrows && (
+        <StyledSliderArrows
+          handleClickOnLeft={() => changeSlide(scrollLeft)}
+          handleClickOnRight={() => changeSlide(scrollRight)}
+        />
+      )}
+    </div>
+  );
+};
+
 Slider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
   className: PropTypes.string.isRequired,
   navArrows: PropTypes.bool,
 };
@@ -55,7 +54,6 @@ Slider.defaultProps = {
   navArrows: false,
 };
 
-//* ================================================== Styles ==================================================
 const StyledSlider = styled(Slider)`
   overflow: hidden;
 `;

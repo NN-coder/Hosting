@@ -7,7 +7,6 @@ import Svg from './Svg';
 import StandardSectionTitle from './StandardSectionTitle';
 import StandardBtn from './StandardBtn';
 
-//* ================================================== Styles ==================================================
 const NewsletterWrapper = styled(StyledWrapper)`
   display: flex;
   justify-content: space-between;
@@ -46,7 +45,6 @@ const NewsletterFormSubmit = styled(StandardBtn)`
   font-size: 1.35rem;
 `;
 
-//* ================================================== Code ==================================================
 const image = (
   <Svg width="25px" height="25px" fill="#fb6b45">
     <g>
@@ -77,7 +75,6 @@ const NewsletterSection = ({ className }) => (
   <section className={className}>
     <NewsletterWrapper>
       <StandardSectionTitle rowOne="Sign up your" rowTwo="Newsletter" beforeImg={image} />
-
       <NewsletterForm action="" method="post">
         <NesletterFormInput type="text" placeholder="Enter your domain name" />
         <NewsletterFormSubmit type="submit">Sign up now</NewsletterFormSubmit>
@@ -90,7 +87,6 @@ NewsletterSection.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-//* ================================================== Styles ==================================================
 const StyledNewsletterSection = styled(NewsletterSection)`
   padding: 100px 0 85px;
   background-color: #e7f4f8;

@@ -9,7 +9,6 @@ import StyledSlider, {
 } from '../../../Slider/StyledSlider';
 import StyledHomeSliderItem from './StyledHomeSliderItem';
 
-//* ================================================== Styles ==================================================
 const SlideContent = styled.div`
   position: absolute;
   bottom: 140px;
@@ -43,7 +42,6 @@ const theme = {
   activeDotColor: '#5278db',
 };
 
-//* ================================================== Code ==================================================
 const HomeSlider = ({ className }) => (
   <ThemeProvider theme={theme}>
     <StyledSlider className={className} navArrows>
@@ -82,7 +80,6 @@ HomeSlider.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-//* ================================================== Styles ==================================================
 const StyledHomeSlider = styled(HomeSlider)`
   position: relative;
   height: 570px;

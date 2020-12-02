@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Svg from '../Svg';
 import HeaderNav, { MainNavLink } from './HeaderNav';
 
-//* ================================================== Styles ==================================================
 const MainMenu = styled.div`
   position: fixed;
   top: 0;
@@ -47,7 +46,6 @@ const CloseBtn = styled.button`
   border: none;
 `;
 
-//* ================================================== Code ==================================================
 const MainNav = ({ isClosed, toggleOpen }) => {
   if (isClosed) return null;
 

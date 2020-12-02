@@ -1,5 +1,5 @@
 import lozad from 'lozad';
 
-const observer = lozad();
+const lozadObserver = lozad('.lozad', { rootMargin: '100px 50px' });
 
-export default observer;
+export default lozadObserver;

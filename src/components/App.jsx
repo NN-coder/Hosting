@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import Header from './Header/Header';
-import * as sections from './mainContentSections/mainContentSections';
 import StyledNewsletterSection from './StyledNewsletterSection';
 
-//* ================================================== Styles ==================================================
+import Home from './mainContentSections/Home/Home';
+import AboutUs from './mainContentSections/AboutUs/AboutUs';
+import Service from './mainContentSections/Service/Service';
+import HostingPlans from './mainContentSections/HostingPlans/HostingPlans';
+import Domain from './mainContentSections/Domain/Domain';
+import FAQ from './mainContentSections/FAQ/FAQ';
+import Testimonials from './mainContentSections/Testimonials/Testimonials';
+import Blog from './mainContentSections/Blog/Blog';
+import Support from './mainContentSections/Support/Support';
+import ContactUs from './mainContentSections/ContactUs/ContactUs';
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -26,23 +35,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-//* ================================================== Code ==================================================
-const {
-  Home,
-  AboutUs,
-  Service,
-  HostingPlans,
-  Domain,
-  FAQ,
-  Testimonials,
-  Blog,
-  Support,
-  ContactUs,
-} = sections;
-
 const CustomRoute = ({ title, ...props }) => {
-  document.title = `Hosting - ${title}`;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  useEffect(() => {
+    document.title = `Hosting - ${title}`;
+  });
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Route {...props} />;
 };
@@ -55,7 +51,7 @@ const App = () => (
     <GlobalStyle />
     <BrowserRouter>
       <Header />
-      <main className="main">
+      <main>
         <Switch>
           <CustomRoute title="Home" path="/home" component={Home} />
           <CustomRoute title="About us" path="/about-us" component={AboutUs} />

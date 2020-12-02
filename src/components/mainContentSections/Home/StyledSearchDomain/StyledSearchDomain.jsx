@@ -8,7 +8,6 @@ import StandardSectionTitle from '../../../StandardSectionTitle';
 import StandradBtn from '../../../StandardBtn';
 import selectBg from './select_bg.png';
 
-//* ================================================== Styles ==================================================
 const SearchDomainWrapper = styled(StyledWrapper)`
   display: flex;
   column-gap: 30px;
@@ -77,7 +76,6 @@ const SearchDomainFormSubmit = styled(StandradBtn)`
   letter-spacing: 0.1em;
 `;
 
-//* ================================================== Code ==================================================
 const image = (
   <Svg width="25px" height="25px" viewBox="0 0 475 475" fill="#fb6b45">
     <g>
@@ -144,7 +142,6 @@ SearchDomain.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-//* ================================================== Styles ==================================================
 const StyledSearchDomain = styled(SearchDomain)`
   padding: 70px 0;
   background-color: #e7f4f8;

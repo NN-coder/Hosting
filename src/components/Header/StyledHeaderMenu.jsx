@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Svg from '../Svg';
 
-//* ================================================== Styles ==================================================
 const HeaderMenuBtn = styled.button`
   display: flex;
   align-items: center;
@@ -15,7 +14,6 @@ const HeaderMenuBtn = styled.button`
   }
 `;
 
-//* ================================================== Code ==================================================
 const HeaderMenu = ({ isMobile, className }) => {
   const innerText = 'Login / Register';
 
@@ -54,7 +52,6 @@ HeaderMenu.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-//* ================================================== Styles ==================================================
 const StyledHeaderMenu = styled(HeaderMenu)`
   margin-right: 20px;
   margin-left: auto;

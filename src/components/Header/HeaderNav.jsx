@@ -7,7 +7,6 @@ import shortid from 'shortid';
 import StandardBtn from '../StandardBtn';
 import sectionNames from '../sectionNames';
 
-//* ================================================== Styles ==================================================
 const MainNav = styled.nav`
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +27,6 @@ const MainNavLink = styled(StandardBtn)`
   }
 `;
 
-//* ================================================== Code ==================================================
 const navLinks = sectionNames.map((name) => ({
   text: name,
   link: name.toLowerCase().split(' ').join('-'),

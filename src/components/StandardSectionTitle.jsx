@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-//* ================================================== Styles ==================================================
 const SectionTitle = styled.h3`
   position: relative;
   grid-column: 1 / -1;
@@ -29,10 +28,9 @@ const RowTwo = styled.div`
   letter-spacing: -0.025em;
 `;
 
-//* ================================================== Code ==================================================
 const StandardSectionTitle = ({ rowOne, rowTwo, beforeImg }) => (
   <SectionTitle>
-    {beforeImg && <Before>{beforeImg}</Before>}
+    {beforeImg && <Before aria-hidden>{beforeImg}</Before>}
     {!beforeImg && <Before line />}
     <RowOne>{rowOne}</RowOne>
     <RowTwo>{rowTwo}</RowTwo>
