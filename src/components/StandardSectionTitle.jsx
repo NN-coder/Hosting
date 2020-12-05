@@ -28,8 +28,8 @@ const RowTwo = styled.div`
   letter-spacing: -0.025em;
 `;
 
-const StandardSectionTitle = ({ rowOne, rowTwo, beforeImg }) => (
-  <SectionTitle>
+const StandardSectionTitle = ({ className, rowOne, rowTwo, beforeImg }) => (
+  <SectionTitle className={className}>
     {beforeImg && <Before aria-hidden>{beforeImg}</Before>}
     {!beforeImg && <Before line />}
     <RowOne>{rowOne}</RowOne>
@@ -38,11 +38,13 @@ const StandardSectionTitle = ({ rowOne, rowTwo, beforeImg }) => (
 );
 
 StandardSectionTitle.propTypes = {
+  className: PropTypes.string,
   rowOne: PropTypes.string.isRequired,
   rowTwo: PropTypes.string.isRequired,
   beforeImg: PropTypes.node,
 };
 StandardSectionTitle.defaultProps = {
+  className: null,
   beforeImg: null,
 };
 
