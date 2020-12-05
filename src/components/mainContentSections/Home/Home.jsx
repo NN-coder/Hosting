@@ -4,6 +4,7 @@ import obsrever from '../../lozadObserver';
 import StyledHomeSlider from './HomeSlider/HomeSlider';
 import StyledSearchDomain from './StyledSearchDomain/StyledSearchDomain';
 import OurBenefits from './OurBenefits/OurBenefits';
+import OurHosting from './OurHosting/OurHosting';
 
 const Home = () => {
   useEffect(() => {
@@ -11,11 +12,12 @@ const Home = () => {
   });
 
   return (
-    <div className="main-content-section">
+    <section>
       <StyledHomeSlider />
       <StyledSearchDomain />
       <OurBenefits />
-    </div>
+      <OurHosting />
+    </section>
   );
 };
 

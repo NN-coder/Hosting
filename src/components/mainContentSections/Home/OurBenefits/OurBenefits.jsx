@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import benefitCards from './benefitCards';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StandrardSectionTitle from '../../../StandardSectionTitle';
+import benefitCards from './benefitCards';
 
 //* ================================================== Styles ==================================================
 const OurBenefitsWrapper = styled(StyledWrapper)`
@@ -68,7 +68,7 @@ const BenefitCardText = styled.div`
 
 //* ================================================== Code ==================================================
 const OurBenefits = () => (
-  <div>
+  <section>
     <OurBenefitsWrapper>
       <StandrardSectionTitle rowOne="Our" rowTwo="Benefits" />
       <OurBenefitsInner>
@@ -83,7 +83,7 @@ const OurBenefits = () => (
         ))}
       </OurBenefitsInner>
     </OurBenefitsWrapper>
-  </div>
+  </section>
 );
 
 export default OurBenefits;
