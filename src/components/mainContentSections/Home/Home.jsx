@@ -4,6 +4,7 @@ import obsrever from '../../lozadObserver';
 import StyledHomeSlider from './HomeSlider/HomeSlider';
 import StyledSearchDomain from './StyledSearchDomain/StyledSearchDomain';
 import OurBenefits from './OurBenefits/OurBenefits';
+import DoubleSection from './DoubleSection/DoubleSection';
 import OurHosting from './OurHosting/OurHosting';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <StyledHomeSlider />
       <StyledSearchDomain />
       <OurBenefits />
+      <DoubleSection />
       <OurHosting />
     </section>
   );

@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     --accent-color-active: #52cbf8;
     --header-elements-color: #161920;
     --section-bg-blue: #e7f4f8;
+    --section-bg-orange: #fffbde;
     --text-color: #a0a9b6;
     --text-color-primary: #556b72;
   }

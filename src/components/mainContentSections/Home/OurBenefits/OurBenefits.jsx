@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
-import StandrardSectionTitle from '../../../StandardSectionTitle';
+import StandrardSectionTitle from '../../../StyledStandardSectionTitle';
 import benefitCards from './benefitCards';
 
 //* ================================================== Styles ==================================================

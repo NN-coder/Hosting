@@ -2,12 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const SectionTitle = styled.h3`
-  position: relative;
-  grid-column: 1 / -1;
-  white-space: nowrap;
-  text-transform: uppercase;
-`;
 const Before = styled.div.attrs({
   'aria-hidden': true,
 })`
@@ -31,12 +25,12 @@ const RowTwo = styled.div`
 `;
 
 const StandardSectionTitle = ({ className, rowOne, rowTwo, beforeImg }) => (
-  <SectionTitle className={className}>
+  <h3 className={className}>
     {beforeImg && <Before>{beforeImg}</Before>}
     {!beforeImg && <Before line />}
     <RowOne>{rowOne}</RowOne>
     <RowTwo>{rowTwo}</RowTwo>
-  </SectionTitle>
+  </h3>
 );
 
 StandardSectionTitle.propTypes = {
@@ -50,4 +44,11 @@ StandardSectionTitle.defaultProps = {
   beforeImg: null,
 };
 
-export default StandardSectionTitle;
+const StyledStandardSectionTitle = styled(StandardSectionTitle)`
+  position: relative;
+  grid-column: 1 / -1;
+  white-space: nowrap;
+  text-transform: uppercase;
+`;
+
+export default StyledStandardSectionTitle;

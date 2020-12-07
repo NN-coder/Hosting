@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
-import StandardSectionTitle from '../../../StandardSectionTitle';
+import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
 import StyledHostingPlanCard from './HostingPlanCard';
 
 const OurHostingWrapper = styled(StyledWrapper)`
@@ -19,7 +19,7 @@ const OurHostingWrapper = styled(StyledWrapper)`
     justify-content: center;
   }
 `;
-const OurHostingTitle = styled(StandardSectionTitle)`
+const OurHostingTitle = styled(StyledStandardSectionTitle)`
   @media (max-width: 850px) {
     justify-self: center;
   }

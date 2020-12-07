@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import StyledWrapper from './StyledWrapper';
 import Svg from './Svg';
-import StandardSectionTitle from './StandardSectionTitle';
+import StyledStandardSectionTitle from './StyledStandardSectionTitle';
 import StandardBtn from './StandardBtn';
 
 const NewsletterWrapper = styled(StyledWrapper)`
@@ -74,7 +74,7 @@ const image = (
 const NewsletterSection = ({ className }) => (
   <section className={className}>
     <NewsletterWrapper>
-      <StandardSectionTitle rowOne="Sign up your" rowTwo="Newsletter" beforeImg={image} />
+      <StyledStandardSectionTitle rowOne="Sign up your" rowTwo="Newsletter" beforeImg={image} />
       <NewsletterForm action="" method="post">
         <NesletterFormInput type="text" placeholder="Enter your domain name" />
         <NewsletterFormSubmit type="submit">Sign up now</NewsletterFormSubmit>

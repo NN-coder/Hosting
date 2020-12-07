@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
 import Svg from '../../../Svg';
-import StandardSectionTitle from '../../../StandardSectionTitle';
+import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
 import StandradBtn from '../../../StandardBtn';
 import selectBg from './select_bg.png';
 
@@ -98,7 +98,7 @@ const image = (
 const SearchDomain = ({ className }) => (
   <div className={className}>
     <SearchDomainWrapper>
-      <StandardSectionTitle rowOne="Search your" rowTwo="Domain" beforeImg={image} />
+      <StyledStandardSectionTitle rowOne="Search your" rowTwo="Domain" beforeImg={image} />
 
       <SearchDomainForm action="" method="post">
         <SearchDomainFormInput
