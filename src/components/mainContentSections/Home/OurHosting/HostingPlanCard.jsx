@@ -6,7 +6,7 @@ import shortid from 'shortid';
 import StandardBtn from '../../../StandardBtn';
 
 const HostingPlanPrice = styled.div`
-  color: #556b72;
+  color: var(--text-color-primary);
   text-transform: uppercase;
 `;
 
@@ -26,13 +26,14 @@ const HostingPlanPricePeriod = styled.div`
   letter-spacing: 0.1em;
 `;
 
-const HostingPlanAdvanteges = styled.div`
+const HostingPlanAdvanteges = styled.ul`
   width: 100%;
   margin-top: 20px;
-  color: #8d9198;
+  color: var(--text-color);
   font-size: 1.4rem;
+  list-style: none;
 `;
-const HostingPlanAdvantegesItem = styled.div`
+const HostingPlanAdvantegesItem = styled.li`
   padding: 10px 0;
   text-align: center;
   border-top: 1px solid #e1eff4;
@@ -56,7 +57,7 @@ const HostingPlanCardTitle = styled.div`
   font-size: 1.4rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background-color: #52cbf8;
+  background-color: var(--accent-color-active);
 `;
 const SignUpBtn = styled(StandardBtn)`
   width: 115px;

@@ -8,13 +8,15 @@ const SectionTitle = styled.h3`
   white-space: nowrap;
   text-transform: uppercase;
 `;
-const Before = styled.div`
+const Before = styled.div.attrs({
+  'aria-hidden': true,
+})`
   position: absolute;
   bottom: ${(props) => (props.line ? 'calc(100% + 10px)' : 'calc(100% + 5px)')};
   left: 0;
   width: ${(props) => (props.line ? '20px' : 'auto')};
   height: ${(props) => (props.line ? '2px' : 'auto')};
-  background: ${(props) => (props.line ? '#fb6b45' : 'none')};
+  background: ${(props) => (props.line ? 'var(--accent-color)' : 'none')};
 `;
 const RowOne = styled.div`
   color: #859aa1;
@@ -22,7 +24,7 @@ const RowOne = styled.div`
   letter-spacing: 0.025em;
 `;
 const RowTwo = styled.div`
-  color: #556b72;
+  color: var(--text-color-primary);
   font-weight: 800;
   font-size: 3rem;
   letter-spacing: -0.025em;
@@ -30,7 +32,7 @@ const RowTwo = styled.div`
 
 const StandardSectionTitle = ({ className, rowOne, rowTwo, beforeImg }) => (
   <SectionTitle className={className}>
-    {beforeImg && <Before aria-hidden>{beforeImg}</Before>}
+    {beforeImg && <Before>{beforeImg}</Before>}
     {!beforeImg && <Before line />}
     <RowOne>{rowOne}</RowOne>
     <RowTwo>{rowTwo}</RowTwo>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import StyledWrapper from '../StyledWrapper';
 import Svg from '../Svg';
 import StyledLogo from '../StyledLogo/StyledLogo';
-import StyledHeaderMenu from './StyledHeaderMenu';
+import StyledHeaderLogin from './StyledHeaderLogin';
 import HeaderNav from './HeaderNav';
 import MainMenu from './MainMenu';
 
@@ -46,7 +46,12 @@ const Header = () => {
       <HeaderWrapper>
         {mobileMode && (
           <MainNavOpener type="button" onClick={() => toggleMainNavClose(!isMainNavClosed)}>
-            <Svg width="25px" height="25px" viewBox="0 0 341 341" fill="#161920">
+            <Svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 341 341"
+              fill="var(--header-elements-color)"
+            >
               <g>
                 <g>
                   <rect y="277.333" width="341.333" height="42.667" />
@@ -66,7 +71,7 @@ const Header = () => {
           </MainNavOpener>
         )}
         <StyledLogo />
-        <StyledHeaderMenu isMobile={mobileMode} />
+        <StyledHeaderLogin isMobile={mobileMode} />
         {mobileMode && (
           <MainMenu
             isClosed={isMainNavClosed}

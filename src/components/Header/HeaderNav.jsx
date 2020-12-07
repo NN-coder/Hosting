@@ -12,14 +12,16 @@ const MainNav = styled.nav`
   flex-wrap: wrap;
   width: 100%;
 `;
-const MainNavLink = styled(StandardBtn)`
+const MainNavLink = styled(StandardBtn).attrs({
+  type: null,
+})`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 10%;
   font-size: 1.3rem;
   &.active {
-    background-color: #52cbf8;
+    background-color: var(--accent-color-active);
   }
 
   @media screen and (max-width: 1150px) {

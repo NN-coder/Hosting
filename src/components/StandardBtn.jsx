@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-const StandardBtn = styled.button`
+const StandardBtn = styled.button.attrs((props) => ({
+  type: 'button' || props.type,
+}))`
   height: 55px;
   color: white;
   text-transform: uppercase;
-  background-color: #ff8261;
+  background-color: var(--accent-color);
   border: none;
   transition: background-color 0.15s ease;
   @media screen and (prefers-reduced-motion: reduce) {
@@ -12,7 +14,7 @@ const StandardBtn = styled.button`
   }
   &:hover,
   &:focus {
-    background-color: #52cbf8;
+    background-color: var(--accent-color-active);
   }
 `;
 

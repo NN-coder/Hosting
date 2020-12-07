@@ -34,7 +34,7 @@ Svg.propTypes = {
 Svg.defaultProps = {
   className: '',
   viewBox: '0 0 512 512',
-  fill: '',
+  fill: 'var(--accent-color)',
   ariaHidden: true,
 };
 

@@ -38,7 +38,7 @@ const SlideContentSubtitle = styled.div`
 `;
 
 const theme = {
-  dotColor: '#ff8261',
+  dotColor: 'var(--accent-color)',
   activeDotColor: '#5278db',
 };
 
@@ -115,7 +115,7 @@ const StyledHomeSlider = styled(HomeSlider)`
       }
       &:hover,
       &:focus {
-        border-color: #fff;
+        border-color: white;
       }
     }
   }

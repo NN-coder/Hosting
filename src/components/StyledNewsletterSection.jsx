@@ -30,7 +30,7 @@ const NesletterFormInput = styled.input`
   width: calc(100% - 195px);
   height: 55px;
   padding: 0 25px;
-  color: #a0a9b6;
+  color: var(--text-color);
   font-size: 1.35rem;
   letter-spacing: 0.01em;
   border: none;
@@ -46,7 +46,7 @@ const NewsletterFormSubmit = styled(StandardBtn)`
 `;
 
 const image = (
-  <Svg width="25px" height="25px" fill="#fb6b45">
+  <Svg width="25px" height="25px">
     <g>
       <path
         d="M498.208,68.235c-8.945-8.947-19.701-13.418-32.261-13.418H45.682c-12.562,0-23.318,4.471-32.264,13.418
@@ -89,7 +89,7 @@ NewsletterSection.propTypes = {
 
 const StyledNewsletterSection = styled(NewsletterSection)`
   padding: 100px 0 85px;
-  background-color: #e7f4f8;
+  background-color: var(--section-bg-blue);
 
   @media screen and (max-width: 1250px) {
     padding: 100px 20px 85px;

@@ -48,7 +48,7 @@ const BenefitCardInner = styled.div`
 `;
 const BenefitCardTitle = styled.div`
   margin: 8px 0 10px;
-  color: #556b72;
+  color: var(--text-color-primary);
   font-weight: 800;
   font-size: 1.6rem;
   letter-spacing: 0.025em;
@@ -56,7 +56,7 @@ const BenefitCardTitle = styled.div`
 `;
 const BenefitCardText = styled.div`
   max-width: 400px;
-  color: #a0a9b6;
+  color: var(--text-color);
   font-size: 1.35rem;
   line-height: 24px;
   letter-spacing: 0.01em;

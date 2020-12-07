@@ -9,7 +9,7 @@ const Arrow = styled.button``;
 const SliderArrows = ({ className, handleClickOnLeft, handleClickOnRight }) => (
   <div className={className}>
     <Arrow type="button" onClick={handleClickOnLeft}>
-      <Svg width="15px" height="15px" viewBox="0 0 285 285" fill="#fff">
+      <Svg width="15px" height="15px" viewBox="0 0 285 285" fill="white">
         <g>
           <path
             d="M110.488,142.468L222.694,30.264c1.902-1.903,2.854-4.093,2.854-6.567c0-2.474-0.951-4.664-2.854-6.563L208.417,2.857
@@ -21,7 +21,7 @@ const SliderArrows = ({ className, handleClickOnLeft, handleClickOnRight }) => (
       </Svg>
     </Arrow>
     <Arrow type="button" onClick={handleClickOnRight}>
-      <Svg width="15px" height="15px" viewBox="0 0 285 285" fill="#fff">
+      <Svg width="15px" height="15px" viewBox="0 0 285 285" fill="white">
         <g>
           <path
             d="M222.701,135.9L89.652,2.857C87.748,0.955,85.557,0,83.084,0c-2.474,0-4.664,0.955-6.567,2.857L62.244,17.133

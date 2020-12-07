@@ -11,7 +11,7 @@ const BenefitCardImg = styled(Svg)`
 
 const card1 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45">
+    <BenefitCardImg width="60px" height="60px">
       <g>
         <path
           d="M63.953,164.453H9.135c-2.474,0-4.615,0.9-6.423,2.709C0.903,168.972,0,171.114,0,173.589v54.817
@@ -63,7 +63,7 @@ const card1 = {
 };
 const card2 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45">
+    <BenefitCardImg width="60px" height="60px">
       <g>
         <path
           d="M301.923,327.602c30.93-13.038,55.34-30.785,73.228-53.248c17.891-22.458,26.837-46.915,26.837-73.372
@@ -104,7 +104,7 @@ const card2 = {
 };
 const card3 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45" viewBox="0 0 548 548">
+    <BenefitCardImg width="60px" height="60px" viewBox="0 0 548 548">
       <g>
         <path
           d="M118.774,383.722h310.632c12.562,0,23.312-4.47,32.257-13.422c8.949-8.949,13.422-19.698,13.422-32.258V137.046
@@ -131,7 +131,7 @@ const card3 = {
 };
 const card4 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45" viewBox="0 0 438 438">
+    <BenefitCardImg width="60px" height="60px" viewBox="0 0 438 438">
       <g>
         <path
           d="M436.25,181.438c-1.529-2.002-3.524-3.193-5.995-3.571l-52.249-7.992c-2.854-9.137-6.756-18.461-11.704-27.98
@@ -167,7 +167,7 @@ const card4 = {
 };
 const card5 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45">
+    <BenefitCardImg width="60px" height="60px">
       <g>
         <path
           d="M498.208,68.235c-8.945-8.947-19.701-13.418-32.261-13.418H45.682c-12.562,0-23.318,4.471-32.264,13.418
@@ -198,7 +198,7 @@ const card5 = {
 };
 const card6 = {
   img: (
-    <BenefitCardImg width="60px" height="60px" fill="#fb6b45" viewBox="0 0 402 402">
+    <BenefitCardImg width="60px" height="60px" viewBox="0 0 402 402">
       <g>
         <path
           d="M357.45,190.721c-5.331-5.33-11.8-7.993-19.417-7.993h-9.131v-54.821c0-35.022-12.559-65.093-37.685-90.218

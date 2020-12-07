@@ -24,6 +24,7 @@
   "devDependencies": {
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.2.0",
@@ -47,6 +48,7 @@
       "react-app",
       "react-app/jest",
       "airbnb",
+      "plugin:jsx-a11y/recommended",
       "prettier",
       "plugin:prettier/recommended",
       "prettier/react",
@@ -57,7 +59,8 @@
     "plugins": [
       "prettier",
       "promise",
-      "sonarjs"
+      "sonarjs",
+      "jsx-a11y"
     ],
     "env": {
       "browser": true
@@ -67,7 +70,6 @@
       "setupTests.js"
     ],
     "rules": {
-      "react/button-has-type": 0,
       "react/static-property-placement": 0
     }
   },

@@ -39,7 +39,7 @@ const SearchDomainForm = styled.form`
 const SearchDomainFormItem = styled.div`
   height: 55px;
   padding-left: 20px;
-  color: #a0a9b6;
+  color: var(--text-color);
   letter-spacing: 0.01em;
   background-color: white;
   border: 1px solid #dfeef3;
@@ -77,7 +77,7 @@ const SearchDomainFormSubmit = styled(StandradBtn)`
 `;
 
 const image = (
-  <Svg width="25px" height="25px" viewBox="0 0 475 475" fill="#fb6b45">
+  <Svg width="25px" height="25px" viewBox="0 0 475 475">
     <g>
       <path
         d="M464.524,412.846l-97.929-97.925c23.6-34.068,35.406-72.047,35.406-113.917c0-27.218-5.284-53.249-15.852-78.087
@@ -144,7 +144,7 @@ SearchDomain.propTypes = {
 
 const StyledSearchDomain = styled(SearchDomain)`
   padding: 70px 0;
-  background-color: #e7f4f8;
+  background-color: var(--section-bg-blue);
 
   @media screen and (max-width: 1250px) {
     padding: 70px 20px;

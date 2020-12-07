@@ -24,9 +24,16 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  html {
+  :root {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
+
+    --accent-color: #ff8261;
+    --accent-color-active: #52cbf8;
+    --header-elements-color: #161920;
+    --section-bg-blue: #e7f4f8;
+    --text-color: #a0a9b6;
+    --text-color-primary: #556b72;
   }
   a {
     text-decoration: none;

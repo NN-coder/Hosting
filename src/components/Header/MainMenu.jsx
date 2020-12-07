@@ -20,7 +20,7 @@ const MainMenu = styled.div`
     width: 100%;
     height: 40px;
     padding-left: 30px;
-    color: #161920;
+    color: var(--header-elements-color);
     font-weight: 500;
     font-size: 1.4rem;
     text-align: left;
@@ -53,7 +53,7 @@ const MainNav = ({ isClosed, toggleOpen }) => {
     <>
       <MainMenu>
         <CloseBtn type="button" onClick={toggleOpen}>
-          <Svg width="25px" height="25px" viewBox="0 0 357 357" fill="#161920">
+          <Svg width="25px" height="25px" viewBox="0 0 357 357" fill="var(--header-elements-color)">
             <g id="close">
               <polygon
                 points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 
