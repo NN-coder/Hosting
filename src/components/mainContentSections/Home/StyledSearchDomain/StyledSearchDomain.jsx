@@ -144,7 +144,7 @@ SearchDomain.propTypes = {
 
 const StyledSearchDomain = styled(SearchDomain)`
   padding: 70px 0;
-  background-color: var(--section-bg-blue);
+  background-color: var(--blue);
 
   @media screen and (max-width: 1250px) {
     padding: 70px 20px;

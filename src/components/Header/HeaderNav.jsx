@@ -38,7 +38,7 @@ const navLinks = sectionNames.map((name) => ({
 const HeaderNav = ({ onClick }) => (
   <MainNav>
     {navLinks.map(({ text, id, link }) => (
-      <MainNavLink as={NavLink} key={id} to={link} onClick={onClick} activeClassName="active">
+      <MainNavLink as={NavLink} key={id} to={link} onClick={onClick}>
         {text}
       </MainNavLink>
     ))}

@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 import StyledLoadingScreen from './StyledLoadingScreen/StyledLoadingScreen';
 import Header from './Header/Header';
 import StyledNewsletterSection from './StyledNewsletterSection';
+import StyledFooter from './StyledFooter/StyledFooter';
 
 const Home = React.lazy(() => import('./mainContentSections/Home/Home'));
 const AboutUs = React.lazy(() => import('./mainContentSections/AboutUs/AboutUs'));
@@ -31,16 +32,24 @@ const GlobalStyle = createGlobalStyle`
     --accent-color: #ff8261;
     --accent-color-active: #52cbf8;
     --header-elements-color: #161920;
-    --section-bg-blue: #e7f4f8;
+    --blue: #e7f4f8;
     --section-bg-orange: #fffbde;
     --text-color: #a0a9b6;
     --text-color-primary: #556b72;
+  }
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   a {
     text-decoration: none;
   }
   button {
     cursor: pointer;
+  }
+  ul {
+    list-style: none;
   }
 `;
 
@@ -78,6 +87,7 @@ const App = () => (
         </Suspense>
       </main>
       <StyledNewsletterSection />
+      <StyledFooter />
     </BrowserRouter>
   </>
 );

@@ -89,7 +89,7 @@ NewsletterSection.propTypes = {
 
 const StyledNewsletterSection = styled(NewsletterSection)`
   padding: 100px 0 85px;
-  background-color: var(--section-bg-blue);
+  background-color: var(--blue);
 
   @media screen and (max-width: 1250px) {
     padding: 100px 20px 85px;

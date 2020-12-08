@@ -31,7 +31,6 @@ const HostingPlanAdvanteges = styled.ul`
   margin-top: 20px;
   color: var(--text-color);
   font-size: 1.4rem;
-  list-style: none;
 `;
 const HostingPlanAdvantegesItem = styled.li`
   padding: 10px 0;

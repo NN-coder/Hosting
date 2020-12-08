@@ -28,7 +28,6 @@ const FeaturesList = styled.ul`
   font-size: 1.35rem;
   letter-spacing: 0.01em;
   column-gap: 50px;
-  list-style: none;
   row-gap: 15px;
 
   @media (max-width: 800px) {

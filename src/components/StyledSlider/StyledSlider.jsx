@@ -30,17 +30,17 @@ const Slider = ({ children, className, navArrows }) => {
   return (
     <div className={className}>
       <SliderTrack currentSlide={curSlide}>{children}</SliderTrack>
-      <StyledSliderDots
-        currentSlide={curSlide}
-        count={childrenCount}
-        handleDotClick={changeSlide}
-      />
       {navArrows && (
         <StyledSliderArrows
           handleClickOnLeft={() => changeSlide(scrollLeft)}
           handleClickOnRight={() => changeSlide(scrollRight)}
         />
       )}
+      <StyledSliderDots
+        currentSlide={curSlide}
+        count={childrenCount}
+        handleDotClick={changeSlide}
+      />
     </div>
   );
 };

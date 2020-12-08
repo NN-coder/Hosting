@@ -6,7 +6,7 @@ import StyledSlider, {
   StyledSliderDots,
   StyledSliderArrows,
   Arrow,
-} from '../../../Slider/StyledSlider';
+} from '../../../StyledSlider/StyledSlider';
 import StyledHomeSliderItem from './StyledHomeSliderItem';
 
 const SlideContent = styled.div`

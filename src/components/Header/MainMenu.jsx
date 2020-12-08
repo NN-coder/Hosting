@@ -12,7 +12,6 @@ const MainMenu = styled.div`
   z-index: 20;
   width: 300px;
   height: 100%;
-  overflow: scroll;
   background-color: white;
 
   ${MainNavLink} {
