@@ -21,7 +21,23 @@ function handleMediaQueryChange() {
 
 const HomeSliderItem = ({ number, className, children }) => (
   <>
-    <MediaQuery maxDeviceWidth={1200} onChange={handleMediaQueryChange}>
+    <MediaQuery maxDeviceWidth={550} onChange={handleMediaQueryChange}>
+      <div
+        className={`lozad ${className}`}
+        data-background-image={images[`slide-${number}_540x960.jpg`]}
+      >
+        {children}
+      </div>
+    </MediaQuery>
+    <MediaQuery minDeviceWidth={550.1} maxDeviceWidth={750} onChange={handleMediaQueryChange}>
+      <div
+        className={`lozad ${className}`}
+        data-background-image={images[`slide-${number}_720x1280.jpg`]}
+      >
+        {children}
+      </div>
+    </MediaQuery>
+    <MediaQuery minDeviceWidth={750.1} maxDeviceWidth={1200} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
         data-background-image={images[`slide-${number}_1280x720.jpg`]}
