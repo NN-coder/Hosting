@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
-import StandrardSectionTitle from '../../../StyledStandardSectionTitle';
+import StyledStandrardSectionTitle from '../../../StyledStandardSectionTitle';
 import benefitCards from './benefitCards';
 
 //* ================================================== Styles ==================================================
@@ -70,7 +70,7 @@ const BenefitCardText = styled.div`
 const OurBenefits = () => (
   <section>
     <OurBenefitsWrapper>
-      <StandrardSectionTitle rowOne="Our" rowTwo="Benefits" />
+      <StyledStandrardSectionTitle rowOne="Our" rowTwo="Benefits" />
       <OurBenefitsInner>
         {benefitCards.map(({ img, title, text, id }) => (
           <BenefitCard key={id}>

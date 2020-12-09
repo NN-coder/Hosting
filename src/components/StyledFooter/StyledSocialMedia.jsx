@@ -11,9 +11,9 @@ const LinksList = styled.ul`
 `;
 const LinksListItem = styled(Svg).attrs({
   ariaHidden: false,
+  width: '25px',
+  height: '25px',
 })`
-  width: 25px;
-  height: 25px;
   transition: fill 0.2s ease;
   fill: var(--text-color);
   @media screen and (prefers-reduced-motion: reduce) {

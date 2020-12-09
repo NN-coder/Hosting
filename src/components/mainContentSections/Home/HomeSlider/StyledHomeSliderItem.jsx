@@ -5,15 +5,8 @@ import MediaQuery from 'react-responsive';
 
 import lozadObserver from '../../../lozadObserver';
 
-function improtAll(r) {
-  const images = {};
-  r.keys().forEach((item) => {
-    images[item.replace('./', '')] = r(item).default;
-  });
-  return images;
-}
-
-const images = improtAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+const images = require.context('./img');
+const getImagePath = (name) => images(name).default;
 
 function handleMediaQueryChange() {
   lozadObserver.observe();
@@ -24,7 +17,7 @@ const HomeSliderItem = ({ number, className, children }) => (
     <MediaQuery maxDeviceWidth={550} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
-        data-background-image={images[`slide-${number}_540x960.jpg`]}
+        data-background-image={getImagePath(`./slide-${number}_540x960.jpg`)}
       >
         {children}
       </div>
@@ -32,7 +25,7 @@ const HomeSliderItem = ({ number, className, children }) => (
     <MediaQuery minDeviceWidth={550.1} maxDeviceWidth={750} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
-        data-background-image={images[`slide-${number}_720x1280.jpg`]}
+        data-background-image={getImagePath(`./slide-${number}_720x1280.jpg`)}
       >
         {children}
       </div>
@@ -40,7 +33,7 @@ const HomeSliderItem = ({ number, className, children }) => (
     <MediaQuery minDeviceWidth={750.1} maxDeviceWidth={1200} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
-        data-background-image={images[`slide-${number}_1280x720.jpg`]}
+        data-background-image={getImagePath(`./slide-${number}_1280x720.jpg`)}
       >
         {children}
       </div>
@@ -48,7 +41,7 @@ const HomeSliderItem = ({ number, className, children }) => (
     <MediaQuery minDeviceWidth={1200.1} maxDeviceWidth={1600} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
-        data-background-image={images[`slide-${number}_1600x900.jpg`]}
+        data-background-image={getImagePath(`./slide-${number}_1600x900.jpg`)}
       >
         {children}
       </div>
@@ -56,7 +49,7 @@ const HomeSliderItem = ({ number, className, children }) => (
     <MediaQuery minDeviceWidth={1600.1} onChange={handleMediaQueryChange}>
       <div
         className={`lozad ${className}`}
-        data-background-image={images[`slide-${number}_2048x1152.jpg`]}
+        data-background-image={getImagePath(`./slide-${number}_2048x1152.jpg`)}
       >
         {children}
       </div>

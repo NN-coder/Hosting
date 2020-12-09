@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import obsrever from '../../lozadObserver';
+import lozadObsrever from '../../lozadObserver';
 import StyledHomeSlider from './HomeSlider/HomeSlider';
 import StyledSearchDomain from './StyledSearchDomain/StyledSearchDomain';
 import OurBenefits from './OurBenefits/OurBenefits';
@@ -9,7 +9,7 @@ import OurHosting from './OurHosting/OurHosting';
 
 const Home = () => {
   useEffect(() => {
-    obsrever.observe();
+    lozadObsrever.observe();
   });
 
   return (
