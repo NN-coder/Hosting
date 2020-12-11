@@ -4,10 +4,16 @@ import styled from 'styled-components';
 
 import Svg from '../../../Svg';
 
-const WorkerCardImg = styled.img.attrs({
-  className: 'lozad',
-})`
+const WorkerCardImg = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 270px;
+  color: #9aaeb7;
+  font-weight: 800;
+  font-size: 1.4rem;
+  background-color: var(--blue);
 `;
 const WorkerCardFooter = styled.div`
   display: flex;
@@ -59,7 +65,6 @@ const WorkerLinkSvg = styled(Svg).attrs({
   width: '16px',
   height: '16px',
   fill: 'currentColor',
-  ariaHidden: false,
 })`
   color: inherit;
 `;
@@ -69,7 +74,7 @@ const WorkerCard = ({ name, position, photo, links }) => {
 
   return (
     <div>
-      <WorkerCardImg data-src={photo} alt={name} />
+      <WorkerCardImg className="lozad" data-src={photo} alt={name} />
       <WorkerCardFooter>
         <WorkerCardInfo>
           <WorkerName>{name}</WorkerName>

@@ -8,7 +8,8 @@ import WorkerCard from './WorkerCard';
 
 const OurTeamWrapper = styled(StyledWrapper)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, 270px);
+  justify-content: space-around;
   padding: 110px 0;
   column-gap: 30px;
   row-gap: 50px;
@@ -17,11 +18,16 @@ const OurTeamWrapper = styled(StyledWrapper)`
     padding: 110px 20px;
   }
 `;
+const OurTeamTitle = styled(StyledStandardSectionTitle)`
+  @media (max-width: 1000px) {
+    justify-self: center;
+  }
+`;
 
 const OurTeam = () => (
   <section>
     <OurTeamWrapper>
-      <StyledStandardSectionTitle rowOne="Meet" rowTwo="Our team" />
+      <OurTeamTitle rowOne="Meet" rowTwo="Our team" />
       {workers.map(({ id, name, position, photo, links }) => (
         <WorkerCard key={id} name={name} position={position} photo={photo} links={links} />
       ))}

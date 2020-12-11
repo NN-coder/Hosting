@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const PromoText = styled.div`
+const PromoText = styled.h2`
   position: absolute;
   top: 50%;
   left: calc((100% - 1200px) / 2);
