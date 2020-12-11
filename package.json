@@ -70,6 +70,7 @@
       "setupTests.js"
     ],
     "rules": {
+      "no-unused-vars": "warn",
       "react/static-property-placement": 0
     }
   },
