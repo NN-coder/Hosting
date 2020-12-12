@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 
-import lozadObsrever from '../../lozadObserver';
+import lozadObserver from '../../lozadObserver';
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import StyledSpecialOffers from './StyledSpecialOffers/StyledSpecialOffers';
 import OurTeam from './OurTeam/OurTeam';
 
 const AboutUs = () => {
   useEffect(() => {
-    lozadObsrever.observe();
+    lozadObserver.observe();
   });
 
   return (
@@ -16,6 +17,7 @@ const AboutUs = () => {
         titleRowOne="About us"
         titleRowTwo="What we are"
       />
+      <StyledSpecialOffers />
       <OurTeam />
     </section>
   );

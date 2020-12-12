@@ -54,7 +54,7 @@ const BenefitCardTitle = styled.div`
   letter-spacing: 0.025em;
   text-transform: uppercase;
 `;
-const BenefitCardText = styled.div`
+const BenefitCardText = styled.p`
   max-width: 400px;
   color: var(--text-color);
   font-size: 1.35rem;
