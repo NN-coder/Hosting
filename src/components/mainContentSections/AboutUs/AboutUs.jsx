@@ -16,6 +16,7 @@ const AboutUs = () => {
         sectionName="about-us"
         titleRowOne="About us"
         titleRowTwo="What we are"
+        bgPosition="center 10%"
       />
       <StyledSpecialOffers />
       <OurTeam />

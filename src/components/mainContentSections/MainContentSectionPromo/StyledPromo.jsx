@@ -53,7 +53,7 @@ const StyledPromo = styled(Promo)`
   position: relative;
   height: 260px;
   background-repeat: no-repeat;
-  background-position: center 10%;
+  background-position: ${(props) => props.bgPosition};
 `;
 
 export default StyledPromo;
