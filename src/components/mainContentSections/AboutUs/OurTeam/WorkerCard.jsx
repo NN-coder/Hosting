@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import LazyImage from '../../../LazyImage';
 import Svg from '../../../Svg';
 
-const WorkerCardImg = styled.img`
+const WorkerCardImg = styled(LazyImage)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +75,7 @@ const WorkerCard = ({ name, position, photo, links }) => {
 
   return (
     <div>
-      <WorkerCardImg className="lozad" data-src={photo} alt={name} />
+      <WorkerCardImg image={photo} alt={name} />
       <WorkerCardFooter>
         <WorkerCardInfo>
           <WorkerName>{name}</WorkerName>

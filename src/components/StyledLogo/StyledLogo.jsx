@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import LazyImage from '../LazyImage';
 import logo from './logo.png';
 
 const Logo = ({ className }) => (
   <h1 className={className}>
     <a href="/">
-      <img className="lozad" src={logo} alt="" />
+      <LazyImage image={logo} alt="" />
       Hosting
     </a>
   </h1>

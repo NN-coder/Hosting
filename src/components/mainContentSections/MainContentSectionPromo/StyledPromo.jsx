@@ -33,8 +33,8 @@ const RowTwo = styled.div`
   letter-spacing: 0.1em;
 `;
 
-const Promo = ({ className, rowOne, rowTwo, bg }) => (
-  <div className={`lozad ${className}`} data-background-image={bg}>
+const Promo = ({ className, rowOne, rowTwo }) => (
+  <div className={className}>
     <PromoText>
       <RowOne>{rowOne}</RowOne>
       <RowTwo>{rowTwo}</RowTwo>
@@ -46,7 +46,6 @@ Promo.propTypes = {
   className: PropTypes.string.isRequired,
   rowOne: PropTypes.string.isRequired,
   rowTwo: PropTypes.string.isRequired,
-  bg: PropTypes.string.isRequired,
 };
 
 const StyledPromo = styled(Promo)`
@@ -54,6 +53,22 @@ const StyledPromo = styled(Promo)`
   height: 260px;
   background-repeat: no-repeat;
   background-position: ${(props) => props.bgPosition};
+
+  @media (min-width: 1600.1px) {
+    background-image: url(${(props) => props.backgrounds['2048x1152']});
+  }
+  @media (min-width: 1250.1px) and (max-width: 1600px) {
+    background-image: url(${(props) => props.backgrounds['1600x900']});
+  }
+  @media (min-width: 700.1px) and (max-width: 1250px) {
+    background-image: url(${(props) => props.backgrounds['1280x720']});
+  }
+  @media (min-width: 500.1px) and (max-width: 700px) {
+    background-image: url(${(props) => props.backgrounds['720x1280']});
+  }
+  @media (max-width: 500px) {
+    background-image: url(${(props) => props.backgrounds['540x960']});
+  }
 `;
 
 export default StyledPromo;

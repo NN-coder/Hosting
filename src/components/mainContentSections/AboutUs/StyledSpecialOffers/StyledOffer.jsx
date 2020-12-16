@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import shortid from 'shortid';
 
+import LazyImage from '../../../LazyImage';
 import StandardBtn from '../../../StandardBtn';
 import listArrow from './img/list-arrow.svg';
 
-const OfferImg = styled.picture`
-  img {
-    width: 260px;
-  }
+const OfferImg = styled(LazyImage)`
+  width: 260px;
 `;
 
 const OfferInner = styled.div`
@@ -73,10 +72,7 @@ const Offer = ({ className, offerTitle, images }) => {
 
   return (
     <div className={className}>
-      <OfferImg className="lozad" data-alt="">
-        <source srcSet={images.webp} type="image/webp" />
-        <source srcSet={images.jpg} type="image/jpg" />
-      </OfferImg>
+      <OfferImg image={images.jpg} imageWebp={images.webp} />
       <OfferInner>
         <OfferTitle>{offerTitle}</OfferTitle>
         <OfferText>
