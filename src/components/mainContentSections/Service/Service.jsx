@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import StyledHappyClients from './StyledHappyClients/StyledHappyClients';
 
 const Service = () => (
   <section>
@@ -10,6 +11,7 @@ const Service = () => (
       titleRowTwo="What we doing"
       bgPosition="center 40%"
     />
+    <StyledHappyClients />
   </section>
 );
 
