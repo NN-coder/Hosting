@@ -1,9 +1,16 @@
 import React from 'react';
 
+import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+
 const Domain = () => (
-  <div className="main-content-section">
-    <div className="wrapper">Domain</div>
-  </div>
+  <section>
+    <MainContentSectionPromo
+      sectionName="domain"
+      titleRowOne="Domain"
+      titleRowTwo="Registration"
+      bgPosition="center 80%"
+    />
+  </section>
 );
 
 export default Domain;
