@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledSlider, { StyledSliderDots } from '../../../StyledSlider/StyledSlider';
+import StyledWrapper from '../StyledWrapper';
+import StyledStandardSectionTitle from '../StyledStandardSectionTitle';
+import StyledSlider, { StyledSliderDots } from '../StyledSlider/StyledSlider';
 import StyledComment from './StyledComment';
 
 const HappyClientsWrapper = styled(StyledWrapper)`
@@ -27,7 +27,7 @@ const theme = {
 const images = require.context('./img');
 const getImagePath = (name) => images(name).default;
 
-const HappyClients = ({ className }) => (
+const HappyClientsSlider = ({ className }) => (
   <ThemeProvider theme={theme}>
     <section>
       <HappyClientsWrapper>
@@ -79,11 +79,11 @@ const HappyClients = ({ className }) => (
   </ThemeProvider>
 );
 
-HappyClients.propTypes = {
+HappyClientsSlider.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-const StyledHappyClients = styled(HappyClients)`
+const StyledHappyClientsSlider = styled(HappyClientsSlider)`
   position: relative;
 
   ${StyledSliderDots} {
@@ -98,4 +98,4 @@ const StyledHappyClients = styled(HappyClients)`
   }
 `;
 
-export default StyledHappyClients;
+export default StyledHappyClientsSlider;

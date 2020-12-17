@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import StyledHappyClientsSlider from '../../StyledHappyClientsSlider/StyledHappyClientsSlider';
 
 const Domain = () => (
   <section>
@@ -10,6 +11,7 @@ const Domain = () => (
       titleRowTwo="Registration"
       bgPosition="center 80%"
     />
+    <StyledHappyClientsSlider />
   </section>
 );
 
