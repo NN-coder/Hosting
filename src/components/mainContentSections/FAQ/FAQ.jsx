@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import SubmitYourQuestion from './SubmitYourQuestion/SubmitYourQuestion';
 
 const FAQ = () => (
   <section>
@@ -10,6 +11,7 @@ const FAQ = () => (
       titleRowTwo="Questions"
       bgPosition="center 80%"
     />
+    <SubmitYourQuestion />
   </section>
 );
 
