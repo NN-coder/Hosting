@@ -6,6 +6,14 @@ const hiddenLabelStyles = css`
   visibility: hidden;
   opacity: 0;
 `;
+const requiredLabelStyles = css`
+  &:after {
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    content: '*';
+  }
+`;
+
 const QuestionFormLabel = styled.label`
   position: absolute;
   top: 21px;
@@ -13,11 +21,7 @@ const QuestionFormLabel = styled.label`
   cursor: text;
   transition: all 0.2s ease;
   ${({ isHidden }) => (isHidden ? hiddenLabelStyles : '')}
-  &:after {
-    color: var(--accent-color);
-    font-size: 1.6rem;
-    content: '*';
-  }
+  ${({ isRequired }) => (isRequired ? requiredLabelStyles : '')}
 `;
 const QuestionFormInput = styled.div`
   width: 100%;
@@ -27,7 +31,14 @@ const QuestionFormInput = styled.div`
   resize: none;
 `;
 
-const QuestionFormItem = ({ className, inputAs, inputType, inputName, placeholder }) => {
+const QuestionFormItem = ({
+  className,
+  inputAs,
+  inputType,
+  inputName,
+  placeholder,
+  isRequired,
+}) => {
   const [isLabelHidden, toggleLabel] = useState(false);
 
   const handleFocusChange = useCallback((event) => {
@@ -49,12 +60,18 @@ const QuestionFormItem = ({ className, inputAs, inputType, inputName, placeholde
         as={inputAs}
         type={inputType}
         name={inputName}
-        onFocus={handleFocusChange}
-        onBlur={handleFocusChange}
+        required={isRequired}
         value={inputValue}
         onChange={handleChange}
+        onFocus={handleFocusChange}
+        onBlur={handleFocusChange}
       />
-      <QuestionFormLabel isHidden={isLabelHidden} onClick={() => inputRef.current.focus()}>
+      <QuestionFormLabel
+        isHidden={isLabelHidden}
+        isRequired={isRequired}
+        onClick={() => inputRef.current.focus()}
+        onCopy={(event) => event.preventDefault()}
+      >
         {placeholder}
       </QuestionFormLabel>
     </div>
@@ -67,9 +84,11 @@ QuestionFormItem.propTypes = {
   inputName: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   inputType: PropTypes.string,
+  isRequired: PropTypes.bool,
 };
 QuestionFormItem.defaultProps = {
   inputType: null,
+  isRequired: false,
 };
 
 const StyledQuestionFormItem = styled(QuestionFormItem)`

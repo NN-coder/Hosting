@@ -71,6 +71,7 @@ const SubmitYourQuestion = () => {
             inputType="text"
             inputName="name"
             placeholder="Name"
+            isRequired
             additionalStyles={questionsFormItemStyles}
           />
           <StyledQuestionFormItem
@@ -78,6 +79,7 @@ const SubmitYourQuestion = () => {
             inputType="email"
             inputName="email"
             placeholder="Email"
+            isRequired
             additionalStyles={questionsFormItemStyles}
           />
           <StyledQuestionFormItem
@@ -85,12 +87,14 @@ const SubmitYourQuestion = () => {
             inputType="text"
             inputName="subject"
             placeholder="Subject"
+            isRequired
             additionalStyles={questionFormSubjectStyles}
           />
           <StyledQuestionFormItem
             inputAs="textarea"
             inputName="questions"
             placeholder="Ask your questions here"
+            isRequired
             additionalStyles={questionFormQuestionsStyles}
           />
           <QuestionFormSubmit type="submit">Submit</QuestionFormSubmit>
