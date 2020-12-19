@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import OurDetails from './OurDetails/OurDetails';
 import StyledSpecialOffers from './StyledSpecialOffers/StyledSpecialOffers';
 import OurTeam from './OurTeam/OurTeam';
 
@@ -12,6 +13,7 @@ const AboutUs = () => (
       titleRowTwo="What we are"
       bgPosition="center 10%"
     />
+    <OurDetails />
     <StyledSpecialOffers />
     <OurTeam />
   </section>

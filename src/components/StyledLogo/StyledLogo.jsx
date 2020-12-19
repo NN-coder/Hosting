@@ -8,7 +8,7 @@ import logo from './logo.png';
 const Logo = ({ className }) => (
   <h1 className={className}>
     <a href="/">
-      <LazyImage image={logo} alt="" />
+      <LazyImage image={logo} />
       Hosting
     </a>
   </h1>
