@@ -61,7 +61,7 @@ const MainNav = ({ isClosed, toggleOpen }) => {
             </g>
           </Svg>
         </CloseBtn>
-        <HeaderNav onClick={toggleOpen} />
+        <HeaderNav handleClick={toggleOpen} />
       </MainMenu>
       <MainMenuBg onClick={toggleOpen} />
     </>

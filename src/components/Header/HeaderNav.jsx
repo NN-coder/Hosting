@@ -14,6 +14,7 @@ const MainNav = styled.nav`
 `;
 const MainNavLink = styled(StandardBtn).attrs({
   type: null,
+  as: NavLink,
 })`
   display: flex;
   align-items: center;
@@ -35,10 +36,10 @@ const navLinks = sectionNames.map((name) => ({
   id: shortid.generate(),
 }));
 
-const HeaderNav = ({ onClick }) => (
+const HeaderNav = ({ handleClick }) => (
   <MainNav>
     {navLinks.map(({ text, id, link }) => (
-      <MainNavLink as={NavLink} key={id} to={link} onClick={onClick}>
+      <MainNavLink key={id} to={link} onClick={handleClick}>
         {text}
       </MainNavLink>
     ))}
@@ -46,10 +47,10 @@ const HeaderNav = ({ onClick }) => (
 );
 
 HeaderNav.propTypes = {
-  onClick: PropTypes.func,
+  handleClick: PropTypes.func,
 };
 HeaderNav.defaultProps = {
-  onClick: null,
+  handleClick: null,
 };
 
 export default HeaderNav;
