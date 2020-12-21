@@ -14,9 +14,17 @@ const HappyClientsWrapper = styled(StyledWrapper)`
   @media (max-width: 1250px) {
     padding: 120px 20px 130px;
   }
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const HappyClientsTitle = styled(StyledStandardSectionTitle)`
   margin-bottom: 30px;
+
+  @media (max-width: 1000px) {
+    align-self: center;
+  }
 `;
 
 const theme = {
