@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const RowOne = styled.div`
+  font-weight: 800;
+  font-size: 4rem;
+  letter-spacing: 0.025em;
+`;
+const RowTwo = styled.div`
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+`;
 const PromoText = styled.h2`
   position: absolute;
   top: 50%;
@@ -21,16 +31,14 @@ const PromoText = styled.h2`
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
-`;
-const RowOne = styled.div`
-  font-weight: 800;
-  font-size: 4rem;
-  letter-spacing: 0.025em;
-`;
-const RowTwo = styled.div`
-  font-weight: 300;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
+  @media (max-width: 600px) {
+    ${RowOne} {
+      font-size: 3.5rem;
+    }
+    ${RowTwo} {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const Promo = ({ className, rowOne, rowTwo }) => (
