@@ -35,8 +35,8 @@ const ClientsTestimonials = () => (
     <ClientsTestimonialsWrapper>
       <StyledStandardSectionTitle rowOne="Clients" rowTwo="Testimonials" />
       <ClientsTestimonialsInner>
-        {comments.map(({ author, comment, images: { jpg, webp } }) => (
-          <StyledComment name={author} image={jpg} imageWebp={webp}>
+        {comments.map(({ author, comment, key, images: { jpg, webp } }) => (
+          <StyledComment key={key} name={author} image={jpg} imageWebp={webp}>
             {comment}
           </StyledComment>
         ))}
