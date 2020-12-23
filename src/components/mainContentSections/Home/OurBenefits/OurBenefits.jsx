@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
-import StyledStandrardSectionTitle from '../../../StyledStandardSectionTitle';
+import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
 import benefitCards from './benefitCards';
 
-//* ================================================== Styles ==================================================
 const OurBenefitsWrapper = styled(StyledWrapper)`
   padding: 85px 0 110px;
 
@@ -35,7 +34,6 @@ const BenefitCard = styled.div`
   column-gap: 25px;
 
   @media (max-width: 700px) {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -66,11 +64,10 @@ const BenefitCardText = styled.p`
   }
 `;
 
-//* ================================================== Code ==================================================
 const OurBenefits = () => (
   <section>
     <OurBenefitsWrapper>
-      <StyledStandrardSectionTitle rowOne="Our" rowTwo="Benefits" />
+      <StyledStandardSectionTitle rowOne="Our" rowTwo="Benefits" />
       <OurBenefitsInner>
         {benefitCards.map(({ img, title, text, id }) => (
           <BenefitCard key={id}>
