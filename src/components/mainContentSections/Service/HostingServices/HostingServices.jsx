@@ -35,6 +35,7 @@ const ServiceCardTitle = styled.div`
   color: var(--text-color-primary);
   font-weight: 800;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 `;
 const ServiceCardText = styled.p`
   max-width: 400px;
