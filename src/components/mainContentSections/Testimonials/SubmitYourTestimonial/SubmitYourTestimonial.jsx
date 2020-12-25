@@ -3,22 +3,17 @@ import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardForm from '../../../StyledStandardForm';
+import StyledStandardForm from '../../../StyledStandardForm';
 
-const SubmitYourQuestionWrapper = styled(StyledWrapper)`
-  padding: 85px 0 110px;
+const SubmitYourTestimonialWrapper = styled(StyledWrapper)`
+  padding: 100px 0;
 
   @media (max-width: 1250px) {
-    padding: 85px 20px 110px;
-  }
-  @media (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 100px 20px;
   }
 `;
 
-const SubmitYourQuestion = () => {
+const SubmitYourTestimonial = () => {
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
     // TODO: Replace with a modal
@@ -28,17 +23,17 @@ const SubmitYourQuestion = () => {
 
   return (
     <section>
-      <SubmitYourQuestionWrapper>
-        <StyledStandardSectionTitle rowOne="Submit your" rowTwo="Question" />
-        <StandardForm
-          name="submit-your-question"
+      <SubmitYourTestimonialWrapper>
+        <StyledStandardSectionTitle rowOne="Submit your" rowTwo="Testimonial" />
+        <StyledStandardForm
+          name="submit-your-testimonial"
           action=""
           method="post"
           handleSubmit={handleSubmit}
         />
-      </SubmitYourQuestionWrapper>
+      </SubmitYourTestimonialWrapper>
     </section>
   );
 };
 
-export default SubmitYourQuestion;
+export default SubmitYourTestimonial;

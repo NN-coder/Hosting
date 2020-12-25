@@ -2,6 +2,7 @@ import React from 'react';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
 import ClientsTestimonials from './ClientsTestimonials/ClientsTestimonials';
+import SubmitYourTestimonial from './SubmitYourTestimonial/SubmitYourTestimonial';
 
 const Testimonials = () => (
   <section>
@@ -12,6 +13,7 @@ const Testimonials = () => (
       bgPosition="center 70%"
     />
     <ClientsTestimonials />
+    <SubmitYourTestimonial />
   </section>
 );
 

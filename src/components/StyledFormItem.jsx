@@ -14,7 +14,7 @@ const requiredLabelStyles = css`
   }
 `;
 
-const QuestionFormLabel = styled.label`
+const InputLabel = styled.label`
   position: absolute;
   top: 21px;
   left: 20px;
@@ -23,7 +23,7 @@ const QuestionFormLabel = styled.label`
   ${({ isHidden }) => (isHidden ? hiddenLabelStyles : '')}
   ${({ isRequired }) => (isRequired ? requiredLabelStyles : '')}
 `;
-const QuestionFormInput = styled.div`
+const FormInput = styled.div`
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -31,14 +31,7 @@ const QuestionFormInput = styled.div`
   resize: none;
 `;
 
-const QuestionFormItem = ({
-  className,
-  inputAs,
-  inputType,
-  inputName,
-  placeholder,
-  isRequired,
-}) => {
+const FormItem = ({ className, inputAs, inputType, inputName, placeholder, isRequired }) => {
   const [isLabelHidden, toggleLabel] = useState(false);
 
   const handleFocusChange = useCallback((event) => {
@@ -55,7 +48,7 @@ const QuestionFormItem = ({
 
   return (
     <div className={className}>
-      <QuestionFormInput
+      <FormInput
         ref={inputRef}
         as={inputAs}
         type={inputType}
@@ -66,19 +59,18 @@ const QuestionFormItem = ({
         onFocus={handleFocusChange}
         onBlur={handleFocusChange}
       />
-      <QuestionFormLabel
+      <InputLabel
         isHidden={isLabelHidden}
         isRequired={isRequired}
         onClick={() => inputRef.current.focus()}
-        onCopy={(event) => event.preventDefault()}
       >
         {placeholder}
-      </QuestionFormLabel>
+      </InputLabel>
     </div>
   );
 };
 
-QuestionFormItem.propTypes = {
+FormItem.propTypes = {
   className: PropTypes.string.isRequired,
   inputAs: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   inputName: PropTypes.string.isRequired,
@@ -86,16 +78,16 @@ QuestionFormItem.propTypes = {
   inputType: PropTypes.string,
   isRequired: PropTypes.bool,
 };
-QuestionFormItem.defaultProps = {
+FormItem.defaultProps = {
   inputType: null,
   isRequired: false,
 };
 
-const StyledQuestionFormItem = styled(QuestionFormItem)`
+const StyledFormItem = styled(FormItem)`
   position: relative;
   color: var(--text-color);
   font-size: 1.4rem;
   letter-spacing: 0.01em;
 `;
 
-export default StyledQuestionFormItem;
+export default StyledFormItem;
