@@ -1,9 +1,16 @@
 import React from 'react';
 
+import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+
 const HostingPlans = () => (
-  <div className="main-content-section">
-    <div className="wrapper">Hosting plans</div>
-  </div>
+  <section>
+    <MainContentSectionPromo
+      sectionName="hosting-plans"
+      titleRowOne="Hosting"
+      titleRowTwo="Plans"
+      bgPosition="center 40%"
+    />
+  </section>
 );
 
 export default HostingPlans;
