@@ -42,8 +42,9 @@ const NewDomains = ({ className }) => (
   <section className={className}>
     <NewDomainsWrapper>
       <NewDomainsTitle rowOne="New" rowTwo="Domains" />
-      {domains.map((name) => (
-        <DomainInfo>
+      {domains.map((name, num) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <DomainInfo key={num}>
           <DomainInfoName>{name}</DomainInfoName>
           <DomainInfoBtn>Register</DomainInfoBtn>
         </DomainInfo>

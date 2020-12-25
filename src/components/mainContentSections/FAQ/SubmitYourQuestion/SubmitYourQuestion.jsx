@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
@@ -40,15 +40,15 @@ const SubmitYourQuestionWrapper = styled(StyledWrapper)`
   }
 `;
 
-const questionsFormItemStyles = css`
+const QuestionFormInput = styled(StyledQuestionFormItem)`
   @media (max-width: 800px) {
     grid-column: 1 / -1;
   }
 `;
-const questionFormSubjectStyles = css`
+const QuestionFormSubjectInput = styled(StyledQuestionFormItem)`
   grid-column: 1 / -1;
 `;
-const questionFormQuestionsStyles = css`
+const QuestionFormQuestionsInput = styled(StyledQuestionFormItem)`
   grid-row: span 3;
   grid-column: 1 / -1;
 `;
@@ -66,36 +66,32 @@ const SubmitYourQuestion = () => {
       <SubmitYourQuestionWrapper>
         <StyledStandardSectionTitle rowOne="Submit your" rowTwo="Question" />
         <QuestionForm action="" method="post" onSubmit={handleSubmit}>
-          <StyledQuestionFormItem
+          <QuestionFormInput
             inputAs="input"
             inputType="text"
             inputName="name"
             placeholder="Name"
             isRequired
-            additionalStyles={questionsFormItemStyles}
           />
-          <StyledQuestionFormItem
+          <QuestionFormInput
             inputAs="input"
             inputType="email"
             inputName="email"
             placeholder="Email"
             isRequired
-            additionalStyles={questionsFormItemStyles}
           />
-          <StyledQuestionFormItem
+          <QuestionFormSubjectInput
             inputAs="input"
             inputType="text"
             inputName="subject"
             placeholder="Subject"
             isRequired
-            additionalStyles={questionFormSubjectStyles}
           />
-          <StyledQuestionFormItem
+          <QuestionFormQuestionsInput
             inputAs="textarea"
             inputName="questions"
             placeholder="Ask your questions here"
             isRequired
-            additionalStyles={questionFormQuestionsStyles}
           />
           <QuestionFormSubmit type="submit">Submit</QuestionFormSubmit>
         </QuestionForm>

@@ -24,9 +24,12 @@ const MainMenu = styled.div`
     font-size: 1.4rem;
     text-align: left;
     background: none;
+    transition: all 0.2s ease;
     &:hover,
-    &:focus {
-      background: none;
+    &:focus,
+    &.active {
+      color: white;
+      background: var(--header-elements-color);
     }
   }
 `;

@@ -96,7 +96,6 @@ const StyledQuestionFormItem = styled(QuestionFormItem)`
   color: var(--text-color);
   font-size: 1.4rem;
   letter-spacing: 0.01em;
-  ${({ additionalStyles }) => additionalStyles}
 `;
 
 export default StyledQuestionFormItem;

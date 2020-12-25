@@ -28,7 +28,7 @@ const questions = [
   },
   {
     question: 'Why are uou gay?',
-    answer: `- Ho says i'm gay? - You are gay. You are transgender, and you're a gay rights activist, and an outspoken... Lesbian? Homosexual? How can I describe you? - I am Pepe Julian Onziema, an LGBTI activist. - What's that? - I'm a human rights defender. - Now we're looking at the raging debate. You're a gay rights activist: why should someone be gay?`,
+    answer: `- Who says i'm gay? - You are gay. You are transgender, and you're a gay rights activist, and an outspoken... Lesbian? Homosexual? How can I describe you? - I am Pepe Julian Onziema, an LGBTI activist. - What's that? - I'm a human rights defender. - Now we're looking at the raging debate. You're a gay rights activist: why should someone be gay?`,
     id: shortid.generate(),
   },
   {

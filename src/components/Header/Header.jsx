@@ -25,6 +25,7 @@ const MainNavOpener = styled.button`
   border: none;
 `;
 
+// TODO: Make the header pop up when scrolling up on a mobile device
 const Header = () => {
   const mql = window.matchMedia('(max-width: 950px)');
 
