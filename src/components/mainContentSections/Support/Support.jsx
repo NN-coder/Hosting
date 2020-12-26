@@ -1,9 +1,16 @@
 import React from 'react';
 
+import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+
 const Support = () => (
-  <div className="main-content-section">
-    <div className="wrapper">Support</div>
-  </div>
+  <section>
+    <MainContentSectionPromo
+      sectionName="support"
+      titleRowOne="Support"
+      titleRowTwo="Center"
+      bgPosition="center 40%"
+    />
+  </section>
 );
 
 export default Support;

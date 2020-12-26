@@ -23,7 +23,7 @@ LazyImage.propTypes = {
   className: PropTypes.string,
 };
 LazyImage.defaultProps = {
-  offset: 50,
+  offset: 100,
   once: true,
   imageWebp: '',
   alt: '',

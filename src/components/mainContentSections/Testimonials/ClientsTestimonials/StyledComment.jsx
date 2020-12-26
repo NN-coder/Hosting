@@ -46,8 +46,8 @@ const Comment = ({ className, name, image, imageWebp, children: text }) => (
 
 Comment.propTypes = {
   className: PropTypes.string.isRequired,
-  name: PropTypes.string,
   image: PropTypes.string.isRequired,
+  name: PropTypes.string,
   imageWebp: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
 };
