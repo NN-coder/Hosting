@@ -8,7 +8,7 @@ const HostingPlans = () => (
       sectionName="hosting-plans"
       titleRowOne="Hosting"
       titleRowTwo="Plans"
-      bgPosition="center 40%"
+      bgPosition="center 65%"
     />
   </section>
 );
