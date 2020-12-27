@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+import { IconContext } from 'react-icons';
+import { CgMenu } from 'react-icons/cg';
 
 import StyledWrapper from '../StyledWrapper';
-import Svg from '../Svg';
 import StyledLogo from '../StyledLogo/StyledLogo';
 import StyledHeaderLogin from './StyledHeaderLogin';
 import HeaderNav from './HeaderNav';
@@ -44,43 +45,24 @@ const Header = () => {
 
   return (
     <header>
-      <HeaderWrapper>
-        {mobileMode && (
-          <MainNavOpener type="button" onClick={() => toggleMainNavClose(!isMainNavClosed)}>
-            <Svg
-              width="25px"
-              height="25px"
-              viewBox="0 0 341 341"
-              fill="var(--header-elements-color)"
-            >
-              <g>
-                <g>
-                  <rect y="277.333" width="341.333" height="42.667" />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <rect y="149.333" width="341.333" height="42.667" />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <rect y="21.333" width="341.333" height="42.667" />
-                </g>
-              </g>
-            </Svg>
-          </MainNavOpener>
-        )}
-        <StyledLogo />
-        <StyledHeaderLogin isMobile={mobileMode} />
-        {mobileMode && (
-          <MainMenu
-            isClosed={isMainNavClosed}
-            toggleOpen={() => toggleMainNavClose(!isMainNavClosed)}
-          />
-        )}
-        {!mobileMode && <HeaderNav />}
-      </HeaderWrapper>
+      <IconContext.Provider value={{ size: '30px', color: 'var(--header-elements-color)' }}>
+        <HeaderWrapper>
+          {mobileMode && (
+            <MainNavOpener type="button" onClick={() => toggleMainNavClose(!isMainNavClosed)}>
+              <CgMenu />
+            </MainNavOpener>
+          )}
+          <StyledLogo />
+          <StyledHeaderLogin isMobile={mobileMode} />
+          {mobileMode && (
+            <MainMenu
+              isClosed={isMainNavClosed}
+              toggleOpen={() => toggleMainNavClose(!isMainNavClosed)}
+            />
+          )}
+          {!mobileMode && <HeaderNav />}
+        </HeaderWrapper>
+      </IconContext.Provider>
     </header>
   );
 };

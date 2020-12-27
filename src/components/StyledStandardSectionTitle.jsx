@@ -6,11 +6,12 @@ const Before = styled.div.attrs({
   'aria-hidden': true,
 })`
   position: absolute;
-  bottom: ${(props) => (props.line ? 'calc(100% + 10px)' : 'calc(100% + 5px)')};
+  bottom: ${({ line }) => (line ? 'calc(100% + 10px)' : 'calc(100% + 5px)')};
   left: 0;
-  width: ${(props) => (props.line ? '20px' : 'auto')};
-  height: ${(props) => (props.line ? '2px' : 'auto')};
-  background: ${(props) => (props.line ? 'var(--accent-color)' : 'none')};
+  width: ${({ line }) => (line ? '20px' : 'auto')};
+  height: ${({ line }) => (line ? '2px' : 'auto')};
+  color: var(--accent-color);
+  background: ${({ line }) => (line ? 'currentColor' : 'none')};
 `;
 const RowOne = styled.div`
   color: #859aa1;

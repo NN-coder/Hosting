@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IconContext } from 'react-icons';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
@@ -64,21 +65,30 @@ const BenefitCardText = styled.p`
   }
 `;
 
+const contextValue = {
+  size: '60px',
+  color: 'var(--accent-color)',
+  attr: { 'aria-hidden': 'true' },
+  style: { minWidth: '60px' },
+};
+
 const OurBenefits = () => (
   <section>
     <OurBenefitsWrapper>
       <StyledStandardSectionTitle rowOne="Our" rowTwo="Benefits" />
-      <OurBenefitsInner>
-        {benefitCards.map(({ img, title, text, id }) => (
-          <BenefitCard key={id}>
-            {img}
-            <BenefitCardInner>
-              <BenefitCardTitle>{title}</BenefitCardTitle>
-              <BenefitCardText>{text}</BenefitCardText>
-            </BenefitCardInner>
-          </BenefitCard>
-        ))}
-      </OurBenefitsInner>
+      <IconContext.Provider value={contextValue}>
+        <OurBenefitsInner>
+          {benefitCards.map(({ img, title, text, id }) => (
+            <BenefitCard key={id}>
+              {img}
+              <BenefitCardInner>
+                <BenefitCardTitle>{title}</BenefitCardTitle>
+                <BenefitCardText>{text}</BenefitCardText>
+              </BenefitCardInner>
+            </BenefitCard>
+          ))}
+        </OurBenefitsInner>
+      </IconContext.Provider>
     </OurBenefitsWrapper>
   </section>
 );

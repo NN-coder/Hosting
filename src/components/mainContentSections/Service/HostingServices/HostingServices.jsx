@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IconContext } from 'react-icons';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
@@ -44,17 +45,25 @@ const ServiceCardText = styled.p`
   letter-spacing: 0.01em;
 `;
 
+const contextValue = {
+  size: '45px',
+  color: 'var(--accent-color)',
+  attr: { 'aria-hidden': true },
+};
+
 const HostingServices = () => (
   <section>
     <HostingServicesWrapper>
       <StyledStandardSectionTitle rowOne="Hosting" rowTwo="Services" />
-      {serviceCards.map(({ title, text, icon, id }) => (
-        <ServiceCard key={id}>
-          {icon}
-          <ServiceCardTitle>{title}</ServiceCardTitle>
-          <ServiceCardText>{text}</ServiceCardText>
-        </ServiceCard>
-      ))}
+      <IconContext.Provider value={contextValue}>
+        {serviceCards.map(({ title, text, icon, id }) => (
+          <ServiceCard key={id}>
+            {icon}
+            <ServiceCardTitle>{title}</ServiceCardTitle>
+            <ServiceCardText>{text}</ServiceCardText>
+          </ServiceCard>
+        ))}
+      </IconContext.Provider>
     </HostingServicesWrapper>
   </section>
 );
