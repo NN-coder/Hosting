@@ -1,6 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import OurHosting from '../Home/OurHosting/OurHosting';
+
+const HostingPlansOurHosting = styled(OurHosting)`
+  background-color: var(--blue);
+`;
 
 const HostingPlans = () => (
   <section>
@@ -10,6 +16,7 @@ const HostingPlans = () => (
       titleRowTwo="Plans"
       bgPosition="center 65%"
     />
+    <HostingPlansOurHosting />
   </section>
 );
 

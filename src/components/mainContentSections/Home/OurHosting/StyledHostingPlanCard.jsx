@@ -26,13 +26,13 @@ const HostingPlanPricePeriod = styled.div`
   letter-spacing: 0.1em;
 `;
 
-const HostingPlanAdvanteges = styled.ul`
+const HostingPlanAdvantages = styled.ul`
   width: 100%;
   margin-top: 20px;
   color: var(--text-color);
   font-size: 1.4rem;
 `;
-const HostingPlanAdvantegesItem = styled.li`
+const HostingPlanAdvantagesItem = styled.li`
   padding: 10px 0;
   text-align: center;
   border-top: 1px solid #e1eff4;
@@ -66,7 +66,7 @@ const SignUpBtn = styled(StandardBtn)`
 `;
 
 const HostingPlanCard = ({ className, price, planName, advantages }) => {
-  const advantegesOptions = useMemo(
+  const advantagesOptions = useMemo(
     () => advantages.slice(0, 5).map((text) => ({ text, key: shortid.generate() })),
     [advantages]
   );
@@ -78,11 +78,11 @@ const HostingPlanCard = ({ className, price, planName, advantages }) => {
         <HostingPlanPricePeriod>Per month</HostingPlanPricePeriod>
       </HostingPlanPrice>
       <HostingPlanCardTitle>{`${planName} plan`}</HostingPlanCardTitle>
-      <HostingPlanAdvanteges>
-        {advantegesOptions.map(({ text, key }) => (
-          <HostingPlanAdvantegesItem key={key}>{text}</HostingPlanAdvantegesItem>
+      <HostingPlanAdvantages>
+        {advantagesOptions.map(({ text, key }) => (
+          <HostingPlanAdvantagesItem key={key}>{text}</HostingPlanAdvantagesItem>
         ))}
-      </HostingPlanAdvanteges>
+      </HostingPlanAdvantages>
       <SignUpBtn>Sign up</SignUpBtn>
     </div>
   );
@@ -99,9 +99,10 @@ const StyledHostingPlanCard = styled(HostingPlanCard)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 30px;
   padding: 30px 20px 25px;
+  background-color: white;
   border: 1px solid #e1eff4;
+  row-gap: 30px;
 `;
 
 export default StyledHostingPlanCard;

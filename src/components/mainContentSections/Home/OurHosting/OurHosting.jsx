@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledHostingPlanCard from './HostingPlanCard';
+import StyledHostingPlanCard from './StyledHostingPlanCard';
 
 const OurHostingWrapper = styled(StyledWrapper)`
   display: grid;
@@ -33,8 +34,8 @@ const advantages = [
   'Managed Hosting',
 ];
 
-const OurHosting = () => (
-  <section>
+const OurHosting = ({ className }) => (
+  <section className={className}>
     <OurHostingWrapper>
       <OurHostingTitle rowOne="Our" rowTwo="Hosting" />
       <StyledHostingPlanCard price="5" planName="Standard" advantages={advantages} />
@@ -44,5 +45,12 @@ const OurHosting = () => (
     </OurHostingWrapper>
   </section>
 );
+
+OurHosting.propTypes = {
+  className: PropTypes.string,
+};
+OurHosting.defaultProps = {
+  className: null,
+};
 
 export default OurHosting;
