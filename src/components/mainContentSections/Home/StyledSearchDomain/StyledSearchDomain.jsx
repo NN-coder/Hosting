@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import StyledWrapper from '../../../StyledWrapper';
 import Svg from '../../../Svg';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandradBtn from '../../../StandardBtn';
+import StandardBtn from '../../../StandardBtn';
 import selectBg from './select_bg.png';
 
 const SearchDomainWrapper = styled(StyledWrapper)`
@@ -68,7 +68,7 @@ const SearchDomainFormSelect = styled(SearchDomainFormItem)`
     }
   }
 `;
-const SearchDomainFormSubmit = styled(StandradBtn)`
+const SearchDomainFormSubmit = styled(StandardBtn)`
   grid-column: 1 / -1;
   justify-self: center;
   min-width: 195px;
