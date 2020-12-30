@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
 import OurHosting from '../Home/OurHosting/OurHosting';
+import FollowSteps from './FollowSteps/FollowSteps';
 
 const HostingPlansOurHosting = styled(OurHosting)`
   background-color: var(--blue);
@@ -16,6 +17,7 @@ const HostingPlans: React.FC = () => (
       titleRowTwo="Plans"
       bgPosition="center 65%"
     />
+    <FollowSteps />
     <HostingPlansOurHosting />
   </section>
 );
