@@ -2,31 +2,49 @@
   "name": "hosting",
   "version": "0.1.0",
   "private": true,
-  "main": "src/index.jsx",
+  "main": "src/index.tsx",
   "repository": "git@github.com:NN-coder/hosting.git",
   "license": "MIT",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.1.2",
-    "@testing-library/user-event": "^12.2.2",
-    "prop-types": "^15.7.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-lazyload": "^3.1.0",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "4.0.1",
     "shortid": "^2.2.16",
     "styled-components": "^5.2.1",
+    "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-lazyload": "^3.0.0",
+    "@types/react-responsive": "^8.0.2",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/shortid": "^0.0.29",
+    "@types/styled-components": "^5.1.7",
+    "@types/webpack": "^4.41.25",
+    "@types/webpack-env": "^1.16.0",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^7.1.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.5.0",
     "prettier": "^2.2.1",
@@ -46,37 +64,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest",
-      "airbnb",
-      "plugin:jsx-a11y/recommended",
-      "prettier",
-      "plugin:prettier/recommended",
-      "prettier/react",
-      "plugin:promise/recommended",
-      "plugin:sonarjs/recommended",
-      "plugin:react-hooks/recommended"
-    ],
-    "plugins": [
-      "prettier",
-      "promise",
-      "sonarjs",
-      "jsx-a11y"
-    ],
-    "env": {
-      "browser": true
-    },
-    "ignorePatterns": [
-      "src/reportWebVitals.js",
-      "setupTests.js"
-    ],
-    "rules": {
-      "no-unused-vars": "warn",
-      "react/static-property-placement": 0
-    }
-  },
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 100
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
