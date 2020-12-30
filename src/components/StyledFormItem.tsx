@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useRef, MutableRefObject } from 'react';
 import styled, { css } from 'styled-components';
-import shortid from 'shortid';
 
 const hiddenLabelStyles = css`
   visibility: hidden;
@@ -32,6 +31,8 @@ const FormInput = styled.div`
   resize: none;
 `;
 
+type InputOrTextarea = HTMLInputElement | HTMLTextAreaElement;
+
 export interface Props {
   inputAs: 'input' | 'textarea';
   name: string;
@@ -44,43 +45,55 @@ export interface Props {
 const FormItem: React.FC<Props> = ({ className, inputAs, type, name, placeholder, isRequired }) => {
   const [isLabelHidden, toggleLabel] = useState(false);
 
-  const handleFocusChange = useCallback(
-    (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      if (event.target.value.length === 0) {
-        toggleLabel((labelStatus) => !labelStatus);
-      }
-    },
-    []
-  );
+  const handleFocusChange = useCallback((event: React.FocusEvent<InputOrTextarea>) => {
+    if (event.target.value.length === 0) {
+      toggleLabel((labelStatus) => !labelStatus);
+    }
+  }, []);
 
   const [inputValue, changeValue] = useState('');
   const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-      changeValue(event.target.value),
+    (event: React.ChangeEvent<InputOrTextarea>) => changeValue(event.target.value),
     []
   );
 
-  const id = useMemo(() => shortid.generate(), []);
-
   const formInputProps = useMemo(
     () => ({
-      id,
       name,
       required: isRequired,
       onChange: handleChange,
       onFocus: handleFocusChange,
       onBlur: handleFocusChange,
     }),
-    [id, name, isRequired, handleChange, handleFocusChange]
+    [name, isRequired, handleChange, handleFocusChange]
   );
+
+  const inputRef = useRef<InputOrTextarea>();
 
   return (
     <div className={className}>
       {inputAs === 'input' && (
-        <FormInput as={inputAs} type={type} value={inputValue} {...formInputProps} />
+        <FormInput
+          as={inputAs}
+          ref={inputRef as MutableRefObject<HTMLInputElement>}
+          type={type}
+          value={inputValue}
+          {...formInputProps}
+        />
       )}
-      {inputAs === 'textarea' && <FormInput as={inputAs} value={inputValue} {...formInputProps} />}
-      <InputLabel isHidden={isLabelHidden} isRequired={isRequired} htmlFor={id}>
+      {inputAs === 'textarea' && (
+        <FormInput
+          as={inputAs}
+          ref={inputRef as MutableRefObject<HTMLTextAreaElement>}
+          value={inputValue}
+          {...formInputProps}
+        />
+      )}
+      <InputLabel
+        isHidden={isLabelHidden}
+        isRequired={isRequired}
+        onClick={() => inputRef.current?.focus()}
+      >
         {placeholder}
       </InputLabel>
     </div>
