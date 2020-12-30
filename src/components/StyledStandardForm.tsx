@@ -39,30 +39,18 @@ export interface Props {
 
 const StandardForm: React.FC<Props> = ({ name, action, method, className, handleSubmit }) => (
   <form name={name} action={action} method={method} onSubmit={handleSubmit} className={className}>
-    <StandardFormInput
-      inputAs="input"
-      inputType="text"
-      inputName="name"
-      placeholder="Name"
-      isRequired
-    />
-    <StandardFormInput
-      inputAs="input"
-      inputType="email"
-      inputName="email"
-      placeholder="Email"
-      isRequired
-    />
+    <StandardFormInput inputAs="input" type="text" name="name" placeholder="Name" isRequired />
+    <StandardFormInput inputAs="input" type="email" name="email" placeholder="Email" isRequired />
     <StandardFormSubjectInput
       inputAs="input"
-      inputType="text"
-      inputName="subject"
+      type="text"
+      name="subject"
       placeholder="Subject"
       isRequired
     />
     <StandardFormQuestionsInput
       inputAs="textarea"
-      inputName="questions"
+      name="questions"
       placeholder="Ask your questions here"
       isRequired
     />

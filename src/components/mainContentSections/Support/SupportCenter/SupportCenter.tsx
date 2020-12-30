@@ -19,8 +19,8 @@ const SearchForm = styled.form.attrs({
 
 const SearchFormInput = styled(StyledFormItem).attrs({
   inputAs: 'input',
-  inputType: 'search',
-  inputName: 'search',
+  type: 'search',
+  name: 'search',
 })`
   width: 100%;
   min-height: 60px;

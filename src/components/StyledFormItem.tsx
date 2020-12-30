@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useCallback, useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import shortid from 'shortid';
@@ -33,21 +34,14 @@ const FormInput = styled.div`
 
 export interface Props {
   inputAs: 'input' | 'textarea';
-  inputName: string;
+  name: string;
   placeholder: string;
   isRequired?: boolean;
-  inputType?: string;
+  type?: string;
   className?: string;
 }
 
-const FormItem: React.FC<Props> = ({
-  className,
-  inputAs,
-  inputType,
-  inputName,
-  placeholder,
-  isRequired,
-}) => {
+const FormItem: React.FC<Props> = ({ className, inputAs, type, name, placeholder, isRequired }) => {
   const [isLabelHidden, toggleLabel] = useState(false);
 
   const handleFocusChange = useCallback(
@@ -68,33 +62,24 @@ const FormItem: React.FC<Props> = ({
 
   const id = useMemo(() => shortid.generate(), []);
 
+  const formInputProps = useMemo(
+    () => ({
+      id,
+      name,
+      required: isRequired,
+      onChange: handleChange,
+      onFocus: handleFocusChange,
+      onBlur: handleFocusChange,
+    }),
+    [id, name, isRequired, handleChange, handleFocusChange]
+  );
+
   return (
     <div className={className}>
       {inputAs === 'input' && (
-        <FormInput
-          id={id}
-          as={inputAs}
-          type={inputType}
-          name={inputName}
-          required={isRequired}
-          value={inputValue}
-          onChange={handleChange}
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
-        />
+        <FormInput as={inputAs} type={type} value={inputValue} {...formInputProps} />
       )}
-      {inputAs === 'textarea' && (
-        <FormInput
-          id={id}
-          as={inputAs}
-          name={inputName}
-          required={isRequired}
-          value={inputValue}
-          onChange={handleChange}
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
-        />
-      )}
+      {inputAs === 'textarea' && <FormInput as={inputAs} value={inputValue} {...formInputProps} />}
       <InputLabel isHidden={isLabelHidden} isRequired={isRequired} htmlFor={id}>
         {placeholder}
       </InputLabel>
