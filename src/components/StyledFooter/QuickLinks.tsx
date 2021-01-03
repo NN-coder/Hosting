@@ -42,9 +42,7 @@ const QuickLinks: React.FC = () => (
     <QuickLinksList>
       {navLinks.map(({ text, link, id }) => (
         <li key={id}>
-          <QuickLinksListItem to={link} onClick={handleClick}>
-            {text}
-          </QuickLinksListItem>
+          <QuickLinksListItem to={link}>{text}</QuickLinksListItem>
         </li>
       ))}
     </QuickLinksList>

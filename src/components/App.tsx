@@ -6,6 +6,7 @@ import StyledLoadingScreen from './StyledLoadingScreen/StyledLoadingScreen';
 import Header from './Header/Header';
 import StyledNewsletterSection from './StyledNewsletterSection';
 import StyledFooter from './StyledFooter/StyledFooter';
+import ScrollToTop from './ScrollToTop';
 
 const Home = React.lazy(() => import('./mainContentSections/Home/Home'));
 const AboutUs = React.lazy(() => import('./mainContentSections/AboutUs/AboutUs'));
@@ -65,31 +66,30 @@ const CustomRoute: React.FC<CustomRouteProps> = ({ title, ...props }) => {
 };
 
 const App: React.FC = () => (
-  <>
+  <BrowserRouter>
+    <ScrollToTop />
     <GlobalStyle />
-    <BrowserRouter>
-      <Header />
-      <main>
-        <Suspense fallback={<StyledLoadingScreen />}>
-          <Switch>
-            <CustomRoute title="Home" path="/home" component={Home} />
-            <CustomRoute title="About us" path="/about-us" component={AboutUs} />
-            <CustomRoute title="Service" path="/service" component={Service} />
-            <CustomRoute title="Hosting plans" path="/hosting-plans" component={HostingPlans} />
-            <CustomRoute title="Domain" path="/domain" component={Domain} />
-            <CustomRoute title="FAQ" path="/faq" component={FAQ} />
-            <CustomRoute title="Testimonials" path="/testimonials" component={Testimonials} />
-            <CustomRoute title="Blog" path="/blog" component={Blog} />
-            <CustomRoute title="Support" path="/support" component={Support} />
-            <CustomRoute title="Contact us" path="/contact-us" component={ContactUs} />
-            <Redirect from="/" to="/home" />
-          </Switch>
-        </Suspense>
-      </main>
-      <StyledNewsletterSection />
-      <StyledFooter />
-    </BrowserRouter>
-  </>
+    <Header />
+    <main>
+      <Suspense fallback={<StyledLoadingScreen />}>
+        <Switch>
+          <CustomRoute title="Home" path="/home" component={Home} />
+          <CustomRoute title="About us" path="/about-us" component={AboutUs} />
+          <CustomRoute title="Service" path="/service" component={Service} />
+          <CustomRoute title="Hosting plans" path="/hosting-plans" component={HostingPlans} />
+          <CustomRoute title="Domain" path="/domain" component={Domain} />
+          <CustomRoute title="FAQ" path="/faq" component={FAQ} />
+          <CustomRoute title="Testimonials" path="/testimonials" component={Testimonials} />
+          <CustomRoute title="Blog" path="/blog" component={Blog} />
+          <CustomRoute title="Support" path="/support" component={Support} />
+          <CustomRoute title="Contact us" path="/contact-us" component={ContactUs} />
+          <Redirect from="/" to="/home" />
+        </Switch>
+      </Suspense>
+    </main>
+    <StyledNewsletterSection />
+    <StyledFooter />
+  </BrowserRouter>
 );
 
 export default App;

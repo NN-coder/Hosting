@@ -95,17 +95,11 @@ const SearchDomain: React.FC<Props> = ({ className }) => (
         <SearchDomainFormInput
           as="input"
           name="name"
-          className="search-domain-form__item search-domain-form__input"
           type="text"
           placeholder="Enter your domain name"
         />
 
-        <SearchDomainFormSelect
-          as="select"
-          defaultValue="placeholder"
-          name="years"
-          className="search-domain-form__item search-domain-form__select"
-        >
+        <SearchDomainFormSelect as="select" defaultValue="placeholder" name="years">
           <option value="placeholder" disabled hidden>
             Years (0-1 year)
           </option>
@@ -113,11 +107,7 @@ const SearchDomain: React.FC<Props> = ({ className }) => (
           <option value="1">1 year</option>
         </SearchDomainFormSelect>
 
-        <SearchDomainFormSelect
-          as="select"
-          name="domain"
-          className="search-domain-form__item search-domain-form__select"
-        >
+        <SearchDomainFormSelect as="select" name="domain">
           <option value="com">.com</option>
           <option value="net">.net</option>
           <option value="org">.org</option>
