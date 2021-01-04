@@ -17,9 +17,6 @@ const QuickLinksListItem = styled(NavLink)`
   color: var(--text-color);
   font-size: 1.4rem;
   transition: color 0.2s ease;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
   &:hover,
   &:focus {
     color: white;

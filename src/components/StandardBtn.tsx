@@ -9,9 +9,6 @@ const StandardBtn = styled.button.attrs((props) => ({
   background-color: var(--accent-color);
   border: none;
   transition: background-color 0.15s ease;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
   &:hover,
   &:focus {
     background-color: var(--accent-color-active);

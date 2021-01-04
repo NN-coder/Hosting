@@ -12,9 +12,6 @@ const LinksList = styled.ul`
   a {
     color: var(--text-color);
     transition: color 0.2s ease;
-    @media screen and (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
     &:hover,
     &:focus {
       color: white;

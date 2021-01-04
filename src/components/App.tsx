@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
   :root {
     font-size: 10px;

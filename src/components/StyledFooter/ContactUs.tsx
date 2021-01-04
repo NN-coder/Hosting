@@ -11,9 +11,6 @@ const ContactUsList = styled.ul`
   a {
     color: inherit;
     transition: color 0.2s ease;
-    @media screen and (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
     &:hover,
     &:focus {
       color: var(--blue);

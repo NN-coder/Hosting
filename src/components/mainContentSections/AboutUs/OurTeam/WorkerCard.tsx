@@ -55,9 +55,6 @@ const WorkerLink = styled.a.attrs({
   border: 1px solid currentColor;
   cursor: pointer;
   transition: color 0.2s ease;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
   &:hover,
   &:focus {
     color: var(--text-color-primary);
