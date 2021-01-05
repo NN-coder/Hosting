@@ -36,7 +36,7 @@ const CommentAuthorName = styled.div`
 export interface Props {
   image: string;
   children: string;
-  imageWebp: string;
+  imageWebp?: string;
   name?: string;
   className?: string;
 }

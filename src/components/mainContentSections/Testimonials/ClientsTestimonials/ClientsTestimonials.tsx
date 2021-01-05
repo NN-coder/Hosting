@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
 import Masonry from '../../../Masonry';
+import StandardBtn from '../../../StandardBtn';
 import StyledWrapper from '../../../StyledWrapper';
 import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
 import StyledComment from './StyledComment';
 import comments, { Comment } from './comments';
 
 const ClientsTestimonialsWrapper = styled(StyledWrapper)`
-  padding: 80px 0;
+  padding: 80px 0 0;
 
   @media (max-width: 1250px) {
     padding: 80px 20px;
@@ -21,6 +22,22 @@ const ClientsTestimonialsInner = styled(Masonry).attrs({
 })`
   margin-top: 70px;
 `;
+const ShowMoreBtn = styled(StandardBtn)`
+  position: relative;
+  left: calc(50% - 85px);
+  width: 170px;
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+`;
+
+const getInitialColumnsCount = () => {
+  const { matchMedia } = window;
+  if (matchMedia('(min-width:1000.1px)').matches) return 3;
+  if (matchMedia('(min-width:700.1px)').matches) return 2;
+  return 1;
+};
 
 const renderComment = ({ author, comment, id, images: { jpg, webp } }: Comment) => (
   <StyledComment key={id} name={author} image={jpg} imageWebp={webp}>
@@ -28,30 +45,51 @@ const renderComment = ({ author, comment, id, images: { jpg, webp } }: Comment) 
   </StyledComment>
 );
 
-const ClientsTestimonials: React.FC = () => (
-  <section>
-    <ClientsTestimonialsWrapper>
-      <StyledStandardSectionTitle rowOne="Clients" rowTwo="Testimonials" />
+// TODO: Add lazy loading for comments
+const ClientsTestimonials: React.FC = () => {
+  const [commentsToShow, showComments] = useState(getInitialColumnsCount() * 3);
 
-      <MediaQuery minDeviceWidth={1000.1}>
-        <ClientsTestimonialsInner columnsCount={3}>
-          {comments.slice(0, 9).map(renderComment)}
-        </ClientsTestimonialsInner>
-      </MediaQuery>
+  return (
+    <section>
+      <ClientsTestimonialsWrapper>
+        <StyledStandardSectionTitle rowOne="Clients" rowTwo="Testimonials" />
 
-      <MediaQuery minDeviceWidth={700.1} maxDeviceWidth={1000}>
-        <ClientsTestimonialsInner columnsCount={2}>
-          {comments.slice(0, 6).map(renderComment)}
-        </ClientsTestimonialsInner>
-      </MediaQuery>
+        <MediaQuery
+          minDeviceWidth={1000.1}
+          onChange={() => (commentsToShow < 9 ? showComments(9) : null)}
+        >
+          <ClientsTestimonialsInner columnsCount={3}>
+            {comments.slice(0, commentsToShow).map(renderComment)}
+          </ClientsTestimonialsInner>
+        </MediaQuery>
 
-      <MediaQuery maxDeviceWidth={700}>
-        <ClientsTestimonialsInner columnsCount={1}>
-          {comments.slice(0, 3).map(renderComment)}
-        </ClientsTestimonialsInner>
-      </MediaQuery>
-    </ClientsTestimonialsWrapper>
-  </section>
-);
+        <MediaQuery
+          minDeviceWidth={700.1}
+          maxDeviceWidth={1000}
+          onChange={() => (commentsToShow < 6 ? showComments(6) : null)}
+        >
+          <ClientsTestimonialsInner columnsCount={2}>
+            {comments.slice(0, commentsToShow).map(renderComment)}
+          </ClientsTestimonialsInner>
+        </MediaQuery>
+
+        <MediaQuery
+          maxDeviceWidth={700}
+          onChange={() => (commentsToShow < 3 ? showComments(3) : null)}
+        >
+          <ClientsTestimonialsInner columnsCount={1}>
+            {comments.slice(0, commentsToShow).map(renderComment)}
+          </ClientsTestimonialsInner>
+        </MediaQuery>
+
+        {commentsToShow < comments.length && (
+          <ShowMoreBtn onClick={() => showComments((prevVal) => prevVal + 3)}>
+            Show more
+          </ShowMoreBtn>
+        )}
+      </ClientsTestimonialsWrapper>
+    </section>
+  );
+};
 
 export default ClientsTestimonials;

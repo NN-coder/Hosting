@@ -1,7 +1,10 @@
 import shortid from 'shortid';
 
-const images = require.context('./img');
-const getImagePath = (name: string): string => images(name).default;
+const jpgImages = require.context('./img/jpg');
+const getJpg = (name: string): string => jpgImages(`./${name}.jpg`).default;
+
+const webpImages = require.context('./img/webp');
+const getWebp = (name: string): string => webpImages(`./${name}.webp`).default;
 
 export interface Comment {
   author: string;
@@ -9,91 +12,219 @@ export interface Comment {
   comment: string;
   images: {
     jpg: string;
-    webp: string;
+    webp?: string;
   };
 }
 
 const comments: Comment[] = [
   {
-    author: 'Abdhulkalam',
-    images: {
-      jpg: getImagePath('./abdhulkalam.jpg'),
-      webp: getImagePath('./abdhulkalam.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae eveniet odit facere eius, commodi adipisci temporibus molestiae quidem optio hic ipsam tenetur amet voluptates expedita unde magnam neque! Numquam, dignissimos suscipit blanditiis at laborum corrupti fuga tempora asperiores maiores rem.`,
+    author: 'Playboi Carti',
+    comment:
+      "In New York I Milly Rock, hide it in my sock, Running from an opp, and I shoot at opp (what), And I'm on the block (what, what, what)",
+    images: {
+      jpg: getJpg('playboi-carti'),
+      webp: getWebp('playboi-carti'),
+    },
   },
   {
-    author: 'Akhil',
-    images: {
-      jpg: getImagePath('./akhil.jpg'),
-      webp: getImagePath('./akhil.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, laborum, perferendis ipsam enim minus officia, ut non nobis vitae numquam illum. Nulla itaque nemo delectus, vitae ipsa eos pariatur vero officiis deleniti reprehenderit tempore eius odio dignissimos soluta temporibus odit voluptatum reiciendis dolorem! Voluptatum delectus, quod est architecto consequatur consectetur eveniet libero voluptates unde autem sed excepturi ducimus nisi atque rerum dolorem voluptas porro odit labore harum. Et, delectus vitae.`,
+    author: 'Juice Wrld',
+    comment:
+      "I still see your shadows in my room, Can't take back the love that I gave you, It's to the point where I love and I hate you, And I cannot change you, so I must replace you, oh",
+    images: {
+      jpg: getJpg('juice-wrld'),
+      webp: getWebp('juice-wrld'),
+    },
   },
   {
-    author: 'Aneesh Kumar',
-    images: {
-      jpg: getImagePath('./aneesh-kumar.jpg'),
-      webp: getImagePath('./aneesh-kumar.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatem repellendus facere natus nulla deserunt hic excepturi a sunt quidem.`,
+    author: 'Lil Baby',
+    comment:
+      "Drip too hard, don't stand too close, You gon' fuck around and drown off this wave, Doin' all these shows, I've been on the road, I don't care where I go, long as I get paid",
+    images: {
+      jpg: getJpg('lil-baby'),
+      webp: getWebp('lil-baby'),
+    },
   },
   {
-    author: 'Ayizha Nasreem',
-    images: {
-      jpg: getImagePath('./ayizha-nasreem.jpg'),
-      webp: getImagePath('./ayizha-nasreem.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatem repellendus facere natus nulla deserunt hic excepturi a sunt quidem.`,
+    author: 'The weekend',
+    comment:
+      "Why? 'Cause I'm heartless, And I'm back to my ways 'cause I'm heartless, All this money and this pain got me heartless, Low life for life 'cause I'm heartless. Said I'm heartless, Tryna be a better man, but I'm heartless, Never be a weddin' plan for the heartless, Low life for life 'cause I'm heartless.",
+    images: {
+      jpg: getJpg('the-weekend'),
+      webp: getWebp('the-weekend'),
+    },
   },
   {
-    author: 'Krishanunni',
-    images: {
-      jpg: getImagePath('./krishanunni.jpg'),
-      webp: getImagePath('./krishanunni.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem perferendis, tempora, cupiditate iusto quaerat odit, at facilis obcaecati sunt corporis deserunt. Voluptatem, quia a! Nihil, qui obcaecati error maiores nobis illo cupiditate ipsum accusantium culpa sunt architecto? Ipsam minus expedita cum quidem iste voluptatibus sed itaque nobis obcaecati nam?`,
+    author: 'Young Thug',
+    comment:
+      "Shinin' hard 'cause we back up, Rose gold from your neck up, You know shit gon' get sloppy, tryna check us, Pop an X pill like we Malcolm, yeah, hey",
+    images: {
+      jpg: getJpg('young-thug'),
+      webp: getWebp('young-thug'),
+    },
   },
   {
-    author: 'Mercy John',
-    images: {
-      jpg: getImagePath('./mercy-john.jpg'),
-      webp: getImagePath('./mercy-john.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur eligendi qui exercitationem perferendis at nemo, expedita rerum aperiam explicabo, quidem dolorem, ea error possimus corporis natus ipsum et sit? Non, unde. Dignissimos natus vel earum necessitatibus ex deserunt quo molestiae porro dicta, repellat perferendis molestias nulla, a illo adipisci incidunt. Placeat tempora rem aliquam molestiae quibusdam ipsum dolorum, earum excepturi repellendus reprehenderit minus fuga magni quidem illum facilis aspernatur possimus?`,
+    author: 'Future',
+    comment:
+      'Percocets, molly, Percocets, Percocets, molly, Percocets, Rep the set, gotta rep the set, Chase a check, never chase a bitch,',
+    images: {
+      jpg: getJpg('future'),
+      webp: getWebp('future'),
+    },
   },
   {
-    author: 'Nimisha John',
-    images: {
-      jpg: getImagePath('./nimisha-john.jpg'),
-      webp: getImagePath('./nimisha-john.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut officiis sequi quas enim, tenetur, similique placeat fugit unde ab magnam repellendus suscipit fugiat obcaecati adipisci. Dignissimos, nisi. Soluta provident corporis optio cupiditate explicabo voluptatibus distinctio expedita! Iure officiis voluptatem magni.`,
+    author: 'DaBaby',
+    comment:
+      "Oh, you askin' for pictures with niggas? (Huh?), What's your name? Get the fuck out the spot, nigga! (Get the fuck), Tryna figure which deal I'ma take, (Uh-huh), I woke up, couple mil' on my plate, (Let's eat)",
+    images: {
+      jpg: getJpg('dababy'),
+      webp: getWebp('dababy'),
+    },
   },
   {
-    author: 'Sana Nair',
-    images: {
-      jpg: getImagePath('./sana-nair.jpg'),
-      webp: getImagePath('./sana-nair.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam officia enim ratione qui ullam ad laudantium rerum sunt quas ea quos dolorem commodi a, possimus eos. Placeat in voluptates quasi.`,
+    author: 'Saint Jhn',
+    comment:
+      "Gucci slippers girl you poppin', ya know, The way you look I know you got them niggas flockin', And you got them Rihanna dreads, Now you deserve a nigga with a Kawasaki, ouu",
+    images: {
+      jpg: getJpg('saint-jhn'),
+      webp: getWebp('saint-jhn'),
+    },
   },
   {
-    author: 'Subash Alpy',
-    images: {
-      jpg: getImagePath('./subash-alpy.jpg'),
-      webp: getImagePath('./subash-alpy.webp'),
-    },
     id: shortid.generate(),
-    comment: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa animi vitae excepturi a in sapiente tempora quas esse assumenda iure!`,
+    author: 'Dutchavelli',
+    comment:
+      'Look, pack going up north like Pogba, Kev just stepped out of rehab last week, Still tryna score like Didier Drogba, Dan just looks like Harry Potter',
+    images: {
+      jpg: getJpg('dutchavelli'),
+      webp: getWebp('dutchavelli'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: '6lack',
+    comment:
+      "Love is not looking over shoulders, Love is you should trust what I told you, Lately it's like you been speaking fantasy and I'm speaking reality, 'Cause we got problems we ain’t getting over",
+    images: {
+      jpg: getJpg('6lack'),
+      webp: getWebp('6lack'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Anderson .Paak',
+    comment:
+      "Take chains off, take rings off, Bracelets and things, big aches and pains, My jack rang off with clickbait, Truth is too raw, it's a fish plate",
+    images: {
+      jpg: getJpg('anderson-paak'),
+      webp: getWebp('anderson-paak'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: '21 Savage',
+    comment:
+      "Every day that I'm alive, I’ma ride with the stick, I'd rather be broke in jail than be dead and rich, Told my brothers take my breath if I turn to a snitch, But I'm 21 4L, ain’t no way I'ma switch",
+    images: {
+      jpg: getJpg('21-savage'),
+      webp: getWebp('21-savage'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'J. Cole',
+    comment:
+      "Niggas been countin' me out, I’m countin' my bullets, I'm loadin’ my clips, I'm writin' down names, I'm makin' a list, I'm checkin' it twice and I'm gettin’ ’em hit",
+    images: {
+      jpg: getJpg('j-cole'),
+      webp: getWebp('j-cole'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Travis Scott',
+    comment:
+      "I get those goosebumps every time, yeah, you come around, yeah, You ease my mind, you make everything feel fine, Worried 'bout those comments, I'm way too numb, yeah, it's way too dumb, yeah",
+    images: {
+      jpg: getJpg('travis-scott'),
+      webp: getWebp('travis-scott'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Pop Smoke',
+    comment:
+      "Buddy gon' grrt that, grrt that, brrt that, brrt that, Send shots, make 'em get back, All that chit-chat, chit-chat, riff-raff, riff-raff, My niggas ain't into that",
+    images: {
+      jpg: getJpg('pop-smoke'),
+      webp: getWebp('pop-smoke'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Denzel Curry',
+    comment: `I'ma act, one, two, stop the track, Bring it back, what it do?, See, Ricky said, "Never let nobody get the one up on you, If they run up on you, hit 'em with a one, two or a bitch slap`,
+    images: {
+      jpg: getJpg('denzel-curry'),
+      webp: getWebp('denzel-curry'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Post Malone',
+    comment:
+      'Me and Kurt feel the same, too much pleasure is pain, My girl spites me in vain, all I do is complain, She needs something to change, need to take off the e-e-edge, So fuck it all tonight',
+    images: {
+      jpg: getJpg('post-malone'),
+      webp: getWebp('post-malone'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Gunna',
+    comment:
+      "We don't take lightly to niggas who chasin' the clout for a buzz (Nah), These pussies don't talk to my niggas 'cause they know we get the business done (Get the business done), We like some students, white chalkin' you niggas, and trust me, we gonna keep a grudge (Yeah), Swear to God that I'm goin' all out for my family, might pay a visit to your mom (Visit to your mom)",
+    images: {
+      jpg: getJpg('gunna'),
+      webp: getWebp('gunna'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Lil Mosey',
+    comment:
+      "Your ho tweaking, Me and KK Wok, we always geekin' (Always geekin'), Leakin', yeah, my fours leave your body leaking (Boom, boom), I be road runnin' every season (Every season)",
+    images: {
+      jpg: getJpg('lil-mosey'),
+      webp: getWebp('lil-mosey'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Polo G',
+    comment:
+      "Swervin' on the E-way, don't care if I crash in this coupe, Shit I'm thinkin' 'bout too real, might lose my mind in this coupe, Can't relapse off these drugs, man, R.I.P. to Juice, We was tweakin' off them Percs, I popped my last one with you",
+    images: {
+      jpg: getJpg('polo-g'),
+      webp: getWebp('polo-g'),
+    },
+  },
+  {
+    id: shortid.generate(),
+    author: 'Roddy Ricch',
+    comment:
+      "I just been ballin' out every season, Know it's some niggas I left in the bleachers, I just been married to double cup, I got to pour me a four inside another liter",
+    images: {
+      jpg: getJpg('roddy-ricch'),
+      webp: getWebp('roddy-ricch'),
+    },
   },
 ];
 
