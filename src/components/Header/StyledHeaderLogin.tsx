@@ -39,4 +39,4 @@ const StyledHeaderLogin = styled(HeaderLogin)`
   font-size: 1.5rem;
 `;
 
-export default StyledHeaderLogin;
+export { StyledHeaderLogin };

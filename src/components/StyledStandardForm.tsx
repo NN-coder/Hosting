@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StandardBtn from './StandardBtn';
-import StyledFormItem from './StyledFormItem';
+import { StandardBtn } from './StandardBtn';
+import { StyledFormItem } from './StyledFormItem';
 
 const StandardFormInput = styled(StyledFormItem)`
   @media (max-width: 800px) {
@@ -68,4 +68,4 @@ const StyledStandardForm = styled(StandardForm)`
   row-gap: 10px;
 `;
 
-export default StyledStandardForm;
+export { StyledStandardForm };

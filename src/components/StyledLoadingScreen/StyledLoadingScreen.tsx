@@ -26,4 +26,4 @@ const StyledLoadingScreen = styled(LoadingScreen)`
   row-gap: 20px;
 `;
 
-export default StyledLoadingScreen;
+export { StyledLoadingScreen };

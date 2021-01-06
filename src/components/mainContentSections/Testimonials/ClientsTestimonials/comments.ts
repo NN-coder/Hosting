@@ -228,4 +228,4 @@ const comments: Comment[] = [
   },
 ];
 
-export default comments;
+export { comments };

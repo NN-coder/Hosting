@@ -60,4 +60,4 @@ const Masonry: React.FC<Props> = ({
   );
 };
 
-export default Masonry;
+export { Masonry };

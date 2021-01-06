@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
 
-import LazyImage from '../../../LazyImage';
-import StandardBtn from '../../../StandardBtn';
+import { LazyImage } from '../../../LazyImage';
+import { StandardBtn } from '../../../StandardBtn';
 import listArrow from './img/list-arrow.svg';
 
 const OfferImg = styled(LazyImage)`
@@ -110,4 +110,4 @@ const StyledOffer = styled(Offer)`
   }
 `;
 
-export default StyledOffer;
+export { StyledOffer };

@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledStandardForm from '../../../StyledStandardForm';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledStandardForm } from '../../../StyledStandardForm';
 
 const SubmitYourTestimonialWrapper = styled(StyledWrapper)`
   padding: 100px 0;
@@ -36,4 +36,4 @@ const SubmitYourTestimonial: React.FC = () => {
   );
 };
 
-export default SubmitYourTestimonial;
+export { SubmitYourTestimonial };

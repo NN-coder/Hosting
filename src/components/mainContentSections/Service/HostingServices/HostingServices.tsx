@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import serviceCards from './serviceCards';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { serviceCards } from './serviceCards';
 
 const HostingServicesWrapper = styled(StyledWrapper)`
   display: grid;
@@ -68,4 +68,4 @@ const HostingServices: React.FC = () => (
   </section>
 );
 
-export default HostingServices;
+export { HostingServices };

@@ -86,4 +86,4 @@ const StyledPromo = styled(Promo)<{ backgrounds: Backgrounds }>`
   }
 `;
 
-export default StyledPromo;
+export { StyledPromo };

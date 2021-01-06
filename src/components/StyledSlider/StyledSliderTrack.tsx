@@ -38,4 +38,4 @@ const StyledSliderTrack = styled(SliderTrack)`
   transition: transform 1s ease;
 `;
 
-export default StyledSliderTrack;
+export { StyledSliderTrack };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LazyImage from '../LazyImage';
+import { LazyImage } from '../LazyImage';
 
 const CommentPhoto = styled(LazyImage)`
   width: 200px;
@@ -74,4 +74,4 @@ const StyledComment = styled(Comment)`
   }
 `;
 
-export default StyledComment;
+export { StyledComment };

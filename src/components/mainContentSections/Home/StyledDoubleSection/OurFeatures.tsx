@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardBtn from '../../../StandardBtn';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StandardBtn } from '../../../StandardBtn';
 import featuresListItemArrow from './features-list-item-arrow.svg';
 
 const OurFeaturesInner = styled.div`
@@ -72,4 +72,4 @@ const OurFeatures: React.FC = () => (
   </section>
 );
 
-export default OurFeatures;
+export { OurFeatures };

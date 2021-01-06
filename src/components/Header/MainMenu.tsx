@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { CgClose } from 'react-icons/cg';
 
-import HeaderNav, { MainNavLink } from './HeaderNav';
+import { HeaderNav, MainNavLink } from './HeaderNav';
 
-const MainMenu = styled.div`
+const MainNav = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -52,20 +52,20 @@ export interface Props {
   toggleOpen: () => void;
 }
 
-const MainNav: React.FC<Props> = ({ isClosed, toggleOpen }) => {
+const MainMenu: React.FC<Props> = ({ isClosed, toggleOpen }) => {
   if (isClosed) return null;
 
   return (
     <>
-      <MainMenu>
+      <MainNav>
         <CloseBtn type="button" onClick={toggleOpen}>
           <CgClose />
         </CloseBtn>
         <HeaderNav handleClick={toggleOpen} />
-      </MainMenu>
+      </MainNav>
       <MainMenuBg onClick={toggleOpen} />
     </>
   );
 };
 
-export default MainNav;
+export { MainMenu };

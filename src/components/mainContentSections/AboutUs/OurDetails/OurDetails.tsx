@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledWrapper from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledWrapper } from '../../../StyledWrapper';
 import imageJpg from './our-details.jpg';
 
 // TODO: Add lazy loading
@@ -72,4 +72,4 @@ const OurDetails: React.FC = () => (
   </section>
 );
 
-export default OurDetails;
+export { OurDetails };

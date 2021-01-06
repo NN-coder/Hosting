@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
 
-const ContactUs = () => (
+const ContactUs: React.FC = () => (
   <section>
     <MainContentSectionPromo
       sectionName="contact-us"

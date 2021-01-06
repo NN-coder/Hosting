@@ -1,9 +1,9 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import HostingServices from './HostingServices/HostingServices';
-import StyledDoubleSection from './StyledDoubleSection/StyledDoubleSection';
-import StyledHappyClientsSlider from '../../StyledHappyClientsSlider/StyledHappyClientsSlider';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { HostingServices } from './HostingServices/HostingServices';
+import { StyledDoubleSection } from './StyledDoubleSection/StyledDoubleSection';
+import { StyledHappyClientsSlider } from '../../StyledHappyClientsSlider/StyledHappyClientsSlider';
 
 const Service: React.FC = () => (
   <section>

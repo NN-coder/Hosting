@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LazyImage from '../LazyImage';
+import { LazyImage } from '../LazyImage';
 import logo from './logo.png';
 
 export interface Props {
@@ -31,4 +31,4 @@ const StyledLogo = styled(Logo)`
   }
 `;
 
-export default StyledLogo;
+export { StyledLogo };

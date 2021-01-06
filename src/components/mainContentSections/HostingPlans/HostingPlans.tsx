@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import OurHosting from '../Home/OurHosting/OurHosting';
-import FollowSteps from './FollowSteps/FollowSteps';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { OurHosting } from '../Home/OurHosting/OurHosting';
+import { FollowSteps } from './FollowSteps/FollowSteps';
 
 const HostingPlansOurHosting = styled(OurHosting)`
   background-color: var(--blue);

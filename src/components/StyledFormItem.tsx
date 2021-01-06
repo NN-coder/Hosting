@@ -111,4 +111,4 @@ const StyledFormItem = styled(FormItem)`
   letter-spacing: 0.01em;
 `;
 
-export { StyledFormItem as default, FormInput, InputLabel };
+export { StyledFormItem, FormInput, InputLabel };

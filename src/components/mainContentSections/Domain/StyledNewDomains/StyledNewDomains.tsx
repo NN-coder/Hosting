@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardBtn from '../../../StandardBtn';
-import domains from './domains';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StandardBtn } from '../../../StandardBtn';
+import { domains } from './domains';
 
 const NewDomainsWrapper = styled(StyledWrapper)`
   display: grid;
@@ -81,4 +81,4 @@ const StyledNewDomains = styled(NewDomains)`
   }
 `;
 
-export default StyledNewDomains;
+export { StyledNewDomains };

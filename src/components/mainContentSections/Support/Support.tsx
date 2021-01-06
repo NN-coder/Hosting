@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import SupportCenter from './SupportCenter/SupportCenter';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { SupportCenter } from './SupportCenter/SupportCenter';
 
 const Support: React.FC = () => (
   <section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LazyImage from '../../../../LazyImage';
+import { LazyImage } from '../../../../LazyImage';
 
 const ServiceCardImg = styled(LazyImage)`
   width: 265px;
@@ -54,4 +54,4 @@ const StyledServiceCard = styled(ServiceCard)`
   }
 `;
 
-export default StyledServiceCard;
+export { StyledServiceCard };

@@ -29,4 +29,4 @@ LazyImage.defaultProps = {
   alt: '',
 };
 
-export default LazyImage;
+export { LazyImage };

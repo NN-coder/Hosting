@@ -11,4 +11,4 @@ const ScrollToTop: FC = () => {
   return null;
 };
 
-export default ScrollToTop;
+export { ScrollToTop };

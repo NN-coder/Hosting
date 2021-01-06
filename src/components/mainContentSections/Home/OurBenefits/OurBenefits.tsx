@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import benefitCards from './benefitCards';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { benefitCards } from './benefitCards';
 
 const OurBenefitsWrapper = styled(StyledWrapper)`
   padding: 85px 0 110px;
@@ -93,4 +93,4 @@ const OurBenefits: React.FC = () => (
   </section>
 );
 
-export default OurBenefits;
+export { OurBenefits };

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-import LazyImage from '../../../LazyImage';
+import { LazyImage } from '../../../LazyImage';
 import { Links } from './workers';
 
 const WorkerCardImg = styled(LazyImage)`
@@ -97,4 +97,4 @@ const WorkerCard: React.FC<Props> = ({ name, position, photo, links }) => {
   );
 };
 
-export default WorkerCard;
+export { WorkerCard };

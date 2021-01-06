@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardForm from '../../../StyledStandardForm';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledStandardForm } from '../../../StyledStandardForm';
 
 const SubmitYourQuestionWrapper = styled(StyledWrapper)`
   padding: 85px 0 110px;
@@ -30,7 +30,7 @@ const SubmitYourQuestion: React.FC = () => {
     <section>
       <SubmitYourQuestionWrapper>
         <StyledStandardSectionTitle rowOne="Submit your" rowTwo="Question" />
-        <StandardForm
+        <StyledStandardForm
           name="submit-your-question"
           action=""
           method="post"
@@ -41,4 +41,4 @@ const SubmitYourQuestion: React.FC = () => {
   );
 };
 
-export default SubmitYourQuestion;
+export { SubmitYourQuestion };

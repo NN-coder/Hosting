@@ -46,4 +46,4 @@ const benefitCards = [
   },
 ];
 
-export default benefitCards;
+export { benefitCards };

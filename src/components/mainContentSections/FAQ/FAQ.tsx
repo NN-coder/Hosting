@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import QuestionFaq from './QuestionFaq/QuestionFaq';
-import SubmitYourQuestion from './SubmitYourQuestion/SubmitYourQuestion';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { QuestionFaq } from './QuestionFaq/QuestionFaq';
+import { SubmitYourQuestion } from './SubmitYourQuestion/SubmitYourQuestion';
 
 const FAQ: React.FC = () => (
   <section>

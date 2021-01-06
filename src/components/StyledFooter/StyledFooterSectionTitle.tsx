@@ -13,4 +13,4 @@ const StyledFooterSectionTitle = styled.div`
   }
 `;
 
-export default StyledFooterSectionTitle;
+export { StyledFooterSectionTitle };

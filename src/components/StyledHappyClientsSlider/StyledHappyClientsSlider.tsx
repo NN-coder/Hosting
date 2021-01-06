@@ -2,10 +2,10 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
-import StyledWrapper from '../StyledWrapper';
-import StyledStandardSectionTitle from '../StyledStandardSectionTitle';
-import StyledSlider, { StyledSliderDots } from '../StyledSlider/StyledSlider';
-import StyledComment from './StyledComment';
+import { StyledWrapper } from '../StyledWrapper';
+import { StyledStandardSectionTitle } from '../StyledStandardSectionTitle';
+import { StyledSlider, StyledSliderDots } from '../StyledSlider/StyledSlider';
+import { StyledComment } from './StyledComment';
 
 const HappyClientsWrapper = styled(StyledWrapper)`
   padding: 120px 0 130px;
@@ -109,4 +109,4 @@ const StyledHappyClientsSlider = styled(HappyClientsSlider)`
   }
 `;
 
-export default StyledHappyClientsSlider;
+export { StyledHappyClientsSlider };

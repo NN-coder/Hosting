@@ -15,4 +15,4 @@ const StandardBtn = styled.button.attrs((props) => ({
   }
 `;
 
-export default StandardBtn;
+export { StandardBtn };

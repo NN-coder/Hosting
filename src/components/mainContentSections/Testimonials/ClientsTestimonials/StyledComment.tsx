@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LazyImage from '../../../LazyImage';
+import { LazyImage } from '../../../LazyImage';
 import quotes from './img/quotes.svg';
 
 const CommentText = styled.p`
@@ -76,4 +76,4 @@ const StyledComment = styled(Comment)`
   }
 `;
 
-export default StyledComment;
+export { StyledComment };

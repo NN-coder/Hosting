@@ -60,4 +60,4 @@ const StyledSliderDots = styled(SliderDots)`
   column-gap: 5px;
 `;
 
-export default StyledSliderDots;
+export { StyledSliderDots };

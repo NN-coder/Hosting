@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
-import StyledSlider, {
+import {
+  StyledSlider,
   StyledSliderDots,
   StyledSliderArrows,
   Arrow,
 } from '../../../StyledSlider/StyledSlider';
-import StyledHomeSliderItem from './StyledHomeSliderItem';
+import { StyledHomeSliderItem } from './StyledHomeSliderItem';
 
 const SlideContent = styled.div`
   position: absolute;
@@ -125,4 +126,4 @@ const StyledHomeSlider = styled(HomeSlider)`
   }
 `;
 
-export default StyledHomeSlider;
+export { StyledHomeSlider };

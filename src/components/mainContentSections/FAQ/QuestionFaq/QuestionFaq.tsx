@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardBtn from '../../../StandardBtn';
-import questions from './questions';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StandardBtn } from '../../../StandardBtn';
+import { questions } from './questions';
 
 const QuestionCard = styled.div`
   display: flex;
@@ -89,4 +89,4 @@ const QuestionFaq: React.FC = () => (
   </section>
 );
 
-export default QuestionFaq;
+export { QuestionFaq };

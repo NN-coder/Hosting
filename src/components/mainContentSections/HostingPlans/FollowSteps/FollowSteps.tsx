@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledStepCard from './StyledStepCard';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledStepCard } from './StyledStepCard';
 
 const FollowStepsWrapper = styled(StyledWrapper)`
   display: grid;
@@ -49,4 +49,4 @@ const FollowSteps: React.FC = () => (
   </section>
 );
 
-export default FollowSteps;
+export { FollowSteps };

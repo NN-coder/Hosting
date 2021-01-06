@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledFeaturedService from './StyledFeaturedService/StyledFeaturedService';
-import StyledLatestNews from './StyledLatestNews/StyledLatestNews';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledFeaturedService } from './StyledFeaturedService/StyledFeaturedService';
+import { StyledLatestNews } from './StyledLatestNews/StyledLatestNews';
 
 const DoubleSectionWrapper = styled(StyledWrapper)`
   display: grid;
@@ -45,4 +45,4 @@ const StyledDoubleSection = styled(DoubleSection)`
   }
 `;
 
-export default StyledDoubleSection;
+export { StyledDoubleSection };

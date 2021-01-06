@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledWrapper from '../../../StyledWrapper';
-import StyledFormItem from '../../../StyledFormItem';
-import StandardBtn from '../../../StandardBtn';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledFormItem } from '../../../StyledFormItem';
+import { StandardBtn } from '../../../StandardBtn';
 import selectBg from './select-background.png';
 
 const RegisterDomainForm = styled.form.attrs({
@@ -82,4 +82,4 @@ const RegisterDomain: React.FC = () => (
   </section>
 );
 
-export default RegisterDomain;
+export { RegisterDomain };

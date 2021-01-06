@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
-import StyledSliderTrack from './StyledSliderTrack';
-import StyledSliderDots from './StyledSliderDots';
-import StyledSliderArrows, { Arrow } from './StyledSliderArrows';
+import { StyledSliderTrack } from './StyledSliderTrack';
+import { StyledSliderDots } from './StyledSliderDots';
+import { StyledSliderArrows, Arrow } from './StyledSliderArrows';
 
 function scrollSlider(direction: 'right' | 'left', slideCount: number, prevSlide: number) {
   if (direction === 'right') {
@@ -73,4 +73,4 @@ const StyledSlider = styled(Slider)`
   touch-action: pan-y;
 `;
 
-export { StyledSlider as default, StyledSliderDots, StyledSliderArrows, Arrow };
+export { StyledSlider, StyledSliderDots, StyledSliderArrows, Arrow };

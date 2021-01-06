@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { CgMenu } from 'react-icons/cg';
 
-import StyledWrapper from '../StyledWrapper';
-import StyledLogo from '../StyledLogo/StyledLogo';
-import StyledHeaderLogin from './StyledHeaderLogin';
-import HeaderNav from './HeaderNav';
-import MainMenu from './MainMenu';
+import { StyledWrapper } from '../StyledWrapper';
+import { StyledLogo } from '../StyledLogo/StyledLogo';
+import { StyledHeaderLogin } from './StyledHeaderLogin';
+import { HeaderNav } from './HeaderNav';
+import { MainMenu } from './MainMenu';
 
 const HeaderWrapper = styled(StyledWrapper)`
   display: flex;
@@ -67,4 +67,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export { Header };

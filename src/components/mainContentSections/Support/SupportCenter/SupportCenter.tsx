@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledFormItem, { FormInput, InputLabel } from '../../../StyledFormItem';
-import StandardBtn from '../../../StandardBtn';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledFormItem, FormInput, InputLabel } from '../../../StyledFormItem';
+import { StandardBtn } from '../../../StandardBtn';
 import icon from './icon.svg';
 
 const SearchForm = styled.form.attrs({
@@ -86,4 +86,4 @@ const SupportCenter: React.FC = () => (
   </section>
 );
 
-export default SupportCenter;
+export { SupportCenter };

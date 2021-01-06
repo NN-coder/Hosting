@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
-import Masonry from '../../../Masonry';
-import StandardBtn from '../../../StandardBtn';
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledComment from './StyledComment';
-import comments, { Comment } from './comments';
+import { Masonry } from '../../../Masonry';
+import { StandardBtn } from '../../../StandardBtn';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledComment } from './StyledComment';
+import { comments, Comment } from './comments';
 
 const ClientsTestimonialsWrapper = styled(StyledWrapper)`
   padding: 80px 0 0;
@@ -92,4 +92,4 @@ const ClientsTestimonials: React.FC = () => {
   );
 };
 
-export default ClientsTestimonials;
+export { ClientsTestimonials };

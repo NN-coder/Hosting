@@ -5,4 +5,4 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
 `;
 
-export default StyledWrapper;
+export { StyledWrapper };

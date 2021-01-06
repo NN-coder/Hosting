@@ -28,4 +28,4 @@ const SliderArrows: React.FC<Props> = ({ className, handleClickOnLeft, handleCli
 
 const StyledSliderArrows = styled(SliderArrows)``;
 
-export { StyledSliderArrows as default, Arrow };
+export { StyledSliderArrows, Arrow };

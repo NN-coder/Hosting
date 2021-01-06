@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 
-import StyledFooterSectionTitle from './StyledFooterSectionTitle';
+import { StyledFooterSectionTitle } from './StyledFooterSectionTitle';
 
 const LinksList = styled.ul`
   display: flex;
@@ -59,4 +59,4 @@ const StyledSocialMedia = styled(SocialMedia)`
   }
 `;
 
-export default StyledSocialMedia;
+export { StyledSocialMedia };

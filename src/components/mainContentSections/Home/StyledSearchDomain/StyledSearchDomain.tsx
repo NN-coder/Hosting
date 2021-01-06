@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FaSearch } from 'react-icons/fa';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StandardBtn from '../../../StandardBtn';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StandardBtn } from '../../../StandardBtn';
 import selectBg from './select_bg.png';
 
 const SearchDomainWrapper = styled(StyledWrapper)`
@@ -128,4 +128,4 @@ const StyledSearchDomain = styled(SearchDomain)`
   }
 `;
 
-export default StyledSearchDomain;
+export { StyledSearchDomain };

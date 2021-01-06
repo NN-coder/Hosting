@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 
 const Coupon = styled.div`
   max-width: 380px;
@@ -80,4 +80,4 @@ const WhatIsHot: React.FC = () => (
   </section>
 );
 
-export default WhatIsHot;
+export { WhatIsHot };

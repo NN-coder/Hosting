@@ -11,4 +11,4 @@ const sectionNames = [
   'Contact us',
 ];
 
-export default sectionNames;
+export { sectionNames };

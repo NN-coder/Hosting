@@ -29,4 +29,4 @@ const Icon: React.FC<Props> = ({ children, viewBox, className }) => {
   );
 };
 
-export default Icon;
+export { Icon };

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FaRegEnvelope } from 'react-icons/fa';
 
-import StyledWrapper from './StyledWrapper';
-import StyledStandardSectionTitle from './StyledStandardSectionTitle';
-import StandardBtn from './StandardBtn';
+import { StyledWrapper } from './StyledWrapper';
+import { StyledStandardSectionTitle } from './StyledStandardSectionTitle';
+import { StandardBtn } from './StandardBtn';
 
 const NewsletterWrapper = styled(StyledWrapper)`
   display: flex;
@@ -76,4 +76,4 @@ const StyledNewsletterSection = styled(NewsletterSection)`
   }
 `;
 
-export default StyledNewsletterSection;
+export { StyledNewsletterSection };

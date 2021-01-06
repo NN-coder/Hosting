@@ -1,9 +1,9 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import OurDetails from './OurDetails/OurDetails';
-import StyledSpecialOffers from './StyledSpecialOffers/StyledSpecialOffers';
-import OurTeam from './OurTeam/OurTeam';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { OurDetails } from './OurDetails/OurDetails';
+import { StyledSpecialOffers } from './StyledSpecialOffers/StyledSpecialOffers';
+import { OurTeam } from './OurTeam/OurTeam';
 
 const AboutUs: React.FC = () => (
   <section>

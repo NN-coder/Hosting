@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledFooterSectionTitle from './StyledFooterSectionTitle';
+import { StyledFooterSectionTitle } from './StyledFooterSectionTitle';
 
 const ContactUsList = styled.ul`
   max-width: 220px;
@@ -41,4 +41,4 @@ const ContactUs: React.FC = () => (
   </div>
 );
 
-export default ContactUs;
+export { ContactUs };

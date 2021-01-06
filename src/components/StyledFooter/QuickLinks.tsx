@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import shortid from 'shortid';
 import { NavLink } from 'react-router-dom';
 
-import StyledFooterSectionTitle from './StyledFooterSectionTitle';
-import sectionNames from '../sectionNames';
+import { StyledFooterSectionTitle } from './StyledFooterSectionTitle';
+import { sectionNames } from '../sectionNames';
 
 const QuickLinksList = styled.ul`
   display: grid;
@@ -29,10 +29,6 @@ const navLinks = sectionNames.map((name) => ({
   id: shortid.generate(),
 }));
 
-const handleClick = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
 const QuickLinks: React.FC = () => (
   <div>
     <StyledFooterSectionTitle>Quick Links</StyledFooterSectionTitle>
@@ -46,4 +42,4 @@ const QuickLinks: React.FC = () => (
   </div>
 );
 
-export default QuickLinks;
+export { QuickLinks };

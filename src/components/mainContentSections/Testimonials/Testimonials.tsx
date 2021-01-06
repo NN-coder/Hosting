@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MainContentSectionPromo from '../MainContentSectionPromo/MainContentSectionPromo';
-import ClientsTestimonials from './ClientsTestimonials/ClientsTestimonials';
-import SubmitYourTestimonial from './SubmitYourTestimonial/SubmitYourTestimonial';
+import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
+import { ClientsTestimonials } from './ClientsTestimonials/ClientsTestimonials';
+import { SubmitYourTestimonial } from './SubmitYourTestimonial/SubmitYourTestimonial';
 
 const Testimonials: React.FC = () => (
   <section>

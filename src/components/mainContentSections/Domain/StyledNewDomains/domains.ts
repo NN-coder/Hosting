@@ -13,4 +13,4 @@ const domains = [
   '.en',
 ];
 
-export default domains;
+export { domains };

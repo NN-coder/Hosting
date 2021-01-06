@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledHostingPlanCard from './StyledHostingPlanCard';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledHostingPlanCard } from './StyledHostingPlanCard';
 
 const OurHostingWrapper = styled(StyledWrapper)`
   display: grid;
@@ -49,4 +49,4 @@ const OurHosting: React.FC<Props> = ({ className }) => (
   </section>
 );
 
-export default OurHosting;
+export { OurHosting };

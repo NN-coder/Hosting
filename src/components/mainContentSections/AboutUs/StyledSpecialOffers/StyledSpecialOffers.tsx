@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import StyledOffer from './StyledOffer';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { StyledOffer } from './StyledOffer';
 
 const SpecialOffersWrapper = styled(StyledWrapper)`
   display: grid;
@@ -51,4 +51,4 @@ const StyledSpecialOffers = styled(SpecialOffers)`
   }
 `;
 
-export default StyledSpecialOffers;
+export { StyledSpecialOffers };

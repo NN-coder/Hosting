@@ -76,4 +76,4 @@ const workers: Worker[] = [
   },
 ];
 
-export default workers;
+export { workers };

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import shortid from 'shortid';
+import { NavLink } from 'react-router-dom';
 
-import StandardBtn from '../StandardBtn';
-import sectionNames from '../sectionNames';
+import { StandardBtn } from '../StandardBtn';
+import { sectionNames } from '../sectionNames';
 
 const MainNav = styled.nav`
   display: flex;
@@ -46,5 +46,4 @@ const HeaderNav: React.FC<Props> = ({ handleClick }) => (
   </MainNav>
 );
 
-export default HeaderNav;
-export { MainNavLink };
+export { HeaderNav, MainNavLink };

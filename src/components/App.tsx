@@ -2,11 +2,11 @@ import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import StyledLoadingScreen from './StyledLoadingScreen/StyledLoadingScreen';
-import Header from './Header/Header';
-import StyledNewsletterSection from './StyledNewsletterSection';
-import StyledFooter from './StyledFooter/StyledFooter';
-import ScrollToTop from './ScrollToTop';
+import { StyledLoadingScreen } from './StyledLoadingScreen/StyledLoadingScreen';
+import { Header } from './Header/Header';
+import { StyledNewsletterSection } from './StyledNewsletterSection';
+import { StyledFooter } from './StyledFooter/StyledFooter';
+import { ScrollToTop } from './ScrollToTop';
 
 const Home = React.lazy(() => import('./mainContentSections/Home/Home'));
 const AboutUs = React.lazy(() => import('./mainContentSections/AboutUs/AboutUs'));
@@ -96,4 +96,4 @@ const App: React.FC = () => (
   </BrowserRouter>
 );
 
-export default App;
+export { App };

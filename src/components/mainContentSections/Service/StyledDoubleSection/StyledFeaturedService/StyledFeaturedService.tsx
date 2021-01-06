@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../../StyledStandardSectionTitle';
-import StyledServiceCard from './StyledServiceCard';
+import { StyledStandardSectionTitle } from '../../../../StyledStandardSectionTitle';
+import { StyledServiceCard } from './StyledServiceCard';
 
 const images = require.context('./img');
 const getImagePath = (name: string): string => images(name).default;
@@ -49,4 +49,4 @@ const StyledFeaturedService = styled(FeaturedService)`
   padding-right: 40px;
 `;
 
-export default StyledFeaturedService;
+export { StyledFeaturedService };

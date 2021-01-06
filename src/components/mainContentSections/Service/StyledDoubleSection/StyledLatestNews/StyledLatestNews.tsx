@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import StyledStandardSectionTitle from '../../../../StyledStandardSectionTitle';
-import StyledNewsCard from './StyledNewsCard';
+import { StyledStandardSectionTitle } from '../../../../StyledStandardSectionTitle';
+import { StyledNewsCard } from './StyledNewsCard';
 
 export interface Props {
   className?: string;
@@ -31,4 +31,4 @@ const StyledLatestNews = styled(LatestNews)`
   padding-left: 30px;
 `;
 
-export default StyledLatestNews;
+export { StyledLatestNews };

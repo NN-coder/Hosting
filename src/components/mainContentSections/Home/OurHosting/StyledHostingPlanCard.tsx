@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
 
-import StandardBtn from '../../../StandardBtn';
+import { StandardBtn } from '../../../StandardBtn';
 
 const HostingPlanPrice = styled.div`
   color: var(--text-color-primary);
@@ -104,4 +104,4 @@ const StyledHostingPlanCard = styled(HostingPlanCard)`
   row-gap: 30px;
 `;
 
-export default StyledHostingPlanCard;
+export { StyledHostingPlanCard };

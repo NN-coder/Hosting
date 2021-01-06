@@ -54,4 +54,4 @@ const StyledNewsCard = styled(NewsCard)`
   column-gap: 20px;
 `;
 
-export default StyledNewsCard;
+export { StyledNewsCard };

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import workers from './workers';
-import StyledWrapper from '../../../StyledWrapper';
-import StyledStandardSectionTitle from '../../../StyledStandardSectionTitle';
-import WorkerCard from './WorkerCard';
+import { workers } from './workers';
+import { StyledWrapper } from '../../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
+import { WorkerCard } from './WorkerCard';
 
 const OurTeamWrapper = styled(StyledWrapper)`
   display: grid;
@@ -35,4 +35,4 @@ const OurTeam: React.FC = () => (
   </section>
 );
 
-export default OurTeam;
+export { OurTeam };

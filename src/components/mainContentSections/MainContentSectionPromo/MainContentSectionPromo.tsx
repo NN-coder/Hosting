@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import StyledPromo, { Backgrounds } from './StyledPromo';
+import { StyledPromo, Backgrounds } from './StyledPromo';
 
 const images = require.context('./img');
 const getImagePath = (name: string): string => images(name).default;
@@ -39,4 +39,4 @@ const MainContentSectionPromo: React.FC<Props> = ({
   );
 };
 
-export default MainContentSectionPromo;
+export { MainContentSectionPromo };

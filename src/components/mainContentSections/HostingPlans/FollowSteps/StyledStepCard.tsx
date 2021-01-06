@@ -49,4 +49,4 @@ const StyledStepCard = styled(StepCard)`
   column-gap: 30px;
 `;
 
-export default StyledStepCard;
+export { StyledStepCard };
