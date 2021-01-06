@@ -21,19 +21,11 @@ const SlideContentTitle = styled.div`
   font-weight: 800;
   font-size: 4rem;
   letter-spacing: 0.025em;
-
-  @media screen and (max-width: 600px) {
-    font-size: 3.5rem;
-  }
 `;
 const SlideContentSubtitle = styled.div`
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: 0.095em;
-
-  @media screen and (max-width: 600px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const theme = {
@@ -50,29 +42,29 @@ const HomeSlider: React.FC<Props> = ({ className }) => (
     <StyledSlider className={className} navArrows>
       <StyledHomeSliderItem number="1">
         <SlideContent>
-          <SlideContentTitle>Awesome hosting 1</SlideContentTitle>
-          <SlideContentSubtitle>With unlimited features 1</SlideContentSubtitle>
+          <SlideContentTitle>Awesome hosting №1</SlideContentTitle>
+          <SlideContentSubtitle>With unlimited features №1</SlideContentSubtitle>
         </SlideContent>
       </StyledHomeSliderItem>
 
       <StyledHomeSliderItem number="2">
         <SlideContent>
-          <SlideContentTitle>Awesome hosting 2</SlideContentTitle>
-          <SlideContentSubtitle>With unlimited features 2</SlideContentSubtitle>
+          <SlideContentTitle>Awesome hosting №2</SlideContentTitle>
+          <SlideContentSubtitle>With unlimited features №2</SlideContentSubtitle>
         </SlideContent>
       </StyledHomeSliderItem>
 
       <StyledHomeSliderItem number="3">
         <SlideContent>
-          <SlideContentTitle>Awesome hosting 3</SlideContentTitle>
-          <SlideContentSubtitle>With unlimited features 3</SlideContentSubtitle>
+          <SlideContentTitle>Awesome hosting №3</SlideContentTitle>
+          <SlideContentSubtitle>With unlimited features №3</SlideContentSubtitle>
         </SlideContent>
       </StyledHomeSliderItem>
 
       <StyledHomeSliderItem number="4">
         <SlideContent>
-          <SlideContentTitle>Awesome hosting 4</SlideContentTitle>
-          <SlideContentSubtitle>With unlimited features 4</SlideContentSubtitle>
+          <SlideContentTitle>Awesome hosting №4</SlideContentTitle>
+          <SlideContentSubtitle>With unlimited features №4</SlideContentSubtitle>
         </SlideContent>
       </StyledHomeSliderItem>
     </StyledSlider>
@@ -99,23 +91,36 @@ const StyledHomeSlider = styled(HomeSlider)`
     width: 100%;
     max-width: 1200px;
     transform: translateY(-50%);
-    @media screen and (max-width: 1200px) {
+  }
+
+  ${Arrow} {
+    width: 70px;
+    height: 70px;
+    color: rgba(255, 255, 255, 0.5);
+    background: none;
+    border: none;
+    transition: color 0.2s ease;
+    &:hover,
+    &:focus {
+      color: white;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    ${StyledSliderArrows} {
       left: 0;
     }
-
+  }
+  @media (max-width: 600px) {
+    ${SlideContentTitle} {
+      font-size: 3rem;
+    }
+    ${SlideContentSubtitle} {
+      font-size: 1.5rem;
+    }
     ${Arrow} {
-      padding: 18.5px 18px 16px;
-      background: none;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      transition: border-color 0.2s ease;
-      @media screen and (prefers-reduced-motion: reduce) {
-        transition: none;
-      }
-      &:hover,
-      &:focus {
-        border-color: white;
-      }
+      width: 60px;
+      height: 60px;
     }
   }
 `;

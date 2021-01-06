@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
 
-const Arrow = styled.button`
+const Arrow = styled.button.attrs({ type: 'button' })`
   color: white;
 `;
 
@@ -15,12 +15,12 @@ export interface Props {
 
 const SliderArrows: React.FC<Props> = ({ className, handleClickOnLeft, handleClickOnRight }) => (
   <div className={className}>
-    <IconContext.Provider value={{ size: '23px' }}>
-      <Arrow type="button" onClick={handleClickOnLeft}>
-        <IoIosArrowBack />
+    <IconContext.Provider value={{ size: '100%' }}>
+      <Arrow onClick={handleClickOnLeft} aria-label="Previous">
+        <IoIosArrowDropleft />
       </Arrow>
-      <Arrow type="button" onClick={handleClickOnRight}>
-        <IoIosArrowForward />
+      <Arrow onClick={handleClickOnRight} aria-label="Next">
+        <IoIosArrowDropright />
       </Arrow>
     </IconContext.Provider>
   </div>
@@ -28,5 +28,4 @@ const SliderArrows: React.FC<Props> = ({ className, handleClickOnLeft, handleCli
 
 const StyledSliderArrows = styled(SliderArrows)``;
 
-export default StyledSliderArrows;
-export { Arrow };
+export { StyledSliderArrows as default, Arrow };

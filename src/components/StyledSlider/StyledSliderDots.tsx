@@ -11,9 +11,6 @@ const Dot = styled.button<{ active?: boolean }>`
   border-color: ${({ active, theme }) => (active ? theme.activeDotColor : theme.dotColor)};
   border-radius: 50%;
   transition: all 0.3s ease;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
   &:hover,
   &:focus {
     background-color: ${({ active, theme }) => (active ? theme.activeDotColor : theme.dotColor)};
@@ -26,7 +23,7 @@ function createDotsOptions(count: number, handleClick: Dispatch<SetStateAction<n
   for (let i = 0; i < count; i += 1) {
     dotsOptions.push({
       slideNum: i,
-      onClick: () => handleClick(i),
+      handleClick: () => handleClick(i),
       dotKey: shortid.generate(),
     });
   }
@@ -49,8 +46,8 @@ const SliderDots: React.FC<Props> = ({ currentSlide, count, handleDotClick, clas
 
   return (
     <div className={className}>
-      {dotsOptions.map(({ slideNum, onClick, dotKey }) => (
-        <Dot type="button" key={dotKey} onClick={onClick} active={currentSlide === slideNum}>
+      {dotsOptions.map(({ slideNum, handleClick, dotKey }) => (
+        <Dot type="button" key={dotKey} onClick={handleClick} active={currentSlide === slideNum}>
           {`Show slide number ${slideNum + 1}`}
         </Dot>
       ))}

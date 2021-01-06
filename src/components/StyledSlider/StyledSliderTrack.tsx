@@ -36,9 +36,6 @@ const StyledSliderTrack = styled(SliderTrack)`
   display: flex;
   height: 100%;
   transition: transform 1s ease;
-  @media screen and (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
 `;
 
 export default StyledSliderTrack;
