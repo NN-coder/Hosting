@@ -6,7 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StandardBtn } from '../../../StandardBtn';
-import selectBg from './select_bg.png';
+import { getSingleImage } from '../../../img';
 
 const SearchDomainWrapper = styled(StyledWrapper)`
   display: flex;
@@ -51,7 +51,7 @@ const SearchDomainFormInput = styled(SearchDomainFormItem)`
 `;
 const SearchDomainFormSelect = styled(SearchDomainFormItem)`
   min-width: 165px;
-  background-image: url(${selectBg});
+  background-image: url(${getSingleImage('home/select-bg', 'png')});
   background-repeat: no-repeat;
   background-position: right 15px center;
   appearance: none;

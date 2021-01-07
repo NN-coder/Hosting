@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { CgMenu } from 'react-icons/cg';
 
 import { StyledWrapper } from '../StyledWrapper';
-import { StyledLogo } from '../StyledLogo/StyledLogo';
+import { StyledLogo } from '../StyledLogo';
 import { StyledHeaderLogin } from './StyledHeaderLogin';
 import { HeaderNav } from './HeaderNav';
 import { MainMenu } from './MainMenu';

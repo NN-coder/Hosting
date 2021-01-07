@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledWrapper } from '../../../StyledWrapper';
-import imageJpg from './our-details.jpg';
+import { getSingleImage } from '../../../img';
 
 // TODO: Add lazy loading
 const OurDetailsImg = styled.div`
   width: 100%;
   height: 100%;
-  background: url(${imageJpg}) center no-repeat;
+  background: url(${getSingleImage('aboutUs/our-details', 'jpg')}) center no-repeat;
 `;
 const OurDetailsInner = styled.div`
   color: var(--text-color);

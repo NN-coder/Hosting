@@ -1,9 +1,11 @@
 import React, { useMemo } from 'react';
 
 import { StyledPromo, Backgrounds } from './StyledPromo';
+import { getSingleImage } from '../../img';
 
-const images = require.context('./img');
-const getImagePath = (name: string): string => images(name).default;
+const getPromoBackground = (name: string, res: string) => {
+  return getSingleImage(`mainContentSectionPromo/${name}_${res}`, 'jpg');
+};
 
 export interface Props {
   sectionName: string;
@@ -20,11 +22,11 @@ const MainContentSectionPromo: React.FC<Props> = ({
 }) => {
   const backgrounds: Backgrounds = useMemo(
     () => ({
-      '540x960': getImagePath(`./${sectionName}_540x960.jpg`),
-      '720x1280': getImagePath(`./${sectionName}_720x1280.jpg`),
-      '1280x720': getImagePath(`./${sectionName}_1280x720.jpg`),
-      '1600x900': getImagePath(`./${sectionName}_1600x900.jpg`),
-      '2048x1152': getImagePath(`./${sectionName}_2048x1152.jpg`),
+      '540x960': getPromoBackground(sectionName, '540x960'),
+      '720x1280': getPromoBackground(sectionName, '720x1280'),
+      '1280x720': getPromoBackground(sectionName, '1280x720'),
+      '1600x900': getPromoBackground(sectionName, '1600x900'),
+      '2048x1152': getPromoBackground(sectionName, '2048x1152'),
     }),
     [sectionName]
   );

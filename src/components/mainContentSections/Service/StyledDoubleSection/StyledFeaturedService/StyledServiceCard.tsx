@@ -22,14 +22,16 @@ const ServiceCardText = styled.p`
 export interface Props {
   serviceName: string;
   children: string;
-  image: string;
-  imageWebp: string;
+  images: {
+    jpg: string;
+    webp?: string;
+  };
   className?: string;
 }
 
-const ServiceCard: React.FC<Props> = ({ className, image, imageWebp, serviceName, children }) => (
+const ServiceCard: React.FC<Props> = ({ className, images, serviceName, children }) => (
   <div className={className}>
-    <ServiceCardImg image={image} imageWebp={imageWebp} />
+    <ServiceCardImg image={images.jpg} imageWebp={images.webp} />
     <ServiceCardInner>
       <ServiceCardTitle>{serviceName}</ServiceCardTitle>
       <ServiceCardText>{children}</ServiceCardText>

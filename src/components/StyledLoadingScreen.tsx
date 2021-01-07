@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import loadingGif from './loading.gif';
+import { getSingleImage } from './img';
 
 export interface Props {
   className?: string;
@@ -9,7 +9,7 @@ export interface Props {
 
 const LoadingScreen: React.FC<Props> = ({ className }) => (
   <div className={className}>
-    <img src={loadingGif} alt="Loading" width="350px" height="250px" />
+    <img src={getSingleImage('loading', 'gif')} alt="Loading" width="350px" height="250px" />
     Loading...
   </div>
 );

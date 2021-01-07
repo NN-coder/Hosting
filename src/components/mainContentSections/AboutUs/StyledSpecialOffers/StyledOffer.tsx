@@ -4,7 +4,7 @@ import shortid from 'shortid';
 
 import { LazyImage } from '../../../LazyImage';
 import { StandardBtn } from '../../../StandardBtn';
-import listArrow from './img/list-arrow.svg';
+import { getSingleImage } from '../../../img';
 
 const OfferImg = styled(LazyImage)`
   width: 260px;
@@ -44,7 +44,7 @@ const OfferListItem = styled.li`
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    content: url(${listArrow});
+    content: url(${getSingleImage('aboutUs/specialOffers/list-arrow', 'svg')});
   }
 `;
 

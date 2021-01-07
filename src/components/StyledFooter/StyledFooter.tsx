@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { StyledWrapper } from '../StyledWrapper';
-import { StyledLogo } from '../StyledLogo/StyledLogo';
+import { StyledLogo } from '../StyledLogo';
 import { QuickLinks } from './QuickLinks';
 import { ContactUs } from './ContactUs';
 import { StyledSocialMedia } from './StyledSocialMedia';

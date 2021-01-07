@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../../StyledStandardSectionTitle';
 import { StyledServiceCard } from './StyledServiceCard';
+import { getImages } from '../../../../img';
 
-const images = require.context('./img');
-const getImagePath = (name: string): string => images(name).default;
+const getServiceImg = (num: number) => {
+  return getImages(`service/featuredService/service_${num}`, ['jpg', 'webp'], 'object');
+};
 
 export interface Props {
   className?: string;
@@ -15,29 +17,17 @@ export interface Props {
 const FeaturedService: React.FC<Props> = ({ className }) => (
   <section className={className}>
     <StyledStandardSectionTitle rowOne="Featured" rowTwo="Service" />
-    <StyledServiceCard
-      image={getImagePath('./service_1.jpg')}
-      imageWebp={getImagePath('./service_1.webp')}
-      serviceName="Service name one"
-    >
+    <StyledServiceCard images={getServiceImg(1)} serviceName="Service name one">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
       been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer
       took a galley of type and scrambled it to make.
     </StyledServiceCard>
-    <StyledServiceCard
-      image={getImagePath('./service_2.jpg')}
-      imageWebp={getImagePath('./service_2.webp')}
-      serviceName="Service name two"
-    >
+    <StyledServiceCard images={getServiceImg(2)} serviceName="Service name two">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
       been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer
       took a galley of type and scrambled it to make.
     </StyledServiceCard>
-    <StyledServiceCard
-      image={getImagePath('./service_3.jpg')}
-      imageWebp={getImagePath('./service_3.webp')}
-      serviceName="Service name three"
-    >
+    <StyledServiceCard images={getServiceImg(3)} serviceName="Service name three">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
       been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer
       took a galley of type and scrambled it to make.

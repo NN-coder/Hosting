@@ -6,7 +6,7 @@ import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledFormItem, FormInput, InputLabel } from '../../../StyledFormItem';
 import { StandardBtn } from '../../../StandardBtn';
-import icon from './icon.svg';
+import { getSingleImage } from '../../../img';
 
 const SearchForm = styled.form.attrs({
   action: '',
@@ -29,7 +29,7 @@ const SearchFormInput = styled(StyledFormItem).attrs({
     top: 50%;
     left: 20px;
     transform: translateY(-50%);
-    content: url(${icon});
+    content: url(${getSingleImage('support/icon', 'svg')});
   }
   ${FormInput} {
     padding: 0 50px;

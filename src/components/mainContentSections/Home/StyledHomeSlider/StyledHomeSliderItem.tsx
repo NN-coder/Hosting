@@ -2,10 +2,13 @@ import React, { ReactNode, useCallback } from 'react';
 import MediaQuery from 'react-responsive';
 import styled from 'styled-components';
 
-const images = require.context('./img');
-const getImagePath = (name: string): string => images(name).default;
+import { getSingleImage } from '../../../img';
 
 type Resolution = '2048x1152' | '1600x900' | '1280x720' | '720x1280' | '540x960';
+
+const getSliderItemBg = (num: number | string, res: Resolution) => {
+  return getSingleImage(`home/homeSlider/slide-${num}_${res}`, 'jpg');
+};
 
 export interface Props {
   number: number | string;
@@ -16,10 +19,10 @@ export interface Props {
 // TODO: Add lazy loading for background images
 const HomeSliderItem: React.FC<Props> = ({ number, children, className }) => {
   const getSliderItem = useCallback(
-    (resolution: Resolution) => (
+    (res: Resolution) => (
       <div
         className={className}
-        style={{ backgroundImage: `url(${getImagePath(`./slide-${number}_${resolution}.jpg`)})` }}
+        style={{ backgroundImage: `url(${getSliderItemBg(number, res)})` }}
       >
         {children}
       </div>

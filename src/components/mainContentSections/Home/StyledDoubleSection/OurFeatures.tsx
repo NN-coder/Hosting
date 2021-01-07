@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StandardBtn } from '../../../StandardBtn';
-import featuresListItemArrow from './features-list-item-arrow.svg';
+import { getSingleImage } from '../../../img';
 
 const OurFeaturesInner = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ const FeaturesListItem = styled.li`
     position: absolute;
     top: 0;
     left: 0;
-    content: url(${featuresListItemArrow});
+    content: url(${getSingleImage('home/features-list-item-arrow', 'svg')});
   }
 `;
 

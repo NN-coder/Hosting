@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { LazyImage } from '../../../LazyImage';
-import quotes from './img/quotes.svg';
+import { getSingleImage } from '../../../img';
 
 const CommentText = styled.p`
   color: var(--text-color);
@@ -53,7 +53,6 @@ const Comment: React.FC<Props> = ({ className, name, image, imageWebp, children:
 
 Comment.defaultProps = {
   name: 'Anonymous',
-  imageWebp: '',
 };
 
 const StyledComment = styled(Comment)`
@@ -72,7 +71,7 @@ const StyledComment = styled(Comment)`
     height: 50px;
     background-color: white;
     border: solid 1px #d3e5eb;
-    content: url(${quotes});
+    content: url(${getSingleImage('testimonials/clientsTestimonials/quotes', 'svg')});
   }
 `;
 

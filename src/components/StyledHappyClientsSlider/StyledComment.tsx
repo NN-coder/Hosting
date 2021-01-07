@@ -37,18 +37,20 @@ function cropText(str: string) {
 export interface Props {
   children: string;
   name: string;
-  photo: string;
-  photoWebp?: string;
+  photos: {
+    jpg: string;
+    webp: string;
+  };
   className?: string;
 }
 
-const Comment: React.FC<Props> = ({ className, children, photo, photoWebp, name }) => {
+const Comment: React.FC<Props> = ({ className, children, photos, name }) => {
   const text = cropText(children);
 
   // TODO: Figure out why all images are loaded at the same time
   return (
     <div className={className}>
-      <CommentPhoto image={photo} imageWebp={photoWebp} alt={name} />
+      <CommentPhoto image={photos.jpg} imageWebp={photos.webp} alt={name} />
       <CommentInner>
         <CommentText>{text}</CommentText>
         <CommentAuthor>{name}</CommentAuthor>

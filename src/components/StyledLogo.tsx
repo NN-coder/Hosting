@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LazyImage } from '../LazyImage';
-import logo from './logo.png';
+import { LazyImage } from './LazyImage';
+import { getSingleImage } from './img';
 
 export interface Props {
   className?: string;
@@ -11,7 +11,7 @@ export interface Props {
 const Logo: React.FC<Props> = ({ className }) => (
   <h1 className={className}>
     <a href="/">
-      <LazyImage image={logo} />
+      <LazyImage image={getSingleImage('logo', 'png')} />
       Hosting
     </a>
   </h1>

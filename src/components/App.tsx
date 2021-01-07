@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import { StyledLoadingScreen } from './StyledLoadingScreen/StyledLoadingScreen';
+import { StyledLoadingScreen } from './StyledLoadingScreen';
 import { Header } from './Header/Header';
 import { StyledNewsletterSection } from './StyledNewsletterSection';
 import { StyledFooter } from './StyledFooter/StyledFooter';

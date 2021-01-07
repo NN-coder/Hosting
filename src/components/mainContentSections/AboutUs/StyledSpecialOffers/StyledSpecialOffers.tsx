@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledOffer } from './StyledOffer';
+import { getSingleImage } from '../../../img';
 
 const SpecialOffersWrapper = styled(StyledWrapper)`
   display: grid;
@@ -17,8 +18,9 @@ const SpecialOffersWrapper = styled(StyledWrapper)`
   }
 `;
 
-const images = require.context('./img');
-const getImagePath = (name: string): string => images(name).default;
+const getOfferImg = (number: number, ext: 'jpg' | 'webp') => {
+  return getSingleImage(`aboutUs/specialOffers/special-offer_${number}`, ext);
+};
 
 export interface Props {
   className?: string;
@@ -30,13 +32,13 @@ const SpecialOffers: React.FC<Props> = ({ className }) => (
       <StyledStandardSectionTitle rowOne="Special" rowTwo="Offers" />
       <StyledOffer
         offerTitle="Host your website"
-        image={getImagePath('./special-offer_1.jpg')}
-        imageWebp={getImagePath('./special-offer_1.webp')}
+        image={getOfferImg(1, 'jpg')}
+        imageWebp={getOfferImg(1, 'webp')}
       />
       <StyledOffer
         offerTitle="Big offers for hosting"
-        image={getImagePath('./special-offer_2.jpg')}
-        imageWebp={getImagePath('./special-offer_2.webp')}
+        image={getOfferImg(2, 'jpg')}
+        imageWebp={getOfferImg(2, 'webp')}
       />
     </SpecialOffersWrapper>
   </section>
