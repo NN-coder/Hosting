@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import MediaQuery from 'react-responsive';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { CgMenu } from 'react-icons/cg';
@@ -9,6 +8,7 @@ import { StyledLogo } from '../StyledLogo';
 import { StyledHeaderLogin } from './StyledHeaderLogin';
 import { DesktopNav } from './DesktopNav';
 import { StyledMobileMenu } from './StyledMobileMenu';
+import { SCROLL_UP, SCROLL_DOWN } from '../scrollEvents';
 
 const HeaderWrapper = styled(StyledWrapper)`
   display: flex;
@@ -32,31 +32,76 @@ export interface Props {
   className?: string;
 }
 
-// TODO: Make the header pop up when scrolling up on a mobile device
 const Header: React.FC<Props> = ({ className }) => {
+  const mediaQuery = window.matchMedia('(max-width:950px)');
+
+  const [mobileMode, setMobileMode] = useState(mediaQuery.matches);
   const [isMobileMenuClosed, setMobileMenuClosed] = useState(true);
 
+  const headerRef = useRef<HTMLElement>(null);
+
+  const handleScrollUp = useCallback(() => {
+    const { current: header } = headerRef;
+
+    if (header) {
+      header.style.transform = '';
+    }
+  }, []);
+
+  const handleScrollDown = useCallback(() => {
+    const { current: header } = headerRef;
+
+    if (header && header.offsetHeight < window.pageYOffset) {
+      header.style.transform = 'translateY(calc(-100% - 15px))';
+    }
+  }, []);
+
+  const handleMediaQueryChange = useCallback(
+    ({ matches }: MediaQueryListEvent) => {
+      setMobileMode(matches);
+      setMobileMenuClosed(true);
+
+      // Called because the same actions must be performed here
+      handleScrollUp();
+    },
+    [handleScrollUp]
+  );
+
+  useEffect(() => {
+    if (mobileMode) {
+      window.addEventListener(SCROLL_UP, handleScrollUp);
+      window.addEventListener(SCROLL_DOWN, handleScrollDown);
+    }
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return () => {
+      window.removeEventListener(SCROLL_UP, handleScrollUp);
+      window.removeEventListener(SCROLL_DOWN, handleScrollDown);
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, [mediaQuery, mobileMode, handleScrollUp, handleScrollDown, handleMediaQueryChange]);
+
+  // TODO: When you click on MobileMenuOpener and quickly scroll down, StyledMobileMenu is not displayed correctly. Needs fixing
+  // TODO: Add the ability to open and close the mobile menu with swipes
   return (
     <IconContext.Provider value={{ size: '30px', color: 'var(--header-elements-color)' }}>
-      <header className={className}>
+      <header ref={headerRef} className={className}>
         <HeaderWrapper>
-          <MediaQuery maxDeviceWidth={950}>
-            <MobileMenuOpener onClick={() => setMobileMenuClosed(false)}>
-              <CgMenu />
-            </MobileMenuOpener>
-            <HeaderLogo />
-            <StyledHeaderLogin isMobile />
-            <StyledMobileMenu
-              isClosed={isMobileMenuClosed}
-              close={() => setMobileMenuClosed(true)}
-            />
-          </MediaQuery>
-
-          <MediaQuery minDeviceWidth={950.1}>
-            <HeaderLogo />
-            <StyledHeaderLogin />
-            <DesktopNav />
-          </MediaQuery>
+          {mobileMode && (
+            <>
+              <MobileMenuOpener onClick={() => setMobileMenuClosed(false)}>
+                <CgMenu />
+              </MobileMenuOpener>
+              <StyledMobileMenu
+                isClosed={isMobileMenuClosed}
+                close={() => setMobileMenuClosed(true)}
+              />
+            </>
+          )}
+          <HeaderLogo />
+          <StyledHeaderLogin isMobile={mobileMode} />
+          {!mobileMode && <DesktopNav />}
         </HeaderWrapper>
       </header>
     </IconContext.Provider>
@@ -64,13 +109,16 @@ const Header: React.FC<Props> = ({ className }) => {
 };
 
 const StyledHeader = styled(Header)`
+  position: sticky;
   z-index: 10;
   padding-top: 20px;
   background-color: white;
   transition: 0.3s;
 
   @media (max-width: 950px) {
+    top: 0;
     padding: 20px 0;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
   }
 `;
 

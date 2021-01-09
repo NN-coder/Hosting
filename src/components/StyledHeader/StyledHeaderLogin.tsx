@@ -16,7 +16,7 @@ const HeaderLoginBtn = styled.button`
 `;
 
 export interface Props {
-  isMobile?: boolean;
+  isMobile: boolean;
   className?: string;
 }
 

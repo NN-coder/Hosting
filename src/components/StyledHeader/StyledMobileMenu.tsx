@@ -49,15 +49,20 @@ export interface Props {
 
 const MobileMenu: React.FC<Props> = ({ className, isClosed, close }) => {
   const handleEscPress = useCallback(
-    (event: KeyboardEvent) => (event.key === 'Escape' ? close() : null),
+    ({ key }: KeyboardEvent) => (key === 'Escape' ? close() : null),
     [close]
   );
 
   useEffect(() => {
     if (!isClosed) {
       document.addEventListener('keyup', handleEscPress);
-      return () => document.removeEventListener('keyup', handleEscPress);
+      document.body.style.overflow = 'hidden';
     }
+
+    return () => {
+      document.removeEventListener('keyup', handleEscPress);
+      document.body.style.overflow = '';
+    };
   }, [isClosed, handleEscPress]);
 
   if (isClosed) return null;
