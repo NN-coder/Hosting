@@ -52,6 +52,12 @@ const StyledNewsCard = styled(NewsCard)`
   display: flex;
   margin-top: 30px;
   column-gap: 20px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export { StyledNewsCard };

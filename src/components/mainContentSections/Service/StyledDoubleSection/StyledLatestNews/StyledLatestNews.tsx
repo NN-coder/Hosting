@@ -29,6 +29,13 @@ const LatestNews: React.FC<Props> = ({ className }) => (
 
 const StyledLatestNews = styled(LatestNews)`
   padding-left: 30px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
 `;
 
 export { StyledLatestNews };

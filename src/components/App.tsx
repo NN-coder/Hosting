@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect, RouteProps } from 'react-router
 import { createGlobalStyle } from 'styled-components';
 
 import { StyledLoadingScreen } from './StyledLoadingScreen';
-import { Header } from './Header/Header';
+import { StyledHeader } from './StyledHeader/StyledHeader';
 import { StyledNewsletterSection } from './StyledNewsletterSection';
 import { StyledFooter } from './StyledFooter/StyledFooter';
 import { ScrollToTop } from './ScrollToTop';
@@ -73,7 +73,7 @@ const App: React.FC = () => (
   <BrowserRouter>
     <ScrollToTop />
     <GlobalStyle />
-    <Header />
+    <StyledHeader />
     <main>
       <Suspense fallback={<StyledLoadingScreen />}>
         <Switch>

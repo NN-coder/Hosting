@@ -21,7 +21,6 @@ const StyledLogo = styled(Logo)`
   a {
     display: flex;
     align-items: center;
-    margin-left: 20px;
     color: var(--header-elements-color);
     font-weight: 900;
     font-size: 2rem;

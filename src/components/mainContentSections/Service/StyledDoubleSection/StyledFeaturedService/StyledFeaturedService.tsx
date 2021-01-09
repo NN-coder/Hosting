@@ -37,6 +37,14 @@ const FeaturedService: React.FC<Props> = ({ className }) => (
 
 const StyledFeaturedService = styled(FeaturedService)`
   padding-right: 40px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
 `;
 
 export { StyledFeaturedService };

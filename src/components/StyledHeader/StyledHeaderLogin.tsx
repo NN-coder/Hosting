@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IconContext } from 'react-icons';
 import { FaUser } from 'react-icons/fa';
 
 const HeaderLoginBtn = styled.button`
   display: flex;
   align-items: center;
   color: var(--header-elements-color);
+  font-weight: 500;
   letter-spacing: 0.01em;
   background: none;
   border: none;
@@ -15,27 +15,22 @@ const HeaderLoginBtn = styled.button`
   }
 `;
 
-const innerText = 'Login / Register';
-
 export interface Props {
-  isMobile: boolean;
+  isMobile?: boolean;
   className?: string;
 }
 
-const HeaderLogin: React.FC<Props> = ({ isMobile, className }) => (
+const HeaderLogin: React.FC<Props> = ({ className, isMobile }) => (
   <div className={className}>
     <HeaderLoginBtn>
-      <IconContext.Provider value={{ size: '30px' }}>
-        <FaUser />
-      </IconContext.Provider>
-      {!isMobile && innerText}
+      <FaUser />
+      {!isMobile && 'Login / Register'}
     </HeaderLoginBtn>
   </div>
 );
 
 const StyledHeaderLogin = styled(HeaderLogin)`
-  margin-right: 20px;
-  margin-left: auto;
+  margin: 0 20px 0 auto;
   font-size: 1.5rem;
 `;
 
