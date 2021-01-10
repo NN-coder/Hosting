@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { LazyImage } from './LazyImage';
 import { getSingleImage } from './img';
@@ -10,10 +11,10 @@ export interface Props {
 
 const Logo: React.FC<Props> = ({ className }) => (
   <h1 className={className}>
-    <a href="/">
+    <Link to="/">
       <LazyImage image={getSingleImage('logo', 'png')} />
       Hosting
-    </a>
+    </Link>
   </h1>
 );
 

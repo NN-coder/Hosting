@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 import { StyledLoadingScreen } from './StyledLoadingScreen';
@@ -65,12 +65,13 @@ const CustomRoute: React.FC<CustomRouteProps> = ({ title, ...props }) => {
   useEffect(() => {
     document.title = `Hosting - ${title}`;
   });
+
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Route {...props} />;
 };
 
 const App: React.FC = () => (
-  <BrowserRouter>
+  <HashRouter>
     <ScrollToTop />
     <GlobalStyle />
     <StyledHeader />
@@ -93,7 +94,7 @@ const App: React.FC = () => (
     </main>
     <StyledNewsletterSection />
     <StyledFooter />
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export { App };

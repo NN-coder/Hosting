@@ -52,7 +52,7 @@ const comments: Comment[] = [
     author: 'The weekend',
     comment:
       "Why? 'Cause I'm heartless, And I'm back to my ways 'cause I'm heartless, All this money and this pain got me heartless, Low life for life 'cause I'm heartless. Said I'm heartless, Tryna be a better man, but I'm heartless, Never be a weddin' plan for the heartless, Low life for life 'cause I'm heartless.",
-    images: getPhotos('lil-baby'),
+    images: getPhotos('the-weekend'),
   },
   {
     id: shortid.generate(),

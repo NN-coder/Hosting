@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { StyledFooterSectionTitle } from './StyledFooterSectionTitle';
 import { sectionNames } from '../sectionNames';
@@ -13,7 +13,7 @@ const QuickLinksList = styled.ul`
   line-height: 30px;
   column-gap: 60px;
 `;
-const QuickLinksListItem = styled(NavLink)`
+const QuickLinksListItem = styled(Link)`
   color: var(--text-color);
   font-size: 1.4rem;
   transition: color 0.2s ease;
