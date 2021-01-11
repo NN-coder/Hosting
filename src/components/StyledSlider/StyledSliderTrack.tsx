@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import shortid from 'shortid';
 
 const SliderItem = styled.div`
-  min-width: 100%;
+  flex-shrink: 0;
+  width: 100%;
   height: 100%;
 `;
 

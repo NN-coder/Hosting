@@ -5,6 +5,11 @@ import { StyledSliderTrack } from './StyledSliderTrack';
 import { StyledSliderDots } from './StyledSliderDots';
 import { StyledSliderArrows, Arrow } from './StyledSliderArrows';
 
+const SliderList = styled.div`
+  height: 100%;
+  overflow: hidden;
+`;
+
 function scrollSlider(direction: 'right' | 'left', slideCount: number, prevSlide: number) {
   if (direction === 'right') {
     return prevSlide === slideCount - 1 ? 0 : prevSlide + 1;
@@ -47,7 +52,9 @@ const Slider: React.FC<Props> = ({ children, className, navArrows }) => {
       onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}
     >
-      <StyledSliderTrack currentSlide={curSlide}>{children}</StyledSliderTrack>
+      <SliderList>
+        <StyledSliderTrack currentSlide={curSlide}>{children}</StyledSliderTrack>
+      </SliderList>
       {navArrows && (
         <StyledSliderArrows
           handleClickOnLeft={() => changeSlide(scrollLeft)}
@@ -63,12 +70,7 @@ const Slider: React.FC<Props> = ({ children, className, navArrows }) => {
   );
 };
 
-Slider.defaultProps = {
-  navArrows: false,
-};
-
 const StyledSlider = styled(Slider)`
-  overflow: hidden;
   user-select: none;
   touch-action: pan-y;
 `;

@@ -45,13 +45,15 @@ const SliderDots: React.FC<Props> = ({ currentSlide, count, handleDotClick, clas
   ]);
 
   return (
-    <div className={className}>
+    <ul className={className}>
       {dotsOptions.map(({ slideNum, handleClick, dotKey }) => (
-        <Dot type="button" key={dotKey} onClick={handleClick} active={currentSlide === slideNum}>
-          {`Show slide number ${slideNum + 1}`}
-        </Dot>
+        <li key={dotKey} style={{ display: 'contents' }}>
+          <Dot type="button" onClick={handleClick} active={currentSlide === slideNum}>
+            {`Show slide number ${slideNum + 1}`}
+          </Dot>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

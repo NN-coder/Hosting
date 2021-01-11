@@ -1,12 +1,10 @@
 import React, { Suspense, useEffect } from 'react';
-import { HashRouter, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { Switch, Route, Redirect, RouteProps } from 'react-router-dom';
 
 import { StyledLoadingScreen } from './StyledLoadingScreen';
 import { StyledHeader } from './StyledHeader/StyledHeader';
 import { StyledNewsletterSection } from './StyledNewsletterSection';
 import { StyledFooter } from './StyledFooter/StyledFooter';
-import { ScrollToTop } from './ScrollToTop';
 
 const Home = React.lazy(() => import('./mainContentSections/Home/Home'));
 const AboutUs = React.lazy(() => import('./mainContentSections/AboutUs/AboutUs'));
@@ -18,44 +16,6 @@ const Testimonials = React.lazy(() => import('./mainContentSections/Testimonials
 const Blog = React.lazy(() => import('./mainContentSections/Blog/Blog'));
 const Support = React.lazy(() => import('./mainContentSections/Support/Support'));
 const ContactUs = React.lazy(() => import('./mainContentSections/ContactUs/ContactUs'));
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-  }
-  :root {
-    font-size: 10px;
-    font-family: 'Montserrat', sans-serif;
-
-    --accent-color: #ff8261;
-    --accent-color-active: #52cbf8;
-    --header-elements-color: #161920;
-    --blue: #e7f4f8;
-    --section-bg-orange: #fffbde;
-    --text-color: #a0a9b6;
-    --text-color-primary: #556b72;
-  }
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  a {
-    text-decoration: none;
-  }
-  button {
-    cursor: pointer;
-  }
-  ul {
-    list-style: none;
-  }
-`;
 
 interface CustomRouteProps extends RouteProps {
   title: string;
@@ -71,9 +31,7 @@ const CustomRoute: React.FC<CustomRouteProps> = ({ title, ...props }) => {
 };
 
 const App: React.FC = () => (
-  <HashRouter>
-    <ScrollToTop />
-    <GlobalStyle />
+  <>
     <StyledHeader />
     <main>
       <Suspense fallback={<StyledLoadingScreen />}>
@@ -94,7 +52,7 @@ const App: React.FC = () => (
     </main>
     <StyledNewsletterSection />
     <StyledFooter />
-  </HashRouter>
+  </>
 );
 
 export { App };

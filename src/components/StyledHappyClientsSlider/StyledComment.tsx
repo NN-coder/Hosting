@@ -71,7 +71,7 @@ const StyledComment = styled(Comment)`
       text-align: center;
     }
     ${CommentPhoto} {
-      margin-top: 40px;
+      margin-top: 32px;
     }
   }
 `;

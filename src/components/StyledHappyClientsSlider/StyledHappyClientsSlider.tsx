@@ -85,7 +85,7 @@ const StyledHappyClientsSlider = styled(HappyClientsSlider)`
 
   ${StyledSliderDots} {
     position: absolute;
-    top: 0;
+    top: -8px;
     right: 0;
 
     @media (max-width: 1000px) {
