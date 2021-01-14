@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { StyledWrapper } from '../../../StyledWrapper';
-import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
-import { StandardBtn } from '../../../StandardBtn';
-import { questions } from './questions';
+import { StyledWrapper } from '../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../StyledStandardSectionTitle';
+import { StandardBtn } from '../../StandardBtn';
+import { useFetchedData, handleFailedFetch } from '../../useFetchedData';
 
 const QuestionCard = styled.div`
   display: flex;
@@ -72,21 +72,39 @@ const QuestionFaqWrapper = styled(StyledWrapper)`
   }
 `;
 
-const QuestionFaq: React.FC = () => (
-  <section>
-    <QuestionFaqWrapper>
-      <StyledStandardSectionTitle rowOne="Question" rowTwo="Faq's" />
-      {questions.map(({ question, answer, id }) => (
-        <QuestionCard key={id}>
-          <div>
-            <QuestionCardTitle>{question}</QuestionCardTitle>
-            <QuestionCardText>{answer}</QuestionCardText>
-          </div>
-        </QuestionCard>
-      ))}
-      <AskBtn>Ask your questions through email</AskBtn>
-    </QuestionFaqWrapper>
-  </section>
-);
+interface Question {
+  question: string;
+  answer: string;
+  id: string;
+}
+
+const QuestionFaq: React.FC = () => {
+  const [questions] = useFetchedData<Question[]>(
+    'https://api.jsonbin.io/b/5ffda321f98f6e35d5fb9173'
+  );
+
+  return (
+    <section>
+      <QuestionFaqWrapper>
+        <StyledStandardSectionTitle rowOne="Question" rowTwo="Faq's" />
+        {handleFailedFetch<Question[]>(questions)}
+
+        {questions.status === 'success' && (
+          <>
+            {questions.value.map(({ question, answer, id }) => (
+              <QuestionCard key={id}>
+                <div>
+                  <QuestionCardTitle>{question}</QuestionCardTitle>
+                  <QuestionCardText>{answer}</QuestionCardText>
+                </div>
+              </QuestionCard>
+            ))}
+            <AskBtn>Ask your questions through email</AskBtn>
+          </>
+        )}
+      </QuestionFaqWrapper>
+    </section>
+  );
+};
 
 export { QuestionFaq };

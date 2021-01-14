@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
-import { StyledWrapper } from '../../../StyledWrapper';
-import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
-import { StyledStandardForm } from '../../../StyledStandardForm';
+import { StyledWrapper } from '../../StyledWrapper';
+import { StyledStandardSectionTitle } from '../../StyledStandardSectionTitle';
+import { StyledStandardForm } from '../../StyledStandardForm';
 
 const SubmitYourQuestionWrapper = styled(StyledWrapper)`
   padding: 85px 0 110px;

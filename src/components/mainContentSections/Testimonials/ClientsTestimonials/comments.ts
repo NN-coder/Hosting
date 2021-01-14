@@ -2,12 +2,6 @@ import shortid from 'shortid';
 
 import { getSingleImage } from '../../../img';
 
-// const jpgImages = require.context('./img/jpg');
-// const getJpg = (name: string): string => jpgImages(`./${name}.jpg`).default;
-
-// const webpImages = require.context('./img/webp');
-// const getWebp = (name: string): string => webpImages(`./${name}.webp`).default;
-
 const getPhotos = (name: string) => {
   return {
     jpg: getSingleImage(`testimonials/clientsTestimonials/jpg/${name}`, 'jpg'),
