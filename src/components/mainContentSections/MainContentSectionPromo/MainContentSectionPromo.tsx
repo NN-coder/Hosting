@@ -1,11 +1,20 @@
 import React, { useMemo } from 'react';
+import MediaQuery from 'react-responsive';
 
-import { StyledPromo, Backgrounds } from './StyledPromo';
+import { StyledPromo } from './StyledPromo';
 import { getSingleImage } from '../../img';
 
-const getPromoBackground = (name: string, res: string) => {
-  return getSingleImage(`mainContentSectionPromo/${name}_${res}`, 'jpg');
+const getPromoBackground = (name: string, resolution: string) => {
+  return getSingleImage(`mainContentSectionPromo/${name}_${resolution}`, 'jpg');
 };
+
+export interface Backgrounds {
+  '540x960': string;
+  '720x1280': string;
+  '1280x720': string;
+  '1600x900': string;
+  '2048x1152': string;
+}
 
 export interface Props {
   sectionName: string;
@@ -32,12 +41,48 @@ const MainContentSectionPromo: React.FC<Props> = ({
   );
 
   return (
-    <StyledPromo
-      rowOne={titleRowOne}
-      rowTwo={titleRowTwo}
-      bgPosition={bgPosition}
-      backgrounds={backgrounds}
-    />
+    <>
+      <MediaQuery minDeviceWidth={1600.1}>
+        <StyledPromo
+          rowOne={titleRowOne}
+          rowTwo={titleRowTwo}
+          bg={backgrounds['2048x1152']}
+          bgPosition={bgPosition}
+        />
+      </MediaQuery>
+      <MediaQuery minDeviceWidth={1250.1} maxDeviceWidth={1600}>
+        <StyledPromo
+          rowOne={titleRowOne}
+          rowTwo={titleRowTwo}
+          bg={backgrounds['1600x900']}
+          bgPosition={bgPosition}
+        />
+      </MediaQuery>
+      <MediaQuery minDeviceWidth={700.1} maxDeviceWidth={1250}>
+        <StyledPromo
+          rowOne={titleRowOne}
+          rowTwo={titleRowTwo}
+          bg={backgrounds['1280x720']}
+          bgPosition={bgPosition}
+        />
+      </MediaQuery>
+      <MediaQuery minDeviceWidth={500.1} maxDeviceWidth={700}>
+        <StyledPromo
+          rowOne={titleRowOne}
+          rowTwo={titleRowTwo}
+          bg={backgrounds['720x1280']}
+          bgPosition={bgPosition}
+        />
+      </MediaQuery>
+      <MediaQuery maxDeviceWidth={500}>
+        <StyledPromo
+          rowOne={titleRowOne}
+          rowTwo={titleRowTwo}
+          bg={backgrounds['540x960']}
+          bgPosition={bgPosition}
+        />
+      </MediaQuery>
+    </>
   );
 };
 

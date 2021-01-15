@@ -43,12 +43,16 @@ const PromoText = styled.h2`
 export interface Props {
   rowOne: string;
   rowTwo: string;
+  bg: string;
   bgPosition: string;
   className?: string;
 }
 
-const Promo: React.FC<Props> = ({ className, rowOne, rowTwo, bgPosition }) => (
-  <div className={className} style={{ backgroundPosition: bgPosition }}>
+const Promo: React.FC<Props> = ({ className, rowOne, rowTwo, bg, bgPosition }) => (
+  <div
+    className={className}
+    style={{ backgroundImage: `url(${bg})`, backgroundPosition: bgPosition }}
+  >
     <PromoText>
       <RowOne>{rowOne}</RowOne>
       <RowTwo>{rowTwo}</RowTwo>
@@ -56,34 +60,10 @@ const Promo: React.FC<Props> = ({ className, rowOne, rowTwo, bgPosition }) => (
   </div>
 );
 
-export interface Backgrounds {
-  '540x960': string;
-  '720x1280': string;
-  '1280x720': string;
-  '1600x900': string;
-  '2048x1152': string;
-}
-
-const StyledPromo = styled(Promo)<{ backgrounds: Backgrounds }>`
+const StyledPromo = styled(Promo)`
   position: relative;
   height: 260px;
   background-repeat: no-repeat;
-
-  @media (min-width: 1600.1px) {
-    background-image: url(${({ backgrounds }) => backgrounds['2048x1152']});
-  }
-  @media (min-width: 1250.1px) and (max-width: 1600px) {
-    background-image: url(${({ backgrounds }) => backgrounds['1600x900']});
-  }
-  @media (min-width: 700.1px) and (max-width: 1250px) {
-    background-image: url(${({ backgrounds }) => backgrounds['1280x720']});
-  }
-  @media (min-width: 500.1px) and (max-width: 700px) {
-    background-image: url(${({ backgrounds }) => backgrounds['720x1280']});
-  }
-  @media (max-width: 500px) {
-    background-image: url(${({ backgrounds }) => backgrounds['540x960']});
-  }
 `;
 
 export { StyledPromo };

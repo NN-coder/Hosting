@@ -3,7 +3,8 @@ import shortid from 'shortid';
 
 import { getImages, ImgObj } from '../../../img';
 
-const getWorkerPhotos = (name: string) => getImages(`aboutUs/ourTeam/${name}`, ['jpg', 'webp'], 'object');
+const getWorkerPhotos = (name: string) =>
+  getImages(`aboutUs/ourTeam/${name}`, ['jpg', 'webp'], 'object');
 
 export interface Links {
   twitter: string;
