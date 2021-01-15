@@ -28,8 +28,8 @@ const OurTeam: React.FC = () => (
   <section>
     <OurTeamWrapper>
       <OurTeamTitle rowOne="Meet" rowTwo="Our team" />
-      {workers.map(({ id, name, position, photo, links }) => (
-        <WorkerCard key={id} name={name} position={position} photo={photo} links={links} />
+      {workers.map(({ id, name, position, photos, links }) => (
+        <WorkerCard key={id} name={name} position={position} photos={photos} links={links} />
       ))}
     </OurTeamWrapper>
   </section>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
+import { ImgObj } from '../../../img';
 import { LazyImage } from '../../../LazyImage';
 import { Links } from './workers';
 
@@ -64,16 +65,17 @@ const WorkerLink = styled.a.attrs({
 export interface Props {
   name: string;
   position: string;
-  photo: string;
+  photos: ImgObj;
   links: Links;
 }
 
-const WorkerCard: React.FC<Props> = ({ name, position, photo, links }) => {
+const WorkerCard: React.FC<Props> = ({ name, position, photos, links }) => {
+  const { jpg, webp } = photos;
   const { twitter = '#', instagram = '#', facebook = '#' } = links;
 
   return (
     <div>
-      <WorkerCardImg image={photo} alt={name} />
+      <WorkerCardImg image={jpg} imageWebp={webp} alt={name} />
       <WorkerCardFooter>
         <WorkerCardInfo>
           <WorkerName>{name}</WorkerName>
