@@ -15,6 +15,7 @@ const HeaderWrapper = styled(StyledWrapper)`
   flex-wrap: wrap;
   align-items: center;
   row-gap: 25px;
+  padding: 0;
 `;
 const HeaderLogo = styled(StyledLogo)`
   margin-left: 20px;

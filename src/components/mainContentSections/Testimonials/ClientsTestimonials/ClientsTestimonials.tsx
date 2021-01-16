@@ -10,11 +10,7 @@ import { StyledComment } from './StyledComment';
 import { comments, Comment } from './comments';
 
 const ClientsTestimonialsWrapper = styled(StyledWrapper)`
-  padding: 80px 0 0;
-
-  @media (max-width: 1250px) {
-    padding: 80px 20px;
-  }
+  padding-top: 80px;
 `;
 const ClientsTestimonialsInner = styled(Masonry).attrs({
   columnGap: 30,

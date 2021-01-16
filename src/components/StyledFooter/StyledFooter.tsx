@@ -58,13 +58,10 @@ const StyledFooter = styled(Footer)`
   margin-top: auto;
   padding: 100px 0;
   background-color: #4c515b;
+
   ${StyledLogo} a {
     margin: 0;
     color: var(--blue);
-  }
-
-  @media (max-width: 1250px) {
-    padding: 100px 20px;
   }
 `;
 

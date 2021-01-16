@@ -39,10 +39,6 @@ const DoubleSection: React.FC<Props> = ({ className }) => (
 const StyledDoubleSection = styled(DoubleSection)`
   padding: 120px 0;
   background-color: var(--blue);
-
-  @media (max-width: 1250px) {
-    padding: 120px 20px;
-  }
 `;
 
 export { StyledDoubleSection };

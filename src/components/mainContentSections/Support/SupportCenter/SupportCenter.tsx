@@ -51,12 +51,10 @@ const SearchFormSubmit = styled(StandardBtn).attrs({
 const SupportCenterWrapper = styled(StyledWrapper)`
   display: flex;
   flex-direction: column;
-  padding: 80px 0 70px;
+  padding-top: 80px;
+  padding-bottom: 70px;
   row-gap: 30px;
 
-  @media (max-width: 1250px) {
-    padding: 80px 20px 70px;
-  }
   @media (max-width: 800px) {
     align-items: center;
   }

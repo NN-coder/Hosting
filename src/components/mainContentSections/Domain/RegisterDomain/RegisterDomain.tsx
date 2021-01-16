@@ -39,11 +39,9 @@ const SubmitBtn = styled(StandardBtn).attrs({ type: 'submit' })`
 `;
 
 const RegisterDomainWrapper = styled(StyledWrapper)`
-  padding: 80px 0 100px;
+  padding-top: 80px;
+  padding-bottom: 100px;
 
-  @media (max-width: 1250px) {
-    padding: 80px 20px 100px;
-  }
   @media (max-width: 900px) {
     display: flex;
     flex-direction: column;

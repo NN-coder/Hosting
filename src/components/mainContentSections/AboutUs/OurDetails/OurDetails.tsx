@@ -37,11 +37,9 @@ const OurDetailsWrapper = styled(StyledWrapper)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  padding: 80px 0 110px;
+  padding-top: 80px;
+  padding-bottom: 110px;
 
-  @media (max-width: 1250px) {
-    padding: 80px 20px 110px;
-  }
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
     ${OurDetailsImg} {

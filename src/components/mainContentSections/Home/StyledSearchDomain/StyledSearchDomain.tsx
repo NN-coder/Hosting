@@ -122,10 +122,6 @@ const SearchDomain: React.FC<Props> = ({ className }) => (
 const StyledSearchDomain = styled(SearchDomain)`
   padding: 70px 0;
   background-color: var(--blue);
-
-  @media screen and (max-width: 1250px) {
-    padding: 70px 20px;
-  }
 `;
 
 export { StyledSearchDomain };

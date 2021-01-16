@@ -9,11 +9,9 @@ const OurHostingWrapper = styled(StyledWrapper)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 40px;
-  padding: 100px 0 110px;
+  padding-top: 100px;
+  padding-bottom: 110px;
 
-  @media (max-width: 1250px) {
-    padding: 100px 20px 110px;
-  }
   @media (max-width: 850px) {
     grid-template-columns: repeat(auto-fit, 250px);
     justify-content: center;

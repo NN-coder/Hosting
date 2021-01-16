@@ -57,12 +57,10 @@ const NewDomains: React.FC<Props> = ({ className }) => (
 );
 
 const StyledNewDomains = styled(NewDomains)`
-  padding: 110px 0;
+  padding-top: 110px;
+  padding-bottom: 110px;
   background-color: var(--blue);
 
-  @media (max-width: 1250px) {
-    padding: 110px 20px;
-  }
   @media (max-width: 1000px) {
     ${NewDomainsTitle} {
       justify-self: center;

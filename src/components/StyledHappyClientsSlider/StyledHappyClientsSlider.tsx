@@ -9,11 +9,9 @@ import { StyledComment } from './StyledComment';
 import { getImages } from '../img';
 
 const HappyClientsWrapper = styled(StyledWrapper)`
-  padding: 120px 0 130px;
+  padding-top: 120px;
+  padding-bottom: 130px;
 
-  @media (max-width: 1250px) {
-    padding: 120px 20px 130px;
-  }
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;

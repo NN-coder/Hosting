@@ -6,11 +6,8 @@ import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle'
 import { StyledStandardForm } from '../../../StyledStandardForm';
 
 const SubmitYourTestimonialWrapper = styled(StyledWrapper)`
-  padding: 100px 0;
-
-  @media (max-width: 1250px) {
-    padding: 100px 20px;
-  }
+  padding-top: 100px;
+  padding-bottom: 100px;
 `;
 
 const SubmitYourTestimonial: React.FC = () => {

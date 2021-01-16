@@ -53,12 +53,10 @@ const QuestionFaqWrapper = styled(StyledWrapper)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
-  padding: 80px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
   border-bottom: 1px solid #d3e5eb;
 
-  @media (max-width: 1250px) {
-    padding: 80px 20px;
-  }
   @media (max-width: 1000px) {
     ${QuestionCard} {
       flex-direction: column;

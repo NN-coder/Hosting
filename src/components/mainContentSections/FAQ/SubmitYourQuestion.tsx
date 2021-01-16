@@ -6,11 +6,9 @@ import { StyledStandardSectionTitle } from '../../StyledStandardSectionTitle';
 import { StyledStandardForm } from '../../StyledStandardForm';
 
 const SubmitYourQuestionWrapper = styled(StyledWrapper)`
-  padding: 85px 0 110px;
+  padding-top: 85px;
+  padding-bottom: 110px;
 
-  @media (max-width: 1250px) {
-    padding: 85px 20px 110px;
-  }
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;

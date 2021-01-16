@@ -10,13 +10,10 @@ const OurTeamWrapper = styled(StyledWrapper)`
   display: grid;
   grid-template-columns: repeat(auto-fit, 270px);
   justify-content: space-around;
-  padding: 110px 0;
+  padding-top: 110px;
+  padding-bottom: 110px;
   column-gap: 30px;
   row-gap: 50px;
-
-  @media (max-width: 1250px) {
-    padding: 110px 20px;
-  }
 `;
 const OurTeamTitle = styled(StyledStandardSectionTitle)`
   @media (max-width: 1000px) {

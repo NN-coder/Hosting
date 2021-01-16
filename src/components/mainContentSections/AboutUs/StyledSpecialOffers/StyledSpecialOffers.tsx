@@ -47,10 +47,6 @@ const SpecialOffers: React.FC<Props> = ({ className }) => (
 const StyledSpecialOffers = styled(SpecialOffers)`
   padding: 100px 0 120px;
   background-color: var(--blue);
-
-  @media (max-width: 1250px) {
-    padding: 100px 20px 120px;
-  }
 `;
 
 export { StyledSpecialOffers };
