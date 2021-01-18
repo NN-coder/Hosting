@@ -22,8 +22,8 @@ const getColumns = (columnsCount: number, children: ReactNode) => {
 export interface Props {
   children: ReactNode;
   columnsCount: number;
-  columnGap: number | string;
-  rowGap: number | string;
+  columnGap?: number | string;
+  rowGap?: number | string;
   className?: string;
 }
 
@@ -34,17 +34,13 @@ const Masonry: React.FC<Props> = ({
   columnGap = '0',
   rowGap = '0',
 }) => {
-  const columnIndent = useMemo(() => getIndent(columnGap), [columnGap]);
-  const rowIndent = useMemo(() => getIndent(rowGap), [rowGap]);
-
   const style = useMemo(
     (): React.CSSProperties => ({
       display: 'grid',
       gridTemplateColumns: `repeat(${columnsCount}, 1fr)`,
-      columnGap: columnIndent,
-      rowGap: rowIndent,
+      gap: `${getIndent(rowGap)} ${getIndent(columnGap)}`,
     }),
-    [columnsCount, columnIndent, rowIndent]
+    [columnsCount, columnGap, rowGap]
   );
 
   const columnKeys = useMemo(() => Array.from({ length: columnsCount }, () => shortid.generate()), [

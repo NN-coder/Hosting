@@ -14,12 +14,17 @@ const requiredLabelStyles = css`
   }
 `;
 
-const InputLabel = styled.label<{ isHidden?: boolean; isRequired?: boolean }>`
+interface InputLabelProps {
+  isHidden?: boolean;
+  isRequired?: boolean;
+}
+
+const InputLabel = styled.label<InputLabelProps>`
   position: absolute;
   top: 21px;
   left: 20px;
   cursor: text;
-  transition: all 0.2s ease;
+  transition: 0.2s;
   ${({ isHidden }) => (isHidden ? hiddenLabelStyles : '')}
   ${({ isRequired }) => (isRequired ? requiredLabelStyles : '')}
 `;
@@ -98,10 +103,6 @@ const FormItem: React.FC<Props> = ({ className, inputAs, type, name, placeholder
       </InputLabel>
     </div>
   );
-};
-
-FormItem.defaultProps = {
-  isRequired: false,
 };
 
 const StyledFormItem = styled(FormItem)`

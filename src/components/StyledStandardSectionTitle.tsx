@@ -39,8 +39,9 @@ export interface Props {
 const StandardSectionTitle: React.FC<Props> = ({ className, rowOne, rowTwo, beforeImg }) => (
   <h3 className={className}>
     {beforeImg ? <Before>{beforeImg}</Before> : <Before line />}
-    {!rowTwo && <OnlyOneRow>{rowOne}</OnlyOneRow>}
-    {!!rowTwo && (
+    {!rowTwo ? (
+      <OnlyOneRow>{rowOne}</OnlyOneRow>
+    ) : (
       <>
         <RowOne>{rowOne}</RowOne>
         <RowTwo>{rowTwo}</RowTwo>

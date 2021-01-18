@@ -19,13 +19,13 @@ type Success<T> = { status: 'success'; value: T };
 type Data<T> = Loading | Error | Success<T>;
 type SetData<T> = Dispatch<SetStateAction<Data<T>>>;
 
-function useFetchedData<T>(url: string): [Data<T>, SetData<T>] {
+function useFetchedData<T>(url: RequestInfo, options?: RequestInit): [Data<T>, SetData<T>] {
   const [state, setState] = useState<Data<T>>({ status: 'loading', value: null });
 
   const controller = useMemo(() => new AbortController(), []);
 
   useEffect(() => {
-    fetch(url, { signal: controller.signal })
+    fetch(url, { ...options, signal: controller.signal })
       .then((res) => {
         if (res.ok) return res.json();
         throw new FetchError(res.statusText);
@@ -34,7 +34,7 @@ function useFetchedData<T>(url: string): [Data<T>, SetData<T>] {
       .catch((error: FetchError) => setState({ status: 'error', value: error }));
 
     return () => controller.abort();
-  }, [url, controller]);
+  }, [url, options, controller]);
 
   return [state, setState];
 }
