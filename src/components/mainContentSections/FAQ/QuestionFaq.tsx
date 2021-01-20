@@ -77,9 +77,7 @@ interface Question {
 }
 
 const QuestionFaq: React.FC = () => {
-  const [questions] = useFetchedData<Question[]>(
-    'https://api.jsonbin.io/b/5ffda321f98f6e35d5fb9173'
-  );
+  const [questions] = useFetchedData<Question[]>(`${process.env.PUBLIC_URL}/json/questions.json`);
 
   return (
     <section>
