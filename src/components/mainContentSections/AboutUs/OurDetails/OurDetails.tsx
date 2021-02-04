@@ -22,7 +22,7 @@ const OurDetailsQuote = styled.div`
   margin-top: 45px;
   padding: 30px 40px;
   font-style: italic;
-  border: 1px solid #dbeaee;
+  border: 1px solid var(--border-color);
   &:before {
     position: absolute;
     top: 1px;

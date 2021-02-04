@@ -32,7 +32,7 @@ const FormInput = styled.div`
   width: 100%;
   height: 100%;
   padding: 20px;
-  border: solid 1px #d3e5eb;
+  border: solid 1px var(--border-color);
   resize: none;
 `;
 

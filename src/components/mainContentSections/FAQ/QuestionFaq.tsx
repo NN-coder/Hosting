@@ -1,10 +1,11 @@
+/* eslint-disable import/no-mutable-exports */
 import React from 'react';
 import styled from 'styled-components';
 
 import { StyledWrapper } from '../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../StyledStandardSectionTitle';
 import { StandardBtn } from '../../StandardBtn';
-import { useFetchedData, handleFailedFetch } from '../../useFetchedData';
+import { withFetchedData, WithFetchedDataProps } from '../../withFetchedData/withFetchedData';
 
 const QuestionCard = styled.div`
   display: flex;
@@ -55,7 +56,7 @@ const QuestionFaqWrapper = styled(StyledWrapper)`
   gap: 50px;
   padding-top: 80px;
   padding-bottom: 80px;
-  border-bottom: 1px solid #d3e5eb;
+  border-bottom: 1px solid var(--border-color);
 
   @media (max-width: 1000px) {
     ${QuestionCard} {
@@ -70,37 +71,30 @@ const QuestionFaqWrapper = styled(StyledWrapper)`
   }
 `;
 
-interface Question {
-  question: string;
-  answer: string;
-  id: string;
-}
+type Questions = { question: string; answer: string; id: string }[];
 
-const QuestionFaq: React.FC = () => {
-  const [questions] = useFetchedData<Question[]>(`${process.env.PUBLIC_URL}/json/questions.json`);
+export type Props = WithFetchedDataProps<Questions>;
 
-  return (
-    <section>
-      <QuestionFaqWrapper>
-        <StyledStandardSectionTitle rowOne="Question" rowTwo="Faq's" />
-        {handleFailedFetch<Question[]>(questions)}
+let QuestionFaq: React.FC<Props> = ({ data: questions }) => (
+  <section>
+    <QuestionFaqWrapper>
+      <StyledStandardSectionTitle rowOne="Question" rowTwo="Faq's" />
+      {questions?.map(({ question, answer, id }) => (
+        <QuestionCard key={id}>
+          <div>
+            <QuestionCardTitle>{question}</QuestionCardTitle>
+            <QuestionCardText>{answer}</QuestionCardText>
+          </div>
+        </QuestionCard>
+      ))}
+      <AskBtn>Ask your questions through email</AskBtn>
+    </QuestionFaqWrapper>
+  </section>
+);
 
-        {questions.status === 'success' && (
-          <>
-            {questions.value.map(({ question, answer, id }) => (
-              <QuestionCard key={id}>
-                <div>
-                  <QuestionCardTitle>{question}</QuestionCardTitle>
-                  <QuestionCardText>{answer}</QuestionCardText>
-                </div>
-              </QuestionCard>
-            ))}
-            <AskBtn>Ask your questions through email</AskBtn>
-          </>
-        )}
-      </QuestionFaqWrapper>
-    </section>
-  );
-};
+QuestionFaq = withFetchedData<Questions, Props>(
+  QuestionFaq,
+  `${process.env.PUBLIC_URL}/json/questions.json`
+);
 
 export { QuestionFaq };

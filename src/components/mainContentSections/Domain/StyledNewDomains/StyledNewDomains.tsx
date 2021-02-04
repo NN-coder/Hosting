@@ -25,7 +25,7 @@ const DomainInfo = styled.div`
   border-top: 0;
   &:nth-child(n + 4) {
     padding-top: 6px;
-    border-top: 1px solid #d5e7ed;
+    border-top: 1px solid var(--border-color);
   }
 `;
 const DomainInfoName = styled.p`
@@ -73,7 +73,7 @@ const StyledNewDomains = styled(NewDomains)`
     ${DomainInfo} {
       &:nth-child(n + 3) {
         padding-top: 6px;
-        border-top: 1px solid #d5e7ed;
+        border-top: 1px solid var(--border-color);
       }
     }
   }

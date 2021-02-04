@@ -1,16 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const lineBeforeStyles = css`
+  bottom: calc(100% + 10px);
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+`;
+const iconBeforeStyles = css`
+  bottom: calc(100% + 5px);
+`;
 
 const Before = styled.div.attrs({
   'aria-hidden': true,
 })<{ line?: boolean }>`
   position: absolute;
-  bottom: ${({ line }) => (line ? 'calc(100% + 10px)' : 'calc(100% + 5px)')};
   left: 0;
-  width: ${({ line }) => (line ? '20px' : 'auto')};
-  height: ${({ line }) => (line ? '2px' : 'auto')};
   color: var(--accent-color);
-  background: ${({ line }) => (line ? 'currentColor' : 'none')};
+  ${({ line }) => (line ? lineBeforeStyles : iconBeforeStyles)}
 `;
 
 const RowOne = styled.div`

@@ -1,14 +1,26 @@
-import React, { useContext } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useContext, useMemo, ReactNode } from 'react';
 import { IconContext } from 'react-icons';
 
 export interface Props {
-  children: React.ReactNode;
   viewBox: string;
+  children: ReactNode;
+  size?: number | string;
+  color?: string;
   className?: string;
 }
 
-const Icon: React.FC<Props> = ({ children, viewBox, className }) => {
-  const { size = '1em', color = 'inherit', attr, style } = useContext(IconContext);
+const Icon: React.FC<Props> = ({
+  viewBox,
+  color: propsColor,
+  size: propsSize,
+  children,
+  className,
+}) => {
+  const { size: contextSize, color: contextColor, attr, style } = useContext(IconContext);
+
+  const size = useMemo(() => propsSize ?? contextSize ?? '1em', [propsSize, contextSize]);
+  const color = useMemo(() => propsColor ?? contextColor ?? 'inherit', [propsColor, contextColor]);
 
   return (
     <svg
@@ -21,8 +33,8 @@ const Icon: React.FC<Props> = ({ children, viewBox, className }) => {
       width={size}
       color={color}
       style={style}
-      aria-hidden={!!attr?.['aria-hidden']}
       xmlns="http://www.w3.org/2000/svg"
+      {...attr}
     >
       {children}
     </svg>

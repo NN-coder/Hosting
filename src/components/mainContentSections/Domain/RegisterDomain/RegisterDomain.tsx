@@ -28,7 +28,7 @@ const RegisterDomainFormSelect = styled.select`
   color: #8d9198;
   background: url(${selectBg}) no-repeat right 15px center;
   background-color: white;
-  border: 1px solid #d4e8ee;
+  border: 1px solid var(--border-color);
   appearance: none;
 `;
 const SubmitBtn = styled(StandardBtn).attrs({ type: 'submit' })`

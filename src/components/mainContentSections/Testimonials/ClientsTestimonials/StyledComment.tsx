@@ -59,7 +59,7 @@ const StyledComment = styled(Comment)`
   position: relative;
   padding: 60px 35px;
   font-size: 1.4rem;
-  border: solid 1px #d3e5eb;
+  border: solid 1px var(--border-color);
   &:before {
     position: absolute;
     top: -25px;
@@ -70,7 +70,7 @@ const StyledComment = styled(Comment)`
     width: 50px;
     height: 50px;
     background-color: white;
-    border: solid 1px #d3e5eb;
+    border: inherit;
     content: url(${getSingleImage('testimonials/clientsTestimonials/quotes', 'svg')});
   }
 `;

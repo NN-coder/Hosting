@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     --section-bg-orange: #fffbde;
     --text-color: #a0a9b6;
     --text-color-primary: #556b72;
+    --border-color: #d3e5eb;
   }
   #root {
     display: flex;
@@ -35,9 +36,12 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
   a {
+    color: inherit;
     text-decoration: none;
   }
   button {
+    background: none;
+    border: none;
     cursor: pointer;
   }
   ul {

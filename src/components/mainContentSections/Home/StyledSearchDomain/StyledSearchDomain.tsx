@@ -42,7 +42,7 @@ const SearchDomainFormItem = styled.div`
   color: var(--text-color);
   letter-spacing: 0.01em;
   background-color: white;
-  border: 1px solid #dfeef3;
+  border: 1px solid var(--border-color);
 `;
 
 const SearchDomainFormInput = styled(SearchDomainFormItem)`

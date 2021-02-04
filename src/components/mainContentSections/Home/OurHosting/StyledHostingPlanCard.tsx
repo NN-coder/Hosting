@@ -34,7 +34,7 @@ const HostingPlanAdvantages = styled.ul`
 const HostingPlanAdvantagesItem = styled.li`
   padding: 10px 0;
   text-align: center;
-  border-top: 1px solid #e1eff4;
+  border-top: 1px solid var(--border-color);
   &:first-child {
     padding-top: 0;
     border: none;
@@ -100,7 +100,7 @@ const StyledHostingPlanCard = styled(HostingPlanCard)`
   align-items: center;
   padding: 30px 20px 25px;
   background-color: white;
-  border: 1px solid #e1eff4;
+  border: 1px solid var(--border-color);
   row-gap: 30px;
 `;
 
