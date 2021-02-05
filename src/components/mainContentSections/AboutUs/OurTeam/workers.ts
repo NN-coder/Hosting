@@ -1,7 +1,7 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import shortid from 'shortid';
 
-import { getImages, ImgObj } from '../../../img';
+import { getImages, ImgObj } from '../../../utils/img';
 
 const getWorkerPhotos = (name: string) =>
   getImages(`aboutUs/ourTeam/${name}`, ['jpg', 'webp'], 'object');

@@ -1,4 +1,4 @@
-const imgFolder = require.context('../img');
+const imgFolder = require.context('../../img');
 const getImgPath = (name: string): string => imgFolder(name).default;
 
 export type Extension = 'png' | 'jpg' | 'jpeg' | 'svg' | 'webp' | 'gif' | 'ico';

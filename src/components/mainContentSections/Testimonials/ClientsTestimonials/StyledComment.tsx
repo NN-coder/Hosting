@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LazyImage } from '../../../LazyImage';
-import { getSingleImage } from '../../../img';
+import { LazyImage } from '../../../utils/LazyImage';
+import { getSingleImage } from '../../../utils/img';
 
 const CommentText = styled.p`
   color: var(--text-color);

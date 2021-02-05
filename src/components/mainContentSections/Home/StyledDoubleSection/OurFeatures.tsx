@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StandardBtn } from '../../../StandardBtn';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const OurFeaturesInner = styled.div`
   display: flex;

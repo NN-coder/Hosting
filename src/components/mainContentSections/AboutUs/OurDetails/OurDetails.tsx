@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledWrapper } from '../../../StyledWrapper';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 // TODO: Add lazy loading
 const OurDetailsImg = styled.div`

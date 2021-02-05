@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { StyledStandardSectionTitle } from '../../../../StyledStandardSectionTitle';
 import { StyledServiceCard } from './StyledServiceCard';
-import { getImages } from '../../../../img';
+import { getImages } from '../../../../utils/img';
 
 const getServiceImg = (num: number) => {
   return getImages(`service/featuredService/service_${num}`, ['jpg', 'webp'], 'object');

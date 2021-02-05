@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
 
-import { LazyImage } from '../../../LazyImage';
+import { LazyImage } from '../../../utils/LazyImage';
 import { StandardBtn } from '../../../StandardBtn';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const OfferImg = styled(LazyImage)`
   width: 260px;

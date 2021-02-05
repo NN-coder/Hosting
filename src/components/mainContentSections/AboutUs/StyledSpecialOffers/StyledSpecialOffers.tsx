@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledOffer } from './StyledOffer';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const SpecialOffersWrapper = styled(StyledWrapper)`
   display: grid;

@@ -75,7 +75,7 @@ type Questions = { question: string; answer: string; id: string }[];
 
 export type Props = WithFetchedDataProps<Questions>;
 
-let QuestionFaq: React.FC<Props> = ({ data: questions }) => (
+const QuestionFaq: React.FC<Props> = ({ data: questions }) => (
   <section>
     <QuestionFaqWrapper>
       <StyledStandardSectionTitle rowOne="Question" rowTwo="Faq's" />
@@ -92,9 +92,9 @@ let QuestionFaq: React.FC<Props> = ({ data: questions }) => (
   </section>
 );
 
-QuestionFaq = withFetchedData<Questions, Props>(
+const QuestionFaqWithFetchedData = withFetchedData<Questions, Props>(
   QuestionFaq,
   `${process.env.PUBLIC_URL}/json/questions.json`
 );
 
-export { QuestionFaq };
+export { QuestionFaqWithFetchedData };

@@ -1,6 +1,6 @@
 import shortid from 'shortid';
 
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const getPhotos = (name: string) => {
   return {

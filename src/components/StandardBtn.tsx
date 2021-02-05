@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const StandardBtn = styled.button.attrs((props) => ({
-  type: props.type || 'button',
+const StandardBtn = styled.button.attrs(({ type }) => ({
+  type: type || 'button',
 }))`
   height: 55px;
   color: white;

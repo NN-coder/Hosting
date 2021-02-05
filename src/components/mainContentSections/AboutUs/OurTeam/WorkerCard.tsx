@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-import { ImgObj } from '../../../img';
-import { LazyImage } from '../../../LazyImage';
+import { ImgObj } from '../../../utils/img';
+import { LazyImage } from '../../../utils/LazyImage';
 import { Links } from './workers';
 
 const WorkerCardImg = styled(LazyImage)`

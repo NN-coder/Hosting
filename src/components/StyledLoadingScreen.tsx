@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { getSingleImage } from './img';
+import { getSingleImage } from './utils/img';
 
-const LoadingGif = styled.img.attrs({
-  src: getSingleImage('loading', 'gif'),
-  alt: 'Loading',
-})`
+const LoadingGif = styled.img`
   width: 100%;
   max-width: 350px;
   height: 250px;
@@ -18,7 +15,7 @@ export interface Props {
 
 const LoadingScreen: React.FC<Props> = ({ className }) => (
   <div className={className}>
-    <LoadingGif />
+    <LoadingGif src={getSingleImage('loading', 'gif')} alt="Loading" />
     Loading...
   </div>
 );

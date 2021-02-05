@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useContext, useMemo, ReactNode } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { IconContext } from 'react-icons';
 
-export interface Props {
+export interface Props extends React.SVGAttributes<SVGElement> {
   viewBox: string;
-  children: ReactNode;
   size?: number | string;
-  color?: string;
-  className?: string;
 }
 
 const Icon: React.FC<Props> = ({
@@ -16,11 +13,15 @@ const Icon: React.FC<Props> = ({
   size: propsSize,
   children,
   className,
+  ...propsAttr
 }) => {
-  const { size: contextSize, color: contextColor, attr, style } = useContext(IconContext);
+  const { size: contextSize, color: contextColor, attr: contextAttr, style } = useContext(
+    IconContext
+  );
 
   const size = useMemo(() => propsSize ?? contextSize ?? '1em', [propsSize, contextSize]);
   const color = useMemo(() => propsColor ?? contextColor ?? 'inherit', [propsColor, contextColor]);
+  const attr = useMemo(() => ({ ...contextAttr, ...propsAttr }), [propsAttr, contextAttr]);
 
   return (
     <svg

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 import { FiHardDrive } from 'react-icons/fi';
 import { BiCheckShield } from 'react-icons/bi';
 
-import { Icon } from '../../../Icon';
+import { Icon } from '../../../utils/Icon';
 
 const standardText = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.`;
 

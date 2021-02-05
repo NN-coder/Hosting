@@ -6,7 +6,7 @@ import { StyledWrapper } from '../StyledWrapper';
 import { StyledStandardSectionTitle } from '../StyledStandardSectionTitle';
 import { StyledSlider, StyledSliderDots } from '../StyledSlider/StyledSlider';
 import { StyledComment } from './StyledComment';
-import { getImages } from '../img';
+import { getImages } from '../utils/img';
 
 const HappyClientsWrapper = styled(StyledWrapper)`
   padding-top: 120px;

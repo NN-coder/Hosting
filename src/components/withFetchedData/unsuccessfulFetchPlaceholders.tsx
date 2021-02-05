@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { MdErrorOutline } from 'react-icons/md';
 
-import { Icon } from '../Icon';
+import { Icon } from '../utils/Icon';
 
 const Wrapper = styled.div`
   display: flex;

@@ -6,7 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StandardBtn } from '../../../StandardBtn';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const SearchDomainWrapper = styled(StyledWrapper)`
   display: flex;

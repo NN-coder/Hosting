@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import MediaQuery from 'react-responsive';
 
 import { StyledPromo } from './StyledPromo';
-import { getSingleImage } from '../../img';
+import { getSingleImage } from '../../utils/img';
 
 const getPromoBackground = (name: string, resolution: string) => {
   return getSingleImage(`mainContentSectionPromo/${name}_${resolution}`, 'jpg');

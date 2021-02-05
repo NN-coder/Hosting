@@ -20,7 +20,6 @@ const getColumns = (columnsCount: number, children: ReactNode) => {
 };
 
 export interface Props {
-  children: ReactNode;
   columnsCount: number;
   columnGap?: number | string;
   rowGap?: number | string;

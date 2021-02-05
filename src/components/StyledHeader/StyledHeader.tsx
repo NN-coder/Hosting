@@ -8,7 +8,7 @@ import { StyledLogo } from '../StyledLogo';
 import { StyledHeaderLogin } from './StyledHeaderLogin';
 import { DesktopNav } from './DesktopNav';
 import { StyledMobileMenu } from './StyledMobileMenu';
-import { SCROLL_UP, SCROLL_DOWN } from '../scrollEvents';
+import { SCROLL_UP, SCROLL_DOWN } from '../utils/scrollEvents';
 
 const HeaderWrapper = styled(StyledWrapper)`
   display: flex;

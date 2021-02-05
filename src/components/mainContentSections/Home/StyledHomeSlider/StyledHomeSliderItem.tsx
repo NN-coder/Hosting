@@ -2,7 +2,7 @@ import React, { ReactNode, useCallback } from 'react';
 import MediaQuery from 'react-responsive';
 import styled from 'styled-components';
 
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 type Resolution = '2048x1152' | '1600x900' | '1280x720' | '720x1280' | '540x960';
 

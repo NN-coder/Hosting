@@ -6,7 +6,7 @@ import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';
 import { StyledFormItem, FormInput, InputLabel } from '../../../StyledFormItem';
 import { StandardBtn } from '../../../StandardBtn';
-import { getSingleImage } from '../../../img';
+import { getSingleImage } from '../../../utils/img';
 
 const SearchForm = styled.form.attrs({
   action: '',

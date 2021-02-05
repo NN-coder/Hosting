@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LazyImage } from '../LazyImage';
+import { LazyImage } from '../utils/LazyImage';
 
 const CommentPhoto = styled(LazyImage)`
   width: 200px;

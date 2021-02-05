@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 
-import { Masonry } from '../../../Masonry';
+import { Masonry } from '../../../utils/Masonry';
 import { StandardBtn } from '../../../StandardBtn';
 import { StyledWrapper } from '../../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../../StyledStandardSectionTitle';

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { LazyImage } from './LazyImage';
-import { getSingleImage } from './img';
+import { LazyImage } from './utils/LazyImage';
+import { getSingleImage } from './utils/img';
 
 export interface Props {
   className?: string;

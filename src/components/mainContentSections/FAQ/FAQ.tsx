@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MainContentSectionPromo } from '../MainContentSectionPromo/MainContentSectionPromo';
-import { QuestionFaq } from './QuestionFaq';
+import { QuestionFaqWithFetchedData } from './QuestionFaq';
 import { SubmitYourQuestion } from './SubmitYourQuestion';
 
 const FAQ: React.FC = () => (
@@ -12,7 +12,7 @@ const FAQ: React.FC = () => (
       titleRowTwo="Questions"
       bgPosition="center 80%"
     />
-    <QuestionFaq />
+    <QuestionFaqWithFetchedData />
     <SubmitYourQuestion />
   </section>
 );
