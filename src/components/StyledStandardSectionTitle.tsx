@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 const lineBeforeStyles = css`
   bottom: calc(100% + 10px);

@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback } from 'react';
 import MediaQuery from 'react-responsive';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { getSingleImage } from '../../../utils/img';
 

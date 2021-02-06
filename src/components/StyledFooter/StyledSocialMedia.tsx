@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { IconContext } from 'react-icons';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';

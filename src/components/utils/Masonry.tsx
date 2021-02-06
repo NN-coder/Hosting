@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo } from 'react';
 import shortid from 'shortid';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Column = styled.div`
   display: flex;

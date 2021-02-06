@@ -7,14 +7,7 @@ export interface Props extends React.SVGAttributes<SVGElement> {
   size?: number | string;
 }
 
-const Icon: React.FC<Props> = ({
-  viewBox,
-  color: propsColor,
-  size: propsSize,
-  children,
-  className,
-  ...propsAttr
-}) => {
+const Icon: React.FC<Props> = ({ color: propsColor, size: propsSize, children, ...propsAttr }) => {
   const { size: contextSize, color: contextColor, attr: contextAttr, style } = useContext(
     IconContext
   );
@@ -25,11 +18,9 @@ const Icon: React.FC<Props> = ({
 
   return (
     <svg
-      className={className}
       stroke="currentColor"
       fill="currentColor"
       strokeWidth="0"
-      viewBox={viewBox}
       height={size}
       width={size}
       color={color}

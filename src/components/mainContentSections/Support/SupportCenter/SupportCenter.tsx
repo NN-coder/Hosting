@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MediaQuery from 'react-responsive';
 
 import { StyledWrapper } from '../../../StyledWrapper';

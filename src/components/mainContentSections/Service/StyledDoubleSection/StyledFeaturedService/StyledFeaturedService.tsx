@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { StyledStandardSectionTitle } from '../../../../StyledStandardSectionTitle';
 import { StyledServiceCard } from './StyledServiceCard';

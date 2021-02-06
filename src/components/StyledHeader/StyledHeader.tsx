@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { IconContext } from 'react-icons';
 import { CgMenu } from 'react-icons/cg';
 

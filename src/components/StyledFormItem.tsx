@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useCallback, useMemo, useRef, MutableRefObject } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 const hiddenLabelStyles = css`
   visibility: hidden;

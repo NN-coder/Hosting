@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { StandardBtn } from './StandardBtn';
 import { StyledFormItem } from './StyledFormItem';

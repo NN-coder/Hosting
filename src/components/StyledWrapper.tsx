@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const StyledWrapper = styled.div`
   max-width: 1200px;

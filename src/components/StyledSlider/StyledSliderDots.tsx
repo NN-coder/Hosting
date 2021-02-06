@@ -1,5 +1,5 @@
 import React, { useMemo, Dispatch, SetStateAction } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import shortid from 'shortid';
 
 const Dot = styled.button<{ active?: boolean }>`

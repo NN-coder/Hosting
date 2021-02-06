@@ -1,6 +1,6 @@
 /* eslint-disable import/no-mutable-exports */
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { StyledWrapper } from '../../StyledWrapper';
 import { StyledStandardSectionTitle } from '../../StyledStandardSectionTitle';

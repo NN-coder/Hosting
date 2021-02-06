@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import MediaQuery from 'react-responsive';
 
 import { Masonry } from '../../../utils/Masonry';

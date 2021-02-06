@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import shortid from 'shortid';
 
 import { StandardBtn } from '../../../StandardBtn';

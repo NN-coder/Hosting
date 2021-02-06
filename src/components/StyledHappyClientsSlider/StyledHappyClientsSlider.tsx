@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components/macro';
 
 import { StyledWrapper } from '../StyledWrapper';
 import { StyledStandardSectionTitle } from '../StyledStandardSectionTitle';

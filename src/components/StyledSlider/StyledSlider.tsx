@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { StyledSliderTrack } from './StyledSliderTrack';
 import { StyledSliderDots } from './StyledSliderDots';
